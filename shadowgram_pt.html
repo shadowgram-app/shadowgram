@@ -240,11 +240,6 @@
       font-size: 14px; letter-spacing: 1px; color: var(--silver);
       margin-bottom: 8px; line-height: 1.6;
     }
-    .result-code {
-      text-align: center;
-      font-size: 12px; letter-spacing: 2px; color: rgba(197,165,114,0.4);
-      margin-bottom: 32px;
-    }
     .result-card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 4px; overflow: hidden; margin-bottom: 16px;
@@ -649,7 +644,6 @@
   <p class="result-label">SEU TIPO SHADOWGRAM</p>
   <div class="result-type-name" id="res-type"></div>
   <p class="result-function" id="res-function"></p>
-  <p class="result-code" id="res-code"></p>
 
   <!-- Score bars -->
   <div class="score-bars">
@@ -1439,7 +1433,6 @@ function showResult(savedWinner) {
   document.getElementById('res-type').textContent = winner;
   document.getElementById('res-type').style.color = data.color;
   document.getElementById('res-function').textContent = data.function;
-  document.getElementById('res-code').textContent = `código: ${d[0]}${d[1]}${d[2]}${d[3]}`;
   document.getElementById('res-light-header').style.color = data.color;
   document.getElementById('res-light').textContent = data.light;
   document.getElementById('res-shadow').textContent = data.shadow;
