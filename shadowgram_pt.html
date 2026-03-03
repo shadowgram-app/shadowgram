@@ -482,6 +482,33 @@
       font-size: 11px; color: rgba(155,170,184,0.4);
       margin-top: 12px; line-height: 1.6;
     }
+    .lgpd-consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-top: 14px; cursor: pointer;
+    }
+    .lgpd-consent input[type="checkbox"] {
+      appearance: none; -webkit-appearance: none;
+      width: 18px; height: 18px; min-width: 18px;
+      border: 1px solid rgba(197,165,114,0.5);
+      border-radius: 3px; background: rgba(255,255,255,0.05);
+      cursor: pointer; margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, border-color .15s;
+    }
+    .lgpd-consent input[type="checkbox"]:checked {
+      background: var(--gold); border-color: var(--gold);
+    }
+    .lgpd-consent input[type="checkbox"]:checked::after {
+      content: '✓'; color: #0D1118; font-size: 12px; font-weight: 900;
+      display: block; text-align: center; line-height: 18px;
+    }
+    .lgpd-consent label {
+      font-size: 11px; color: rgba(155,170,184,0.55); line-height: 1.6; cursor: pointer;
+    }
+    .lgpd-consent label a { color: rgba(184,134,11,0.7); text-decoration: underline; }
+    .lgpd-error {
+      font-size: 11px; color: #e05555; margin-top: 6px; display: none;
+    }
     .email-success-msg {
       display: none;
       padding: 20px;
@@ -659,6 +686,16 @@
           ENVIAR AGORA →
         </button>
       </div>
+      <div class="lgpd-consent">
+        <input type="checkbox" id="lgpd-checkbox"/>
+        <label for="lgpd-checkbox">
+          Concordo em receber e-mails da Shadowgram com meu relatório e conteúdos relacionados.
+          Posso cancelar a qualquer momento. Seus dados são tratados conforme a
+          <a href="https://shadowgram.org/privacidade" target="_blank" rel="noopener">Política de Privacidade</a>
+          (LGPD · Lei 13.709/2018).
+        </label>
+      </div>
+      <p class="lgpd-error" id="lgpd-error">Por favor, aceite os termos para continuar.</p>
       <p class="email-privacy">🔒 Sem spam. Cancelamento em 1 clique. Seus dados ficam seguros.</p>
     </div>
 
@@ -673,23 +710,9 @@
   <!-- CTA -->
   <div class="cta-box">
 
-    <p class="cta-box-label" id="res-cta-label">SHADOWGRAM SOLO · NÍVEL 1</p>
+    <p class="cta-box-label" id="res-cta-label">SHADOWGRAM SELF · RELATÓRIO COMPLETO</p>
     <h2 class="cta-box-title" id="res-cta-title"></h2>
     <p class="cta-box-sub" id="res-cta-sub"></p>
-
-    <!-- Price -->
-    <div class="price-row">
-      <span class="price-currency">R$</span>
-      <span class="price-main">37</span>
-    </div>
-    <span class="price-note">pagamento único · acesso imediato · 6 PDFs completos</span>
-
-    <a class="btn-buy" id="res-buy-btn" href="#" target="_blank" rel="noopener">
-      QUERO O RELATÓRIO COMPLETO →
-    </a>
-    <p style="font-size:12px;color:rgba(155,170,184,0.7);margin:10px 0 0;letter-spacing:0.03em;line-height:1.6;">
-      🔒 Pagamento seguro via <strong style="color:rgba(197,165,114,0.85);">Hotmart</strong> · Garantia de 7 dias
-    </p>
 
     <!-- SNS 공유 버튼 -->
     <div style="margin-top:16px;">
@@ -771,7 +794,6 @@
     </div>
 
     <button class="btn-retry" onclick="restartQuiz()">Refazer o diagnóstico</button>
-    <p class="guarantee">🔒 Compra segura via Hotmart · Garantia de 7 dias sem perguntas</p>
   </div>
 </div>
 
@@ -816,9 +838,37 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbw4gdZ0y8L47fo1p9HGcIb7
 
 let _currentType = '';  // showResult()에서 세팅됨
 
+// 타임존 → 국가 코드 추정 (브라우저 Intl API 기반)
+function _guessCountry() {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    const lang = (navigator.language || '').toLowerCase();
+    // 타임존 prefix로 대륙/국가 추정
+    if (tz.startsWith('America/Sao_Paulo') || tz.startsWith('America/Fortaleza') ||
+        tz.startsWith('America/Manaus') || tz.startsWith('America/Belem') ||
+        tz === 'America/Noronha' || lang.includes('pt-br')) return 'BR';
+    if (tz.startsWith('America/Mexico') || lang.includes('es-mx')) return 'MX';
+    if (tz.startsWith('America/Bogota')) return 'CO';
+    if (tz.startsWith('America/Santiago')) return 'CL';
+    if (tz.startsWith('America/Argentina')) return 'AR';
+    if (tz.startsWith('America/Lima')) return 'PE';
+    if (tz.startsWith('Europe/Lisbon') || lang.includes('pt-pt')) return 'PT';
+    if (tz.startsWith('Europe/')) return 'EU';
+    if (tz.startsWith('America/New_York') || tz.startsWith('America/Chicago') ||
+        tz.startsWith('America/Denver') || tz.startsWith('America/Los_Angeles')) return 'US';
+    // 언어 fallback
+    if (lang.startsWith('pt')) return 'BR';
+    if (lang.startsWith('es')) return 'LATAM';
+    if (lang.startsWith('en')) return 'EN';
+    return tz.split('/')[0] || 'unknown';
+  } catch(e) { return 'unknown'; }
+}
+
 async function submitEmail() {
   const input = document.getElementById('email-input');
   const email = input.value.trim();
+  const checkbox = document.getElementById('lgpd-checkbox');
+  const lgpdError = document.getElementById('lgpd-error');
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     input.style.borderColor = '#e05555';
@@ -827,9 +877,19 @@ async function submitEmail() {
     return;
   }
 
+  if (!checkbox.checked) {
+    lgpdError.style.display = 'block';
+    checkbox.closest('.lgpd-consent').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => { lgpdError.style.display = 'none'; }, 3000);
+    return;
+  }
+  lgpdError.style.display = 'none';
+
   const btn = document.querySelector('.email-submit-btn');
   btn.textContent = 'Enviando...';
   btn.disabled = true;
+
+  const utmParams = new URLSearchParams(window.location.search);
 
   // Google Apps Script로 전송 (Brevo 이메일 발송 + Sheets 기록)
   fetch(GAS_URL, {
@@ -837,11 +897,19 @@ async function submitEmail() {
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      event:    'email_capture',
-      email:    email,
-      tipo:     _currentType,
-      ts:       new Date().toISOString(),
-      page_url: window.location.href.split('?')[0]
+      event:        'email_capture',
+      email:        email,
+      tipo:         _currentType,
+      ts:           new Date().toISOString(),
+      country:      _guessCountry(),
+      lang:         navigator.language || 'unknown',
+      timezone:     Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown',
+      utm_source:   utmParams.get('utm_source') || '',
+      utm_medium:   utmParams.get('utm_medium') || '',
+      utm_campaign: utmParams.get('utm_campaign') || '',
+      lgpd_consent: true,
+      consent_ts:   new Date().toISOString(),
+      page_url:     window.location.href.split('?')[0]
     })
   }).catch(() => {});
 
@@ -1233,6 +1301,7 @@ function showResult(savedWinner) {
         type:         winner,
         code:         d.join(''),
         lang:         navigator.language || 'unknown',
+        country:      _guessCountry(),
         device:       /Mobi|Android/i.test(ua) ? 'mobile' : 'desktop',
         browser:      browser,
         os:           os,
@@ -1279,7 +1348,6 @@ function showResult(savedWinner) {
   document.getElementById('res-cta-label').textContent = `SHADOWGRAM SELF · RELATÓRIO COMPLETO · ${winner}`;
   document.getElementById('res-cta-title').textContent = data.ctaTitle;
   document.getElementById('res-cta-sub').textContent = data.ctaSub;
-  document.getElementById('res-buy-btn').href = getHotmartLink(winner);
 
   // 이메일 캡처 — 유형별 타이틀 업데이트 & 상태 리셋
   _currentType = winner;
