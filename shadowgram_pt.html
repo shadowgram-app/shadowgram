@@ -861,7 +861,7 @@ function getHotmartLink(tipo) {
 // EMAIL CAPTURE — Google Apps Script 경유 → Brevo 자동 발송
 // API 키는 Apps Script 안에만 보관 (프론트엔드 노출 없음)
 // ═══════════════════════════════════════════════════════════════
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbw4gdZ0y8L47fo1p9HGcIb7JTkaDKEN6MQe2b75SIdoXj3zMnZjIR6xnRLBVgatRJ2h1w/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbys-Y9-EUh6pHBWmIHxSJPbCGpErvw714zM2q8xaEuDj1qcMgRVlMMKwgdk1ChDzRL-1A/exec';
 
 let _currentType = '';  // showResult()에서 세팅됨
 
@@ -1416,7 +1416,7 @@ function showResult(savedWinner) {
         utm_term:     utmParams.get('utm_term') || '',
         page_url:     window.location.href.split('?')[0]
       };
-      fetch('https://script.google.com/macros/s/AKfycbw4gdZ0y8L47fo1p9HGcIb7JTkaDKEN6MQe2b75SIdoXj3zMnZjIR6xnRLBVgatRJ2h1w/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbys-Y9-EUh6pHBWmIHxSJPbCGpErvw714zM2q8xaEuDj1qcMgRVlMMKwgdk1ChDzRL-1A/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
