@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPARK 📩 Email 1 — Entrega do Relatório</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#E8E4DC; font-family: 'Georgia', serif; }
+  .wrapper { max-width:620px; margin:0 auto; background:#fff; }
+
+  /* ── 헤더 배너 ── */
+  .header-band { background:#1A2030; padding:0; }
+  .header-top { background:#1A2030; padding:18px 32px 14px; border-bottom:2px solid #D4860B; }
+  .brand-row { display:flex; align-items:center; justify-content:space-between; }
+  .brand-logo { color:#D4A520; font-size:13px; letter-spacing:3px; text-transform:uppercase; font-family: 'Arial', sans-serif; }
+  .brand-tag { color:#8899AA; font-size:11px; letter-spacing:1px; font-family:'Arial',sans-serif; }
+
+  /* ── 타입 히어로 ── */
+  .type-hero { background: linear-gradient(135deg, #1A2030 0%, #D4860B22 100%); padding:36px 32px 28px; text-align:center; border-bottom:1px solid #D4860B44; }
+  .type-emoji { font-size:48px; display:block; margin-bottom:10px; }
+  .type-name { font-size:36px; font-weight:900; color:#D4860B; letter-spacing:4px; font-family:'Arial Black','Arial',sans-serif; text-transform:uppercase; }
+  .type-archetype { color:#8899AA; font-size:13px; letter-spacing:2px; margin-top:6px; font-family:'Arial',sans-serif; text-transform:uppercase; }
+  .email-badge { display:inline-block; margin-top:14px; background:#D4860B22; color:#D4860B; border:1px solid #D4860B55; border-radius:20px; padding:5px 16px; font-size:11px; letter-spacing:1.5px; font-family:'Arial',sans-serif; text-transform:uppercase; }
+
+  /* ── 제목줄 메타 ── */
+  .subj-bar { background:#FFF8EE; border-left:4px solid #D4860B; padding:14px 24px; margin:0 32px; margin-top:-1px; }
+  .subj-label { font-size:10px; color:#8899AA; letter-spacing:1.5px; font-family:'Arial',sans-serif; text-transform:uppercase; margin-bottom:4px; }
+  .subj-text { font-size:14px; color:#1A2030; font-family:'Arial',sans-serif; font-weight:600; }
+
+  /* ── 본문 ── */
+  .body-wrap { padding:32px 32px 24px; }
+  .greeting { font-size:18px; color:#1A2030; margin-bottom:18px; font-weight:600; }
+  .body-p { font-size:15px; color:#333; line-height:1.75; margin-bottom:14px; }
+  .body-p strong { color:#D4860B; }
+
+  /* ── 페인 질문 박스 ── */
+  .pain-box { background:#FFF8EE; border-left:4px solid #D4860B; border-radius:0 8px 8px 0; padding:18px 20px; margin:20px 0; }
+  .pain-q { font-size:16px; color:#1A2030; font-style:italic; line-height:1.6; font-weight:600; }
+  .pain-label { font-size:10px; color:#D4860B; letter-spacing:1.5px; text-transform:uppercase; font-family:'Arial',sans-serif; margin-bottom:8px; }
+
+  /* ── 내부 콘텐츠 리스트 ── */
+  .inside-box { background:#1A2030; border-radius:12px; padding:22px 24px; margin:20px 0; }
+  .inside-title { color:#D4A520; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-family:'Arial',sans-serif; margin-bottom:14px; }
+  .inside-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
+  .inside-text { color:#D0D8E4; font-size:14px; line-height:1.55; }
+
+  /* ── 시크릿 박스 ── */
+  .secret-box { background: linear-gradient(135deg, #1A2030 0%, #D4860B33 100%); border:1px solid #D4860B55; border-radius:12px; padding:22px 24px; margin:20px 0; text-align:center; }
+  .secret-label { color:#D4860B; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-family:'Arial',sans-serif; margin-bottom:10px; }
+  .secret-q { color:#FFFFFF; font-size:16px; font-style:italic; line-height:1.6; font-weight:600; }
+
+  /* ── 인클루드 리스트 ── */
+  .includes-box { border:1px solid #D4860B33; border-radius:12px; padding:20px 24px; margin:20px 0; }
+  .includes-title { color:#D4860B; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-family:'Arial',sans-serif; margin-bottom:14px; }
+  .inc-item { display:flex; gap:10px; margin-bottom:10px; align-items:flex-start; }
+  .inc-check { color:#D4860B; font-size:16px; flex-shrink:0; margin-top:1px; }
+  .inc-text { color:#1A2030; font-size:14px; line-height:1.55; }
+
+  /* ── 질문2 박스 ── */
+  .q2-box { background:#F7F5F0; border-radius:8px; padding:16px 20px; margin:20px 0; border:1px solid #E0DCD4; }
+  .q2-label { font-size:10px; color:#8899AA; letter-spacing:1.5px; text-transform:uppercase; font-family:'Arial',sans-serif; margin-bottom:8px; }
+  .q2-text { font-size:15px; color:#1A2030; font-style:italic; line-height:1.6; }
+
+  /* ── 3문 질문 박스 ── */
+  .qs-list { margin:16px 0; }
+  .qs-item { background:#1A2030; border-left:4px solid #D4860B; border-radius:0 8px 8px 0; padding:14px 18px; margin-bottom:10px; }
+  .qs-num { color:#D4860B; font-size:11px; letter-spacing:1px; font-family:'Arial',sans-serif; margin-bottom:6px; text-transform:uppercase; }
+  .qs-text { color:#D0D8E4; font-size:14px; line-height:1.55; font-style:italic; }
+
+  /* ── 테스티모니얼 ── */
+  .testimonial { background:#FFF8EE; border-radius:12px; padding:20px 24px; margin:20px 0; text-align:center; position:relative; }
+  .testimonial::before { content:'"'; font-size:60px; color:#D4860B22; position:absolute; top:-10px; left:16px; font-family:Georgia,serif; line-height:1; }
+  .testimonial-text { color:#444; font-size:14px; line-height:1.7; font-style:italic; position:relative; z-index:1; }
+  .testimonial-star { color:#D4860B; font-size:16px; margin-top:10px; letter-spacing:3px; }
+
+  /* ── CTA 버튼 ── */
+  .cta-section { padding:8px 0 28px; text-align:center; }
+  .cta-urgency { color:#8899AA; font-size:12px; font-family:'Arial',sans-serif; margin-bottom:14px; letter-spacing:0.5px; }
+  .cta-btn { display:inline-block; background: linear-gradient(135deg, #D4860B 0%, #D4A520 100%); color:#FFFFFF !important; text-decoration:none; font-family:'Arial Black','Arial',sans-serif; font-size:15px; font-weight:900; letter-spacing:1px; padding:18px 36px; border-radius:50px; box-shadow:0 6px 24px #D4860B55; text-transform:uppercase; }
+  .cta-sub { color:#8899AA; font-size:11px; font-family:'Arial',sans-serif; margin-top:12px; }
+
+  /* ── 구분선 ── */
+  .divider { height:1px; background: linear-gradient(to right, transparent, #D4860B44, transparent); margin:24px 0; }
+
+  /* ── 푸터 ── */
+  .footer { background:#1A2030; padding:22px 32px; text-align:center; border-top:2px solid #D4860B44; }
+  .footer-logo { color:#D4A520; font-size:12px; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px; }
+  .footer-copy { color:#445566; font-size:10px; letter-spacing:0.5px; font-family:'Arial',sans-serif; line-height:1.6; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header-band">
+    <div class="header-top">
+      <div class="brand-row">
+        <span class="brand-logo">✦ Shadowgram</span>
+        <span class="brand-tag">shadowgram.org</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-hero">
+    <span class="type-emoji">⚡</span>
+    <div class="type-name">SPARK</div>
+    <div class="type-archetype">O Explorador · Beija-flor</div>
+    <div class="email-badge">📩 Email 1 — Entrega do Relatório</div>
+  </div>
+  <div style="margin:20px 32px 0;">
+    <div class="subj-label">ASSUNTO DO EMAIL</div>
+    <div class="subj-text">Seu relatório SPARK chegou 🔥 + uma pergunta que vai te pegar</div>
+  </div>
+
+  <div class="body-wrap">
+    <div class="greeting">Oi, explorador(a) 👋</div>
+    <p class="body-p">Seu relatório gratuito Shadowgram tipo <strong>SPARK</strong> está em anexo.</p>
+    <p class="body-p">Mas antes de abrir — me diz uma coisa:</p>
+
+    <div class="pain-box">
+      <div class="pain-label">💬 Pergunta rápida</div>
+      <div class="pain-q">Você já teve uma ideia que estava certo que era diferente... e simplesmente parou no meio?</div>
+    </div>
+
+    <p class="body-p">Se a resposta foi <em>"sim"</em> ou <em>"às vezes"</em>... o relatório vai falar direto com você.</p>
+
+    <div class="inside-box">
+      <div class="inside-title">📋 O que está no relatório</div>
+      
+      <div class="inside-item">
+        <span class="inside-text">⚡ Sua luz Ne — o que faz de você alguém raro</span>
+      </div>
+      <div class="inside-item">
+        <span class="inside-text">🌑 Sua sombra Si — o padrão que sabota sem você perceber</span>
+      </div>
+      <div class="inside-item">
+        <span class="inside-text">💸 O custo invisível — o que acontece se você continuar ignorando</span>
+      </div>
+      <div class="inside-item">
+        <span class="inside-text">🗺️ Missão de 3 dias — os primeiros passos concretos</span>
+      </div>
+    </div>
+
+    <p class="body-p" style="color:#666; font-size:13px;">📎 O arquivo está em anexo. Abra quando tiver 15 minutos de silêncio — vale cada linha.</p>
+
+    <div class="divider"></div>
+
+    <div class="cta-section">
+      <div class="cta-urgency">Quer ir mais fundo? O relatório completo está disponível agora.</div>
+      <a href="https://go.hotmart.com/J104717194W" class="cta-btn">Quero o Relatório Completo SPARK →</a>
+      <div class="cta-sub">✓ Acesso imediato · ✓ Garantia de 7 dias · ✓ Pagamento seguro</div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="footer-logo">✦ Shadowgram</div>
+    <div class="footer-copy">
+      shadowgram.org · © 2025 Shadowgram<br>
+      Comprador(a) — uso pessoal exclusivo · Redistribuição proibida<br>
+      * MBTI® is a registered trademark of The Myers & Briggs Foundation.<br>
+      Shadowgram é um framework independente, sem vínculo com The Myers & Briggs Foundation.
+    </div>
+  </div>
+</div>
+</body>
+</html>
