@@ -347,6 +347,28 @@
       font-size: 13px; color: var(--silver);
     }
 
+    /* ── Stats counter ── */
+    .stats-banner {
+      background: rgba(184,134,11,0.06);
+      border: 1px solid rgba(184,134,11,0.2);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      display: none; /* JS로 표시 */
+    }
+    .stats-total {
+      font-size: 13px; color: var(--silver); line-height: 1.7;
+    }
+    .stats-total strong {
+      color: var(--gold); font-size: 18px; font-weight: 900;
+    }
+    .stats-type {
+      font-size: 12px; color: rgba(155,170,184,0.6);
+      margin-top: 4px; letter-spacing: 0.5px;
+    }
+    .stats-type em { color: var(--goldL); font-style: normal; font-weight: 700; }
+
     /* ── CTA box ── */
     .cta-box {
       margin-top: 40px;
@@ -615,6 +637,15 @@
 
 <!-- RESULT -->
 <div id="result-section">
+
+  <!-- 실시간 카운터 배너 -->
+  <div class="stats-banner" id="stats-banner">
+    <div class="stats-total">
+      <strong id="stats-total-num">—</strong> pessoas descobriram sua sombra
+    </div>
+    <div class="stats-type" id="stats-type-line"></div>
+  </div>
+
   <p class="result-label">SEU TIPO SHADOWGRAM</p>
   <div class="result-type-name" id="res-type"></div>
   <p class="result-function" id="res-function"></p>
@@ -837,6 +868,66 @@ function getHotmartLink(tipo) {
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbw4gdZ0y8L47fo1p9HGcIb7JTkaDKEN6MQe2b75SIdoXj3zMnZjIR6xnRLBVgatRJ2h1w/exec';
 
 let _currentType = '';  // showResult()에서 세팅됨
+
+// ── 실시간 통계 로드 (JSONP) ──
+function loadStats(tipo) {
+  const callbackName = '_sgStats_' + Date.now();
+  const script = document.createElement('script');
+  script.src = GAS_URL + '?action=stats&callback=' + callbackName;
+
+  window[callbackName] = function(data) {
+    try {
+      const total = data.total || 0;
+      const pct   = data.pctByType && data.pctByType[tipo] ? data.pctByType[tipo] : null;
+      const rank  = data.ranking   ? data.ranking.find(function(r){ return r.type === tipo; }) : null;
+
+      // 총 카운트 — 카운트 업 애니메이션
+      animateCount(document.getElementById('stats-total-num'), total);
+
+      // 유형 비율 + 순위
+      const typeLine = document.getElementById('stats-type-line');
+      let msg = '';
+      if (pct !== null) {
+        msg += '<em>' + pct + '%</em> dos usuários são tipo ' + tipo;
+      }
+      if (rank && rank.rank <= 3) {
+        const medals = ['🥇','🥈','🥉'];
+        msg += ' · ' + medals[rank.rank - 1] + ' ' + rank.rank + 'º mais comum';
+      } else if (rank) {
+        msg += ' · ' + rank.rank + 'º entre os 8 tipos';
+      }
+      typeLine.innerHTML = msg;
+
+      document.getElementById('stats-banner').style.display = 'block';
+    } catch(e) {}
+
+    // JSONP 클린업
+    delete window[callbackName];
+    if (script.parentNode) script.parentNode.removeChild(script);
+  };
+
+  script.onerror = function() {
+    delete window[callbackName];
+    if (script.parentNode) script.parentNode.removeChild(script);
+  };
+
+  document.head.appendChild(script);
+}
+
+// 숫자 카운트 업 애니메이션
+function animateCount(el, target) {
+  if (!el || target === 0) { if(el) el.textContent = target.toLocaleString('pt-BR'); return; }
+  const duration = 1200;
+  const start = Date.now();
+  const from = Math.max(0, target - Math.min(target, 80));
+  function tick() {
+    const p = Math.min(1, (Date.now() - start) / duration);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(from + (target - from) * ease).toLocaleString('pt-BR');
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
 
 // 타임존 → 국가 코드 추정 (브라우저 Intl API 기반)
 function _guessCountry() {
@@ -1348,6 +1439,9 @@ function showResult(savedWinner) {
   document.getElementById('res-cta-label').textContent = `SHADOWGRAM SELF · RELATÓRIO COMPLETO · ${winner}`;
   document.getElementById('res-cta-title').textContent = data.ctaTitle;
   document.getElementById('res-cta-sub').textContent = data.ctaSub;
+
+  // 실시간 통계 로드
+  loadStats(winner);
 
   // 이메일 캡처 — 유형별 타이틀 업데이트 & 상태 리셋
   _currentType = winner;
