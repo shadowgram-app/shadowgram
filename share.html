@@ -416,6 +416,72 @@
       line-height: 1.4;
     }
 
+    /* ── 선언 카드 (강점 + 요청) ── */
+    .identity-card {
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .identity-section {
+      padding: 22px 24px;
+    }
+    .identity-section + .identity-section {
+      border-top: 1px solid var(--border);
+    }
+    .identity-section-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .identity-section-label.gold { color: var(--gold); }
+    .identity-section-label.teal { color: #6BBFBF; }
+    .identity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+    }
+    .identity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .identity-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+    .identity-num.gold {
+      background: rgba(197,165,114,0.15);
+      color: var(--gold);
+      border: 1px solid rgba(197,165,114,0.3);
+    }
+    .identity-num.teal {
+      background: rgba(107,191,191,0.12);
+      color: #6BBFBF;
+      border: 1px solid rgba(107,191,191,0.25);
+    }
+    .identity-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #d8cfc4;
+    }
+    .identity-text strong { color: var(--white); font-weight: 700; }
+
     /* ── FOOTER ── */
     .footer {
       margin-top: 40px;
@@ -461,42 +527,47 @@
     <p>E você — <span>qual é o seu tipo?</span> 👇</p>
   </div>
 
-  <!-- 유형 카드 -->
-  <div class="type-card">
-    <div class="type-card-header">
-      <div class="type-icon" id="type-icon">🔥</div>
-      <div>
-        <div class="type-name" id="type-name">—</div>
-        <div class="type-function" id="type-function">—</div>
-      </div>
+  <!-- 선언 카드 -->
+  <div class="identity-card">
+
+    <!-- 강점 섹션 -->
+    <div class="identity-section">
+      <div class="identity-section-label gold">✦ Meus pontos fortes</div>
+      <ul class="identity-list" id="strengths-list">
+        <li class="identity-item">
+          <div class="identity-num gold">1</div>
+          <div class="identity-text" id="strength-1">—</div>
+        </li>
+        <li class="identity-item">
+          <div class="identity-num gold">2</div>
+          <div class="identity-text" id="strength-2">—</div>
+        </li>
+        <li class="identity-item">
+          <div class="identity-num gold">3</div>
+          <div class="identity-text" id="strength-3">—</div>
+        </li>
+      </ul>
     </div>
-    <div class="type-body">
 
-      <!-- ✦ 역동 (빛) -->
-      <div>
-        <div class="section-label">✦ Ponto forte — sua luz</div>
-        <div class="light-box">
-          <p id="type-light">—</p>
-        </div>
-      </div>
-
-      <!-- ⚠ 페인포인트 -->
-      <div>
-        <div class="section-label">⚠ O padrão que te sabota</div>
-        <div class="pain-box">
-          <p id="type-pain">—</p>
-        </div>
-      </div>
-
-      <!-- ✅ 해결책 힌트 -->
-      <div>
-        <div class="section-label">✅ O que o relatório revela</div>
-        <div class="solution-box">
-          <p id="type-solution">—</p>
-        </div>
-      </div>
-
+    <!-- 요청 섹션 -->
+    <div class="identity-section">
+      <div class="identity-section-label teal">◆ Como me ajudar a crescer</div>
+      <ul class="identity-list" id="needs-list">
+        <li class="identity-item">
+          <div class="identity-num teal">1</div>
+          <div class="identity-text" id="need-1">—</div>
+        </li>
+        <li class="identity-item">
+          <div class="identity-num teal">2</div>
+          <div class="identity-text" id="need-2">—</div>
+        </li>
+        <li class="identity-item">
+          <div class="identity-num teal">3</div>
+          <div class="identity-text" id="need-3">—</div>
+        </li>
+      </ul>
     </div>
+
   </div>
 
   <!-- 호기심 질문 3종 -->
@@ -559,6 +630,16 @@ const TYPES = {
     pain: 'Quantas ideias brilhantes você já abandonou a 90% do caminho? Começa com tudo, perde o interesse, abandona — e sente que algo está errado com você.',
     solution: 'O relatório revela os 4 padrões do abandono e o método específico para o tipo SPARK completar o que começa — sem perder sua criatividade.',
     miniDesc: 'Criativo · Para tudo antes do fim',
+    strengths: [
+      '<strong>Eu enxergo possibilidades onde outros veem obstáculos.</strong> Minha mente conecta ideias de formas que surpreendem até a mim mesmo.',
+      '<strong>Meu entusiasmo é genuíno e contagiante.</strong> Quando acredito em algo, as pessoas ao redor começam a acreditar também.',
+      '<strong>Sou capaz de inovar em qualquer ambiente.</strong> O novo não me assusta — ele me alimenta.',
+    ],
+    needs: [
+      '<strong>Me ajude a terminar o que começo.</strong> Não me dê mais ideias — me ajude a escolher uma e ir até o fim.',
+      '<strong>Não me abandone no meio do processo.</strong> Quando a empolgação passar, preciso de alguém que me lembre por que comecei.',
+      '<strong>Celebre cada conclusão comigo.</strong> Para mim, terminar é mais difícil que começar — e merece reconhecimento real.',
+    ],
     asks: [
       { q: 'Você já teve uma ideia incrível... e simplesmente parou no meio?', a: 'Para o SPARK, isso não é falta de força de vontade. É o seu padrão de sombra agindo. <strong>O relatório completo revela os 4 gatilhos exatos</strong> que fazem você abandonar — e como desativá-los um por um.', cta: 'Quero entender meu padrão →' },
       { q: 'Você se sente "multitarefas demais" para se aprofundar em algo?', a: 'A intuição extrovertida cria um fluxo constante de novas conexões. Sem integrar a sombra (Si), você vira escravo das ideias. <strong>Existe um método específico para o tipo SPARK</strong> — descubra no relatório.', cta: 'Descobrir meu método →' },
@@ -573,6 +654,16 @@ const TYPES = {
     pain: 'Sua rotina protege — mas também prende. Você evita mudanças mesmo quando sente que algo precisa evoluir. O conforto virou uma gaiola dourada.',
     solution: 'O relatório revela como identificar quando a estabilidade virou estagnação — e o caminho para crescer sem abandonar quem você é.',
     miniDesc: 'Estável · Preso na zona de conforto',
+    strengths: [
+      '<strong>Sou o pilar que sustenta sem precisar de reconhecimento.</strong> Quando todos estão em pânico, eu mantenho a ordem.',
+      '<strong>Minha memória e atenção ao detalhe evitam erros que outros nem percebem.</strong> Eu lembro do que importa.',
+      '<strong>Sou confiável de verdade.</strong> Não prometo o que não consigo cumprir — e isso vale ouro.',
+    ],
+    needs: [
+      '<strong>Me dê tempo para processar mudanças.</strong> Não me empurre — me mostre o porquê, e eu irei com você.',
+      '<strong>Reconheça minha consistência.</strong> Eu raramente peço atenção, mas sinto quando meu esforço é invisível.',
+      '<strong>Não confunda minha cautela com medo.</strong> Estou avaliando — não evitando.',
+    ],
     asks: [
       { q: 'Você sente que poderia estar mais longe do que está — mas algo te segura?', a: 'O STEADY protege com a rotina. Mas o que antes era segurança pode virar paralisia. <strong>O relatório revela o sinal exato</strong> de quando a estabilidade virou estagnação — e o primeiro passo para sair.', cta: 'Quero identificar meu sinal →' },
       { q: 'Você evita conversas difíceis esperando que o problema se resolva sozinho?', a: 'A sombra do STEADY (Ne) tem medo do desconhecido. Evitar conflitos é uma forma de controle. <strong>Existe uma técnica no relatório</strong> para o tipo STEADY enfrentar o que precisa sem entrar em colapso.', cta: 'Ver a técnica →' },
@@ -587,6 +678,16 @@ const TYPES = {
     pain: 'Você constrói resultados para todos. Mas quando foi a última vez que perguntou o que você realmente quer? A eficiência está devorando sua autenticidade.',
     solution: 'O relatório revela o que sua eficiência está escondendo — e como liderar com propósito real, conectado a valores genuínos.',
     miniDesc: 'Executor · Vazio por dentro',
+    strengths: [
+      '<strong>Onde há caos, eu crio ordem.</strong> Minha capacidade de estruturar e executar é uma força que poucos têm.',
+      '<strong>Entrego o que prometo.</strong> Resultados não são acidente — são consequência da forma como penso.',
+      '<strong>Elevo o padrão de tudo ao meu redor.</strong> Não por cobrança — por não aceitar menos do que o possível.',
+    ],
+    needs: [
+      '<strong>Me mostre que você também tem padrões.</strong> Comprometimento medíocre me fecha — excelência me abre.',
+      '<strong>Me pergunte o que EU quero de vez em quando.</strong> Eu sei cuidar de tudo — mas preciso ser lembrado de cuidar de mim.',
+      '<strong>Não interprete minha diretividade como agressão.</strong> Falo direto porque respeito seu tempo — não para intimidar.',
+    ],
     asks: [
       { q: 'Você conquista metas — mas sente que falta algo, sem saber o quê?', a: 'O LEADER entrega resultados para o mundo. Mas a sombra (Fi) cobra: <strong>qual é o seu propósito real?</strong> O relatório revela o que está por trás dessa sensação de vazio — e como preenchê-la com autenticidade.', cta: 'Descobrir meu propósito real →' },
       { q: 'Você tem dificuldade de delegar — e termina fazendo tudo você mesmo?', a: 'Para o LEADER, confiar é difícil porque os padrões são altíssimos. Mas isso tem um custo invisível. <strong>O relatório revela os 3 padrões de controle</strong> do tipo LEADER — e como libertar sua liderança.', cta: 'Ver meus padrões de controle →' },
@@ -601,6 +702,16 @@ const TYPES = {
     pain: 'Sua precisão tem um custo invisível: a frieza que os outros sentem como rejeição. As pessoas ao redor sentem distância — mesmo quando não é sua intenção.',
     solution: 'O relatório revela como integrar emoção e razão — e construir conexões reais sem abrir mão da sua precisão intelectual.',
     miniDesc: 'Preciso · Difícil de conectar',
+    strengths: [
+      '<strong>Resolvo problemas que outros nem conseguem formular.</strong> Minha mente vai à raiz — não à superfície.',
+      '<strong>Não aceito respostas vagas.</strong> Isso me torna exigente e, ao mesmo tempo, alguém em quem você pode realmente confiar.',
+      '<strong>Sou consistente com meus princípios.</strong> Não mudo de posição por pressão social — só por lógica melhor.',
+    ],
+    needs: [
+      '<strong>Dê-me espaço para processar antes de responder.</strong> Silêncio não é indiferença — é onde meu pensamento acontece.',
+      '<strong>Não interprete minha objetividade como frieza.</strong> Eu me importo — só expresso de um jeito diferente.',
+      '<strong>Argumente com lógica, não com emoção.</strong> Não porque emoção não importa — mas porque é assim que consigo realmente ouvir você.',
+    ],
     asks: [
       { q: 'Alguém já te chamou de "frio" ou "distante" — e você não entendeu por quê?', a: 'Para o LOGIC, é lógico. Para o outro, parece rejeição. A sombra (Fe) cria um abismo entre você e as pessoas que ama. <strong>O relatório revela os 3 momentos exatos</strong> em que você fecha sem perceber.', cta: 'Entender meu fechamento →' },
       { q: 'Você explica problemas com perfeição — mas raramente fala do que sente?', a: 'Análise é conforto. Emoção é território estranho. Mas isso tem um custo real na forma como você se conecta com o mundo. <strong>O relatório ensina o caminho específico</strong> para o tipo LOGIC integrar emoção sem se trair.', cta: 'Ver meu caminho →' },
@@ -615,6 +726,16 @@ const TYPES = {
     pain: 'Quantas visões brilhantes ficaram apenas na sua cabeça? Sua sombra cria uma distância dolorosa entre o que você percebe e o que você manifesta no mundo.',
     solution: 'O relatório revela como transformar visão interna em resultados concretos — sem perder sua profundidade e singularidade.',
     miniDesc: 'Visionário · Não consegue agir',
+    strengths: [
+      '<strong>Eu enxergo o que vai acontecer antes de acontecer.</strong> Não é previsão — é leitura profunda de padrões.',
+      '<strong>Minha profundidade cria sínteses que outros levam anos para entender.</strong> Penso em camadas.',
+      '<strong>Quando confio na minha visão e ajo, os resultados são extraordinários.</strong> O problema não é a visão — é o caminho até ela.',
+    ],
+    needs: [
+      '<strong>Dê-me tempo para ter clareza antes de cobrar ação.</strong> Pressa me paralisa — espaço me liberta.',
+      '<strong>Leve minha intuição a sério, mesmo sem explicação lógica imediata.</strong> Muitas vezes não sei o porquê ainda — mas estou certo.',
+      '<strong>Me ajude a dar o primeiro passo concreto.</strong> Não o mapa inteiro — só o primeiro passo.',
+    ],
     asks: [
       { q: 'Você sente que as pessoas ao redor simplesmente não te entendem?', a: 'A visão do VISION é rara — e esse isolamento é real. Mas parte disso é a sombra (Se) evitando o mundo concreto. <strong>O relatório revela</strong> como sair do isolamento sem trair sua profundidade.', cta: 'Quero ser compreendido →' },
       { q: 'Você tem clareza interna sobre o que quer — mas dificuldade de agir?', a: 'Visão sem ação é sofrimento silencioso. A sombra do VISION paralisa entre o ideal e o real. <strong>O relatório ensina o método de aterrissagem</strong> específico para o tipo VISION.', cta: 'Ver meu método de ação →' },
@@ -629,6 +750,16 @@ const TYPES = {
     pain: 'Quantas vezes você disse sim quando queria dizer não? Você se perde completamente nos outros — até o esgotamento. Quem cuida de você?',
     solution: 'O relatório revela como cuidar dos outros sem se perder — e construir limites saudáveis sem culpa e sem perder sua compaixão.',
     miniDesc: 'Cuidador · Não consegue dizer não',
+    strengths: [
+      '<strong>Percebo o estado emocional de um ambiente antes de uma palavra ser dita.</strong> Essa antena é rara e poderosa.',
+      '<strong>Tenho o dom de criar pertencimento.</strong> As pessoas se sentem vistas quando estão comigo.',
+      '<strong>Meu cuidado é genuíno — não estratégico.</strong> Dou sem calcular retorno.',
+    ],
+    needs: [
+      '<strong>Pergunte como EU estou de vez em quando.</strong> Cuido de todos — mas também precisso ser cuidado.',
+      '<strong>Não confunda minha gentileza com concordância.</strong> Sou suave na forma — mas tenho opiniões firmes.',
+      '<strong>Me dê permissão para dizer não.</strong> Quando eu recuo, não é abandono — é sobrevivência.',
+    ],
     asks: [
       { q: 'Você às vezes sente raiva das pessoas que ajudou — mas não consegue falar?', a: 'Essa raiva silenciosa é a sombra (Ti) do HARMONY falando. Você deu demais, esperou reconhecimento, não recebeu. <strong>O relatório revela esse ciclo</strong> e como sair dele sem se tornar frio.', cta: 'Entender minha raiva silenciosa →' },
       { q: 'Você evita conflitos a qualquer custo — mesmo quando tem razão?', a: 'Para o HARMONY, conflito parece o fim do mundo. Mas essa evitação acumula ressentimento. <strong>O relatório ensina o método específico</strong> para o HARMONY falar com verdade sem destruir o vínculo.', cta: 'Falar com verdade →' },
@@ -643,6 +774,16 @@ const TYPES = {
     pain: 'Suas conquistas têm prazo de validade curto. Você repete os mesmos padrões — impulsividade, excesso, recomeço — sem entender por quê o ciclo continua.',
     solution: 'O relatório revela os 4 padrões que sabotam sua consistência — e o caminho para transformar ação intensa em legado duradouro.',
     miniDesc: 'Intenso · Repete os mesmos erros',
+    strengths: [
+      '<strong>Ajo quando os outros ainda estão pensando.</strong> Minha capacidade de criar momentum é uma força que move situações.',
+      '<strong>Estou completamente presente no que faço.</strong> Quando me envolvo, me envolvo de verdade.',
+      '<strong>Minha energia é contagiante.</strong> Levanto o ritmo de qualquer ambiente que entro.',
+    ],
+    needs: [
+      '<strong>Me ajude a ver além do agora.</strong> Não me dê o mapa inteiro — só o próximo horizonte.',
+      '<strong>Não me julgue pela intensidade.</strong> Sinto tudo amplificado — é assim que processo o mundo.',
+      '<strong>Celebre comigo — mas me lembre do que construí.</strong> Às vezes esqueço o que já conquistei na busca do próximo.',
+    ],
     asks: [
       { q: 'Você já se perguntou por que conquistas incríveis não te satisfazem por muito tempo?', a: 'O PLAYER vive no pico — e o pico passa rápido. A sombra (Ni) nunca deixa você descansar no que conquistou. <strong>O relatório revela o ciclo exato</strong> e como criar satisfação que dura.', cta: 'Entender meu ciclo →' },
       { q: 'Você age no impulso e só pensa nas consequências depois?', a: 'Isso é a assinatura do PLAYER em modo sombra. A ação vem antes do reflexo — sempre. <strong>O relatório ensina a técnica dos 3 segundos</strong> específica para o tipo PLAYER que muda tudo.', cta: 'Ver a técnica dos 3 segundos →' },
@@ -657,6 +798,16 @@ const TYPES = {
     pain: 'Você tem muito a oferecer — mas o mundo parece não reconhecer. Sua profundidade raramente se traduz em resultado concreto. E essa distância dói.',
     solution: 'O relatório revela como transformar sua profundidade em presença real — e ser visto pelo que você realmente é, no mundo que existe.',
     miniDesc: 'Profundo · Invisível no mundo prático',
+    strengths: [
+      '<strong>Minha autenticidade não se negocia.</strong> Não sigo multidão — sigo o que sinto ser verdadeiro.',
+      '<strong>Toco as pessoas de formas que a lógica não consegue.</strong> Minha profundidade cria conexões que duram.',
+      '<strong>Tenho uma bússola moral que não se dobra à pressão.</strong> Isso é raro — e o mundo precisa disso.',
+    ],
+    needs: [
+      '<strong>Dê-me espaço para sentir antes de agir.</strong> Não sou lento — estou processando em profundidade.',
+      '<strong>Não tente me convencer com lógica fria.</strong> Preciso sentir que você se importa — depois o argumento faz sentido.',
+      '<strong>Veja minha profundidade como força, não como excesso.</strong> O que parece sensibilidade demais é onde meu melhor vive.',
+    ],
     asks: [
       { q: 'Você sente que as pessoas não enxergam sua profundidade real?', a: 'Para o SOUL, ser mal interpretado é uma dor constante. A sombra (Te) dificulta traduzir o interno em externo. <strong>O relatório revela como</strong> tornar sua profundidade visível sem se trair.', cta: 'Ser visto de verdade →' },
       { q: 'Você tem dificuldade de pedir o que precisa — esperando que percebam?', a: 'O SOUL espera que o amor se expresse sem palavras. Isso cria silêncios que magoam. <strong>O relatório ensina</strong> como o tipo SOUL comunica necessidades sem perder autenticidade.', cta: 'Comunicar sem se perder →' },
@@ -706,6 +857,20 @@ function renderType(typeName) {
   // 동물 맵
   const animalMap = {SPARK:'Beija-flor ⚡',VISION:'Pavão 🦚',STEADY:'Tartaruga 🐢',PLAYER:'Leopardo 🐆',HARMONY:'Golfinho 🐬',SOUL:'Borboleta 🦋',LOGIC:'Corvo 🐦',LEADER:'Águia 🦅'};
   const animal = animalMap[typeName] || typeName;
+
+  // ── 선언 카드 채우기 (강점 + 요청) ──
+  if (data.strengths) {
+    data.strengths.forEach((txt, i) => {
+      const el = document.getElementById(`strength-${i+1}`);
+      if (el) el.innerHTML = txt;
+    });
+  }
+  if (data.needs) {
+    data.needs.forEach((txt, i) => {
+      const el = document.getElementById(`need-${i+1}`);
+      if (el) el.innerHTML = txt;
+    });
+  }
 
   // ── 선언 헤더 채우기 ──
   const header = document.getElementById('declaration-header');
