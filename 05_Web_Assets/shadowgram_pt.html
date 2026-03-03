@@ -714,6 +714,19 @@
     <h2 class="cta-box-title" id="res-cta-title"></h2>
     <p class="cta-box-sub" id="res-cta-sub"></p>
 
+    <!-- Preço + CTA -->
+    <div class="price-row">
+      <span class="price-currency">R$</span>
+      <span class="price-main">37</span>
+    </div>
+    <span class="price-note">
+      <span style="text-decoration:line-through;color:rgba(155,170,184,0.5);margin-right:6px;">R$ 47 no Kindle</span>
+      O eBook da Amazon ensina a teoria. Este relatório diz o que <em>fazer</em> com ela — ritual, plano e prática personalizados para o seu tipo.<br>
+      <em style="font-size:12px;">Preço de lançamento · Pode aumentar a qualquer momento</em>
+    </span>
+    <a id="res-cta-btn" href="#" target="_blank" class="btn-buy">Quero o Relatório + Ritual →</a>
+    <p class="guarantee">🔒 Pagamento seguro via Hotmart · Acesso imediato · PDF personalizado por tipo</p>
+
     <!-- SNS 공유 버튼 -->
     <div style="margin-top:16px;">
       <p style="font-size:12px;color:#aaa;text-align:center;margin:0 0 12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;">
@@ -1351,6 +1364,13 @@ function showResult(savedWinner) {
 
   // 이메일 캡처 — 유형별 타이틀 업데이트 & 상태 리셋
   _currentType = winner;
+
+  // CTA 버튼 — 유형별 Hotmart URL 연결
+  const _ctaBtn = document.getElementById('res-cta-btn');
+  if (_ctaBtn && HOTMART_LINKS[winner]) {
+    _ctaBtn.href = HOTMART_LINKS[winner];
+  }
+
   document.getElementById('email-capture-title').innerHTML =
     `Receba seu Relatório <strong style="color:var(--gold)">${winner}</strong><br>gratuitamente por e-mail`;
   document.getElementById('email-form-wrap').style.display = 'block';
