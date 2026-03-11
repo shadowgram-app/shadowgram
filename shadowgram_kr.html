@@ -644,23 +644,18 @@
   </a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
+<!-- HERO / CRED / META — 기본 숨김 -->
+<div class="hero" id="hero-block" style="display:none;">
   <p class="hero-label">섀도우그램 · 무료 진단</p>
   <h1 class="hero-title">왜 같은 실수를<br>반복하는 걸까요?</h1>
   <p class="hero-sub">
     답은 당신의 심리적 그림자에 있습니다.<br>
     4분이면 알 수 있어요.
   </p>
-  <!-- CTA 버튼 — 히어로에 바로 배치 -->
-  <button class="hero-cta-btn" onclick="document.getElementById('quiz-section').scrollIntoView({behavior:'smooth'}); window.scrollBy(0,-20);">
-    내 유형 알아보기 →
-  </button>
   <p class="hero-cta-sub">✓ 무료 &nbsp;·&nbsp; ✓ 즉시 결과 &nbsp;·&nbsp; ✓ 회원가입 불필요</p>
 </div>
 
-<!-- CREDIBILITY (축소 버전) -->
-<div class="cred-bar">
+<div class="cred-bar" id="cred-block" style="display:none;">
   <div class="cred-inner">
     <div class="cred-icon">🔬</div>
     <div>
@@ -675,8 +670,7 @@
   </div>
 </div>
 
-<!-- META -->
-<div class="hero-meta">
+<div class="hero-meta" id="meta-block" style="display:none;">
   <span>⏱ <strong>~4분</strong></span>
   <span>📋 <strong>28문항</strong></span>
   <span>🎯 <strong>즉시 결과 확인</strong></span>
@@ -686,6 +680,12 @@
 <!-- BACK BUTTON -->
 <div class="back-btn-wrap">
   <button class="btn-prev hidden" id="btn-prev" onclick="goPrev()">← 이전 문항</button>
+</div>
+
+<!-- QUIZ 상단 브랜드 미니 헤더 -->
+<div style="max-width:680px;margin:0 auto;padding:14px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+  <span style="font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:700;">SHADOWGRAM</span>
+  <span style="font-size:12px;color:var(--silver);">무료 진단 · ✓ 회원가입 불필요</span>
 </div>
 
 <!-- PROGRESS -->
@@ -1324,14 +1324,7 @@ function buildQuiz() {
 function selectOption(qIdx, choice, btn) {
   // 첫 번째 답 선택 시 hero + meta + cred 숨기기
   if (qIdx === 0 && answers[qIdx] === null) {
-    // 퀴즈 시작 시간 기록
     if (!window._sgQuizStart) window._sgQuizStart = Date.now();
-    const hero = document.querySelector('.hero');
-    const meta = document.querySelector('.hero-meta');
-    const cred = document.querySelector('.cred-bar');
-    if (hero) hero.style.display = 'none';
-    if (meta) meta.style.display = 'none';
-    if (cred) cred.style.display = 'none';
   }
   document.querySelectorAll(`#q-${qIdx} .ab-btn`).forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -1636,13 +1629,7 @@ function restartQuiz() {
   document.querySelector('.progress-wrap').style.display = 'block';
   document.querySelector('.back-btn-wrap').style.display = 'block';
   document.getElementById('btn-prev').classList.add('hidden');
-  // 재시작 시 hero + meta + cred 다시 표시
-  const hero = document.querySelector('.hero');
-  const meta = document.querySelector('.hero-meta');
-  const cred = document.querySelector('.cred-bar');
-  if (hero) hero.style.display = '';
-  if (meta) meta.style.display = '';
-  if (cred) cred.style.display = '';
+  // hero/cred/meta는 숨긴 채로 유지
   buildQuiz();
   updateProgress(0);
   window.scrollTo({ top: 0, behavior: 'smooth' });

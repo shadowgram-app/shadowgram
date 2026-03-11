@@ -635,31 +635,26 @@
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- NAV (퀴즈 중/결과 시 로고만) -->
+<nav id="main-nav">
   <a class="nav-logo" href="https://shadowgram.org">
     <img src="https://shadowgram.org/logo.png" alt="Shadowgram Logo">
     <span><span class="s1">SHADOW</span><span class="s2">GRAM</span></span>
   </a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
+<!-- HERO / CRED / META — 기본 숨김, 결과 후 재시작 시에만 표시 -->
+<div class="hero" id="hero-block" style="display:none;">
   <p class="hero-label">SHADOWGRAM · DIAGNÓSTICO GRATUITO</p>
   <h1 class="hero-title">Por que você continua repetindo<br>os mesmos erros?</h1>
   <p class="hero-sub">
     A resposta está na sua sombra psicológica.<br>
     Descubra seu tipo em menos de 4 minutos.
   </p>
-  <!-- CTA 버튼 — 히어로에 바로 배치 -->
-  <button class="hero-cta-btn" onclick="document.getElementById('quiz-section').scrollIntoView({behavior:'smooth'}); window.scrollBy(0,-20);">
-    DESCOBRIR MEU TIPO →
-  </button>
   <p class="hero-cta-sub">✓ Grátis &nbsp;·&nbsp; ✓ Resultado imediato &nbsp;·&nbsp; ✓ Sem cadastro</p>
 </div>
 
-<!-- CREDIBILITY (축소 버전) -->
-<div class="cred-bar">
+<div class="cred-bar" id="cred-block" style="display:none;">
   <div class="cred-inner">
     <div class="cred-icon">🔬</div>
     <div>
@@ -674,8 +669,7 @@
   </div>
 </div>
 
-<!-- META -->
-<div class="hero-meta">
+<div class="hero-meta" id="meta-block" style="display:none;">
   <span>⏱ <strong>~4 min</strong></span>
   <span>📋 <strong>28 perguntas</strong></span>
   <span>🎯 <strong>Resultado imediato</strong></span>
@@ -685,6 +679,12 @@
 <!-- BACK BUTTON -->
 <div class="back-btn-wrap">
   <button class="btn-prev hidden" id="btn-prev" onclick="goPrev()">← Pergunta anterior</button>
+</div>
+
+<!-- QUIZ 상단 브랜드 미니 헤더 -->
+<div style="max-width:680px;margin:0 auto;padding:14px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+  <span style="font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:700;">SHADOWGRAM</span>
+  <span style="font-size:12px;color:var(--silver);">Diagnóstico Gratuito · ✓ Sem cadastro</span>
 </div>
 
 <!-- PROGRESS -->
@@ -1322,16 +1322,9 @@ function buildQuiz() {
 }
 
 function selectOption(qIdx, choice, btn) {
-  // 첫 번째 답 선택 시 hero + meta + cred 숨기기
+  // 퀴즈 시작 시간 기록 (첫 선택 시)
   if (qIdx === 0 && answers[qIdx] === null) {
-    // 퀴즈 시작 시간 기록
     if (!window._sgQuizStart) window._sgQuizStart = Date.now();
-    const hero = document.querySelector('.hero');
-    const meta = document.querySelector('.hero-meta');
-    const cred = document.querySelector('.cred-bar');
-    if (hero) hero.style.display = 'none';
-    if (meta) meta.style.display = 'none';
-    if (cred) cred.style.display = 'none';
   }
   document.querySelectorAll(`#q-${qIdx} .ab-btn`).forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -1631,13 +1624,7 @@ function restartQuiz() {
   document.querySelector('.progress-wrap').style.display = 'block';
   document.querySelector('.back-btn-wrap').style.display = 'block';
   document.getElementById('btn-prev').classList.add('hidden');
-  // 재시작 시 hero + meta + cred 다시 표시
-  const hero = document.querySelector('.hero');
-  const meta = document.querySelector('.hero-meta');
-  const cred = document.querySelector('.cred-bar');
-  if (hero) hero.style.display = '';
-  if (meta) meta.style.display = '';
-  if (cred) cred.style.display = '';
+  // hero/cred/meta는 숨긴 채로 유지 (퀴즈 바로 시작)
   buildQuiz();
   updateProgress(0);
   window.scrollTo({ top: 0, behavior: 'smooth' });
