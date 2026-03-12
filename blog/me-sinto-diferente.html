@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Por que me sinto tão diferente de todo mundo? | Shadowgram</title>
-  <meta name="description" content="A sensação de não se encaixar em lugar nenhum tem uma causa psicológica. Descubra por que você se sente diferente — e o que isso revela sobre seu tipo de sombra.">
+  <meta name="description" content="A sensação de não se encaixar em lugar nenhum tem uma causa psicológica. Descubra por que você se sente diferente — e o que isso revela sobre seu potencial único.">
   <meta property="og:url" content="https://shadowgram.org/blog/me-sinto-diferente.html">
   <meta property="og:title" content="Por que me sinto tão diferente de todo mundo? | Shadowgram">
-  <meta property="og:description" content="A sensação de não se encaixar em lugar nenhum tem uma causa psicológica. Descubra por que você se sente diferente — e o que isso revela sobre seu tipo de sombra.">
+  <meta property="og:description" content="A sensação de não se encaixar em lugar nenhum tem uma causa psicológica. Descubra por que você se sente diferente — e o que isso revela sobre seu potencial único.">
   <meta property="og:type" content="article">
   
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,23 +16,23 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --dark: #0F1119; --dark2: #1A1F2E; --card: #161B28;
+      --dark: var(--bg); --dark2: #1A1F2E; --card: #161B28;
       --gold: #C5A572; --goldL: #E8D4A8;
       --white: #FFFFFF; --silver: #9BAAB8;
       --border: rgba(197,165,114,0.18);
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--dark); color: var(--white); font-family: 'Montserrat', sans-serif; }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15,17,25,0.95); backdrop-filter: blur(10px); z-index: 100; }
+    body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(250,250,247,0.96); backdrop-filter: blur(10px); z-index: 100; }
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
     .nav-logo img { width: 36px; height: 36px; border-radius: 50%; }
     .nav-logo-text { font-size: 15px; letter-spacing: 3px; }
     .nav-logo .s1 { color: var(--gold); font-weight: 300; }
-    .nav-logo .s2 { color: var(--white); font-weight: 900; }
+    .nav-logo .s2 { color: var(--text); font-weight: 900; }
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: var(--silver); font-size: 12px; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; }
     .nav-link:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: #0F1119; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 10px 20px; border-radius: 30px; text-decoration: none; text-transform: uppercase; }
+    .nav-cta { background: var(--gold); color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 10px 20px; border-radius: 30px; text-decoration: none; text-transform: uppercase; }
     .nav-cta:hover { background: var(--goldL); }
     .breadcrumb { padding: 16px 24px; font-size: 12px; color: var(--silver); max-width: 820px; margin: 0 auto; }
     .breadcrumb a { color: var(--gold); text-decoration: none; }
@@ -46,7 +46,7 @@
     .article-body h3 { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 1px; margin: 30px 0 10px; text-transform: uppercase; }
     .article-body p { font-size: 16px; color: var(--silver); line-height: 1.88; margin-bottom: 22px; }
     .article-body strong { color: var(--white); }
-    .highlight-box { background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
+    .highlight-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
     .highlight-box .label { font-size: 11px; font-weight: 800; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
     .highlight-box p { font-size: 15px; color: var(--silver); line-height: 1.8; margin: 0; }
     .highlight-box p strong { color: var(--white); }
@@ -56,17 +56,17 @@
     .pattern-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; background: rgba(197,165,114,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .pattern-content h4 { font-size: 14px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
     .type-link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0 32px; }
-    .type-link-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; text-decoration: none; transition: border-color 0.2s; }
+    .type-link-card { background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow, 0 2px 16px rgba(26,32,48,0.08)); border-radius: 10px; padding: 14px; text-align: center; text-decoration: none; transition: border-color 0.2s; }
     .type-link-card:hover { border-color: var(--gold); }
     .type-link-card .em { font-size: 20px; margin-bottom: 4px; }
     .type-link-card .nm { font-size: 11px; font-weight: 900; color: var(--white); letter-spacing: 1px; }
     .cta-block { text-align: center; background: linear-gradient(135deg, rgba(197,165,114,0.1), rgba(197,165,114,0.04)); border: 1px solid var(--border); border-radius: 16px; padding: 52px 32px; margin: 60px 0 0; }
     .cta-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 4vw, 36px); font-weight: 600; margin-bottom: 12px; }
     .cta-block p { font-size: 15px; color: var(--silver); margin-bottom: 28px; }
-    .btn-cta { display: inline-block; background: var(--gold); color: #0F1119; font-size: 14px; font-weight: 900; letter-spacing: 1px; padding: 18px 40px; border-radius: 40px; text-decoration: none; text-transform: uppercase; }
+    .btn-cta { display: inline-block; background: var(--gold); color: #FFFFFF; font-size: 14px; font-weight: 900; letter-spacing: 1px; padding: 18px 40px; border-radius: 40px; text-decoration: none; text-transform: uppercase; }
     .btn-cta:hover { background: var(--goldL); }
     .cta-meta { font-size: 12px; color: var(--silver); margin-top: 14px; }
-    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 12px; color: #444; line-height: 1.8; }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 12px; color: var(--silver); line-height: 1.8; }
     footer a { color: var(--gold); text-decoration: none; }
     @media (max-width: 600px) { .nav-links { display: none; } .type-link-grid { grid-template-columns: repeat(4,1fr); } }
   </style>
@@ -79,7 +79,7 @@
     </a>
     <div class="nav-links">
       <a class="nav-link" href="/blog/">Blog</a>
-      <a class="nav-link" href="/blog/o-que-e-sombra.html">O que é Sombra?</a>
+      <a class="nav-link" href="/blog/o-que-e-sombra.html">O que é Potencial Psicológico?</a>
       <a class="nav-link" href="/blog/faq.html">FAQ</a>
     </div>
     <a class="nav-cta" href="/shadowgram_pt.html?fresh=1">Teste Gratuito →</a>
@@ -98,21 +98,21 @@
       </div>
 
       <div class="article-body">
-        <h2>Dois tipos de "diferença" — e por que importa distinguir</h2>
+        <h2>Dois tipos de "diferença" — e como entender a sua</h2>
         <p>A sensação de "não me encaixo em nenhum lugar" pode vir de duas fontes radicalmente diferentes — e é absolutamente crucial distinguir entre elas.</p>
 
         <p><strong>A primeira é diferença genuína.</strong> Alguns tipos psicológicos são estatisticamente menos comuns. A LOGIC, por exemplo, representa aproximadamente 8-12% da população. A VISION representa algo próximo. Quando você é um desses tipos, não é coincidência que sinta diferença — você realmente é menos comum em alguns aspectos específicos de como pensa e percebe o mundo.</p>
 
-        <p><strong>A segunda é isolamento amplificado pela sombra.</strong> Isso acontece quando aspectos importantes da sua personalidade não estão integrados. A sombra não cria a diferença, mas transforma uma peculiaridade genuína em completo isolamento. A pessoa se retira, deixa de tentar se conectar, para de se expressar. E essa retração confirma a crença de que não se encaixa.</p>
+        <p><strong>A segunda é isolamento amplificado por padrões inconscientes.</strong> Isso acontece quando aspectos importantes da sua personalidade não estão integrados. A sombra não cria a diferença, mas transforma uma peculiaridade genuína em completo isolamento. A pessoa se retira, deixa de tentar se conectar, para de se expressar. E essa retração confirma a crença de que não se encaixa.</p>
 
-        <p>Aqui está o ponto que muda tudo: <strong>quando a sombra está integrada, a mesma diferença genuína que gerava isolamento se torna uma ponte para conexões profundas</strong>. A pessoa menos comum no grupo é frequentemente a mais compreensora, a mais criativa, a mais capaz de oferecer perspectivas que o resto não consegue ver.</p>
+        <p>Aqui está o ponto que muda tudo: <strong>quando você conhece seu tipo psicológico, a mesma diferença genuína que gerava isolamento se torna uma ponte para conexões profundas</strong>. A pessoa menos comum no grupo é frequentemente a mais compreensora, a mais criativa, a mais capaz de oferecer perspectivas que o resto não consegue ver.</p>
 
         <div class="highlight-box">
           <div class="label">Distinção Fundamental</div>
           <p>Existem dois tipos de sensação de diferença: a diferença genuína de tipo — que é real, válida e frequentemente uma força — e a diferença amplificada pela sombra, que transforma peculiaridade em isolamento. <strong>Identificar qual é qual muda tudo.</strong></p>
         </div>
 
-        <h2>Os tipos que mais sentem não se encaixar — e por quê</h2>
+        <h2>Os tipos com maior potencial único — e por quê</h2>
         <p>Alguns tipos experimentam essa sensação de diferença com mais intensidade. Não porque sejam deficientes ou inadequados, mas porque sua forma de existir genuinamente desvia do padrão médio. Aqui estão os quatro mais afetados:</p>
 
         <ul class="pattern-list">
@@ -146,18 +146,18 @@
           </li>
         </ul>
 
-        <h2>Quando a sombra amplifica a diferença</h2>
+        <h2>Quando padrões inconscientes amplificam a diferença</h2>
         <p>A dinâmica é insidiosa e se reforça continuamente.</p>
 
         <p>Você é genuinamente diferente em algum aspecto — talvez em como processa informação, talvez em que tipo de conexão busca, talvez em que velocidade opera seu pensamento. Essa diferença é real e, em contextos certos, é uma força.</p>
 
         <p>Mas quando a sombra não está integrada, o que acontece?</p>
 
-        <p><strong>A pessoa começa a se retrair.</strong> Não porque a diferença a destrua, mas porque a sombra cria medo: "Se eu mostrar completamente quem sou, vão perceber que sou estranho". Então ela se afasta. Para de tentar se conectar. Reduz a expressão. Fica invisível.</p>
+        <p><strong>A pessoa começa a se retrair.</strong> Não porque a diferença a destrua, mas porque o medo opera: "Se eu mostrar completamente quem sou, vão perceber que sou estranho". Então ela se afasta. Para de tentar se conectar. Reduz a expressão. Fica invisível.</p>
 
         <p><strong>E essa retração confirma a crença original.</strong> Quanto menos você se expressa, menos conexões acontecem. Quanto menos conexões, mais a sensação de "ninguém me entende" parece verdade. O isolamento se torna autoimposto, mas parece escolha do mundo.</p>
 
-        <p>A sombra não cria a diferença — <strong>ela amplifica o isolamento que a diferença pode gerar</strong>. Quando aspectos importantes da personalidade não estão integrados, a pessoa se retira — e o afastamento confirma a crença de que não se encaixa.</p>
+        <p>O tipo psicológico não cria a diferença — <strong>mas quando não é compreendido, amplifica o isolamento que a diferença pode gerar</strong>. Quando aspectos importantes da personalidade não estão integrados, a pessoa se retira — e o afastamento confirma a crença de que não se encaixa.</p>
 
         <div class="highlight-box">
           <div class="label">O Padrão da Sombra</div>
@@ -208,7 +208,7 @@
         <div class="cta-block">
           <h2>Qual é o seu tipo de sombra?</h2>
           <p>Entender seu tipo revela por que você pensa, sente e percebe o mundo de forma diferente — e como transformar essa diferença em sua maior força. Sua diferença, integrada, é exatamente o que o mundo precisa.</p>
-          <a class="btn-cta" href="/shadowgram_pt.html?fresh=1">Fazer o Diagnóstico Gratuito →</a>
+          <a class="btn-cta" href="/shadowgram_pt.html?fresh=1">Descobrir Meu Potencial →</a>
           <div class="cta-meta">Diagnóstico gratuito • 5 a 7 minutos • Baseado em Jung</div>
         </div>
       </div>

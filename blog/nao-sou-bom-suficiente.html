@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Por que sinto que nunca sou bom o suficiente? | Shadowgram</title>
-  <meta name="description" content="A sensação de nunca ser bom o suficiente tem uma causa psicológica precisa. Descubra como a síndrome do impostor e o perfeccionismo se conectam ao seu tipo de sombra.">
+  <meta name="description" content="A sensação de nunca ser bom o suficiente tem uma causa psicológica precisa. Descubra como a síndrome do impostor e o perfeccionismo se conectam ao seu potencial psicológico.">
   <meta property="og:url" content="https://shadowgram.org/blog/nao-sou-bom-suficiente.html">
   <meta property="og:title" content="Por que sinto que nunca sou bom o suficiente? | Shadowgram">
-  <meta property="og:description" content="A sensação de nunca ser bom o suficiente tem uma causa psicológica precisa. Descubra como a síndrome do impostor e o perfeccionismo se conectam ao seu tipo de sombra.">
+  <meta property="og:description" content="A sensação de nunca ser bom o suficiente tem uma causa psicológica precisa. Descubra como a síndrome do impostor e o perfeccionismo se conectam ao seu potencial psicológico.">
   <meta property="og:type" content="article">
   
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,23 +16,23 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --dark: #0F1119; --dark2: #1A1F2E; --card: #161B28;
+      --dark: var(--bg); --dark2: #1A1F2E; --card: #161B28;
       --gold: #C5A572; --goldL: #E8D4A8;
       --white: #FFFFFF; --silver: #9BAAB8;
       --border: rgba(197,165,114,0.18);
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--dark); color: var(--white); font-family: 'Montserrat', sans-serif; }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15,17,25,0.95); backdrop-filter: blur(10px); z-index: 100; }
+    body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(250,250,247,0.96); backdrop-filter: blur(10px); z-index: 100; }
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
     .nav-logo img { width: 36px; height: 36px; border-radius: 50%; }
     .nav-logo-text { font-size: 15px; letter-spacing: 3px; }
     .nav-logo .s1 { color: var(--gold); font-weight: 300; }
-    .nav-logo .s2 { color: var(--white); font-weight: 900; }
+    .nav-logo .s2 { color: var(--text); font-weight: 900; }
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-link { color: var(--silver); font-size: 12px; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; }
     .nav-link:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: #0F1119; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 10px 20px; border-radius: 30px; text-decoration: none; text-transform: uppercase; }
+    .nav-cta { background: var(--gold); color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 10px 20px; border-radius: 30px; text-decoration: none; text-transform: uppercase; }
     .nav-cta:hover { background: var(--goldL); }
     .breadcrumb { padding: 16px 24px; font-size: 12px; color: var(--silver); max-width: 820px; margin: 0 auto; }
     .breadcrumb a { color: var(--gold); text-decoration: none; }
@@ -46,7 +46,7 @@
     .article-body h3 { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 1px; margin: 30px 0 10px; text-transform: uppercase; }
     .article-body p { font-size: 16px; color: var(--silver); line-height: 1.88; margin-bottom: 22px; }
     .article-body strong { color: var(--white); }
-    .highlight-box { background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
+    .highlight-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 28px 0; }
     .highlight-box .label { font-size: 11px; font-weight: 800; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
     .highlight-box p { font-size: 15px; color: var(--silver); line-height: 1.8; margin: 0; }
     .highlight-box p strong { color: var(--white); }
@@ -56,17 +56,17 @@
     .pattern-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; background: rgba(197,165,114,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .pattern-content h4 { font-size: 14px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
     .type-link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0 32px; }
-    .type-link-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; text-decoration: none; transition: border-color 0.2s; }
+    .type-link-card { background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow, 0 2px 16px rgba(26,32,48,0.08)); border-radius: 10px; padding: 14px; text-align: center; text-decoration: none; transition: border-color 0.2s; }
     .type-link-card:hover { border-color: var(--gold); }
     .type-link-card .em { font-size: 20px; margin-bottom: 4px; }
     .type-link-card .nm { font-size: 11px; font-weight: 900; color: var(--white); letter-spacing: 1px; }
     .cta-block { text-align: center; background: linear-gradient(135deg, rgba(197,165,114,0.1), rgba(197,165,114,0.04)); border: 1px solid var(--border); border-radius: 16px; padding: 52px 32px; margin: 60px 0 0; }
     .cta-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 4vw, 36px); font-weight: 600; margin-bottom: 12px; }
     .cta-block p { font-size: 15px; color: var(--silver); margin-bottom: 28px; }
-    .btn-cta { display: inline-block; background: var(--gold); color: #0F1119; font-size: 14px; font-weight: 900; letter-spacing: 1px; padding: 18px 40px; border-radius: 40px; text-decoration: none; text-transform: uppercase; }
+    .btn-cta { display: inline-block; background: var(--gold); color: #FFFFFF; font-size: 14px; font-weight: 900; letter-spacing: 1px; padding: 18px 40px; border-radius: 40px; text-decoration: none; text-transform: uppercase; }
     .btn-cta:hover { background: var(--goldL); }
     .cta-meta { font-size: 12px; color: var(--silver); margin-top: 14px; }
-    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 12px; color: #444; line-height: 1.8; }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 12px; color: var(--silver); line-height: 1.8; }
     footer a { color: var(--gold); text-decoration: none; }
     @media (max-width: 600px) { .nav-links { display: none; } .type-link-grid { grid-template-columns: repeat(4,1fr); } }
   </style>
@@ -79,7 +79,7 @@
     </a>
     <div class="nav-links">
       <a class="nav-link" href="/blog/">Blog</a>
-      <a class="nav-link" href="/blog/o-que-e-sombra.html">O que é Sombra?</a>
+      <a class="nav-link" href="/blog/o-que-e-sombra.html">O que é Potencial Psicológico?</a>
       <a class="nav-link" href="/blog/faq.html">FAQ</a>
     </div>
     <a class="nav-cta" href="/shadowgram_pt.html?fresh=1">Teste Gratuito →</a>
@@ -98,19 +98,19 @@
       </div>
 
       <div class="article-body">
-        <h2>A sensação que não passa com mais conquistas</h2>
+        <h2>O padrão que bloqueia o reconhecimento das suas conquistas</h2>
         <p>Um dos paradoxos mais frustrantes da mente humana é este: <strong>quanto mais você realiza, mais distante o suficiente parece ficar</strong>. Você esperaria que alcançar um objetivo resultasse em alívio, em satisfação genuína, em um momento onde pudesse respirar e dizer "pronto". Mas o que acontece é diferente.</p>
         
         <p>O alvo se move. A métrica muda. O sucesso é requalificado como "óbvio", "fácil demais", ou "não era realmente tão importante". Enquanto isso, a sensação de insuficiência permanece — agora com evidências de que talvez você realmente não seja bom o suficiente, já que nem uma série de conquistas conseguiu extinguir a dúvida.</p>
 
-        <p>Essa não é uma questão de falta de confiança comum. <strong>Não é sobre autossabotagem casual ou insegurança passageira</strong>. É um padrão sistemático, onde o inconsciente opera com uma métrica diferente daquela que seu consciente usa para se avaliar. Um cria evidências; o outro as descarta. Um celebra; o outro já está pensando no próximo fracasso potencial.</p>
+        <p>Essa não é uma questão de falta de confiança comum. <strong>Não é sobre autossabotagem casual ou insegurança passageira</strong>. É um padrão sistemático, onde o inconsciente opera com uma métrica diferente daquela que seu consciente usa para se avaliar. Seu potencial consciente cria evidências; o padrão inconsciente as descarta. Um celebra; o outro já está pensando no próximo fracasso potencial.</p>
 
         <div class="highlight-box">
           <div class="label">Princípio Junguiano</div>
-          <p>"Nunca sou bom o suficiente" é um dos sintomas mais comuns da sombra não integrada. Não é sobre o que você fez — é sobre um padrão inconsciente que move o alvo constantemente, tornando a chegada impossível.</p>
+          <p>"Nunca sou bom o suficiente" é um dos padrões mais comuns quando o tipo psicológico não está integrado. Não é sobre o que você fez — é sobre um padrão inconsciente que move o alvo constantemente, tornando a chegada impossível.</p>
         </div>
 
-        <h2>Síndrome do impostor — o que a psicologia realmente diz</h2>
+        <h2>Síndrome do impostor — e o potencial que está por trás</h2>
         <p>Desde os anos 1970, quando as psicólogas Pauline Rose Clance e Suzanne Imes cunharam o termo, a "síndrome do impostor" tem sido descrita como a <strong>experiência persistente de acreditar que suas conquistas são resultado de sorte, engano ou circunstâncias externas</strong> — e que em algum momento as pessoas vão descobrir que você não é tão competente quanto parece.</p>
 
         <p>Mas há um detalhe crucial que frequentemente é omitido nas explicações populares: essa síndrome não afeta apenas pessoas inseguras. De fato, ela é <strong>mais comum em pessoas altamente competentes</strong>. Por quê? Porque pessoas competentes veem mais detalhes, mais possibilidades de erro, mais dimensões de um problema. Elas compreendem a complexidade de forma que pessoas menos reflexivas simplesmente não compreendem.</p>
@@ -119,11 +119,11 @@
 
         <div class="highlight-box">
           <div class="label">Definição Psicológica</div>
-          <p>A síndrome do impostor não é falta de conquistas — é a incapacidade de internalizá-las. A sombra cria um filtro: os sucessos são atribuídos a fatores externos (sorte, circunstância, engano); os fracassos, a fatores internos (incompetência real). <strong>Esse filtro é automático e inconsciente.</strong></p>
+          <p>A síndrome do impostor não é falta de conquistas — é a incapacidade de internalizá-las. O padrão inconsciente cria um filtro: os sucessos são atribuídos a fatores externos (sorte, circunstância, engano); os fracassos, a fatores internos (incompetência real). <strong>Esse filtro é automático e inconsciente.</strong></p>
         </div>
 
-        <h2>Os padrões de sombra por trás da insuficiência</h2>
-        <p>Nem toda pessoa que sente "nunca ser bom o suficiente" tem o mesmo padrão psicológico por trás. A causa é específica do seu tipo de sombra. Aqui estão os cinco padrões mais comuns:</p>
+        <h2>Os padrões psicológicos por trás da sensação de insuficiência</h2>
+        <p>Nem toda pessoa que sente "nunca ser bom o suficiente" tem o mesmo padrão psicológico. A causa é específica do seu tipo psicológico. Aqui estão os cinco padrões mais comuns:</p>
 
         <ul class="pattern-list">
           <li>
