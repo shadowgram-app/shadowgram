@@ -30,8 +30,8 @@
   }
 
   /* ── Layout ─────────────────────────────────────────────── */
-  .screen { display: none; animation: fadeIn .4s ease; }
-  .screen.active { display: block; }
+  .screen { display: none !important; animation: fadeIn .4s ease; }
+  .screen.active { display: block !important; }
   @keyframes fadeIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 
   .container {
@@ -61,7 +61,7 @@
     padding: 40px 24px;
     text-align: center;
   }
-  #screen-intro.active { display: flex; }
+  #screen-intro.active { display: flex !important; }
   .intro-logo {
     font-size: 13px;
     letter-spacing: .12em;
@@ -977,8 +977,13 @@ let state = {
    NAVIGATION
 ═════════════════════════════════════════════════════════════*/
 function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen-' + id).classList.add('active');
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
+  const target = document.getElementById('screen-' + id);
+  target.classList.add('active');
+  target.style.display = (id === 'intro') ? 'flex' : 'block';
   window.scrollTo(0, 0);
 }
 
