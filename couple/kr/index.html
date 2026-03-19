@@ -9,6 +9,9 @@
 <title>커플 유형 테스트 — Shadowgram Couple</title>
 <meta property="og:title" content="우리 커플 유형은? — Shadowgram Couple">
 <meta property="og:description" content="연인과 함께 24문항으로 커플 유형을 알아보세요.">
+<meta property="og:image" content="https://shadowgram.org/couple/kr/og.png">
+<meta property="og:url" content="https://couple.shadowgram.org/kr">
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
 <style>
   /* ── Reset & Base ───────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -623,6 +626,8 @@
   .btn-share.kakao:hover { background: #F0D800; }
   .btn-share.copy  { background: var(--dark); color: #fff; }
   .btn-share.copy:hover { background: #2A3450; }
+  .btn-share.save  { background: #1565C0; color: #fff; }
+  .btn-share.save:hover { background: #0D47A1; }
   .btn-share.restart { background: transparent; border: 2px solid var(--dark); color: var(--dark); }
   .btn-share.restart:hover { background: #f0ece5; }
 
@@ -859,9 +864,16 @@
 
     <!-- Share -->
     <div class="share-section">
-      <div class="share-title">📲 친구들에게 공유하기</div>
+      <div class="share-title">📲 공유하기</div>
       <div class="share-buttons">
-        <button class="btn-share copy" onclick="copyLink()">🔗 링크 복사해서 공유</button>
+        <button class="btn-share kakao" onclick="shareKakao()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.548 1.516 4.787 3.81 6.188L4.5 21l4.903-2.63C10.238 18.77 11.106 18.9 12 18.9c5.523 0 10-3.477 10-7.8S17.523 3 12 3z"/></svg>
+          카카오톡으로 공유
+        </button>
+        <button class="btn-share save" onclick="saveResultImage()" id="btn-save">
+          🖼️ 결과 이미지 저장
+        </button>
+        <button class="btn-share copy" onclick="copyLink()">🔗 링크 복사</button>
         <button class="btn-share restart" onclick="restart()">↺ 다시 테스트하기</button>
       </div>
     </div>
@@ -1509,16 +1521,292 @@ function renderBig5Radar(sA, sB) {
    SHARE / CTA
 ═════════════════════════════════════════════════════════════*/
 function copyLink() {
-  const url = window.location.href.split('?')[0];
-  navigator.clipboard.writeText(url).then(() => {
+  var url = 'https://couple.shadowgram.org/kr';
+  navigator.clipboard.writeText(url).then(function() {
     showToast('링크가 복사됐어요! 연인에게 공유해보세요 💑');
-  }).catch(() => {
+  }).catch(function() {
     showToast('링크: ' + url);
   });
 }
 
 function goUpsell() {
   showToast('커플 리포트 준비 중이에요! 곧 오픈합니다 ✨');
+}
+
+/* ── 카카오톡 공유 ───────────────────────────────────────────*/
+function shareKakao() {
+  var typeA = getType(state.scoresA);
+  var typeB = getType(state.scoresB);
+  var key   = typeA + '\u00d7' + typeB;
+  var combo = COMBOS[key] || COMBOS[typeB + '\u00d7' + typeA] || { title: typeA+' \u00d7 '+typeB+'\ud615', sub: '\uc6b0\ub9ac\ub9cc\uc758 \uc870\ud569' };
+
+  if (window.Kakao && window.Kakao.isInitialized && window.Kakao.isInitialized()) {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '\uc6b0\ub9ac \ucee4\ud50c \uc720\ud615\uc740 \u2728 ' + combo.title,
+        description: combo.sub + '\n\ub098\ub3c4 \ud14c\uc2a4\ud2b8\ud574\ubcf4\uc138\uc694!',
+        imageUrl: 'https://shadowgram.org/couple/kr/og.png',
+        link: {
+          mobileWebUrl: 'https://couple.shadowgram.org/kr',
+          webUrl: 'https://couple.shadowgram.org/kr',
+        },
+      },
+      buttons: [
+        {
+          title: '\uc6b0\ub9ac \ucee4\ud50c \uc720\ud615 \ud14c\uc2a4\ud2b8',
+          link: {
+            mobileWebUrl: 'https://couple.shadowgram.org/kr',
+            webUrl: 'https://couple.shadowgram.org/kr',
+          },
+        },
+      ],
+    });
+  } else {
+    // Kakao SDK 없으면 링크 공유로 fallback
+    var text = '\uc6b0\ub9ac \ucee4\ud50c \uc720\ud615\uc740 ' + combo.title + '!\n\ub108\ub3c4 \ud14c\uc2a4\ud2b8\ud574\ubd10 \u2192 https://couple.shadowgram.org/kr';
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428! \uce74\uce74\uc624\ud1a1\uc5d0 \ubd99\uc5ec\ub123\uc5b4 \ubcf4\uc138\uc694 \uad81');
+    });
+  }
+}
+
+/* ── 결과 이미지 저장 ────────────────────────────────────────*/
+function saveResultImage() {
+  var btn = document.getElementById('btn-save');
+  btn.textContent = '\u23f3 \uc0dd\uc131 \uc911...';
+  btn.disabled = true;
+
+  var typeA = getType(state.scoresA);
+  var typeB = getType(state.scoresB);
+  var key   = typeA + '\u00d7' + typeB;
+  var combo = COMBOS[key] || COMBOS[typeB + '\u00d7' + typeA] || {
+    title: typeA + ' \u00d7 ' + typeB + '\ud615',
+    sub: '\uc6b0\ub9ac\ub9cc\uc758 \uc870\ud569',
+    hook: '',
+    bg: ['#1A2030','#2A3450'],
+  };
+
+  var b5A = calcBig5(state.scoresA);
+  var b5B = calcBig5(state.scoresB);
+  var axisValsA = [b5A.extraversion, b5A.openness, b5A.agreeableness, b5A.conscientiousness, b5A.stability];
+  var axisValsB = [b5B.extraversion, b5B.openness, b5B.agreeableness, b5B.conscientiousness, b5B.stability];
+  var axisLabels = ['\uc5d0\ub108\uc9c0 \ud0c0\uc785', '\uc124\ub808\uc784 \uac10\ub3c4', '\ubc30\ub824 \uc628\ub3c4', '\uc5f0\uc560 \uacc4\ud68d\ub825', '\ub9c8\uc74c \ub0a0\uc528'];
+
+  // Canvas size: 600x900 (9:15 — mobile share 최적)
+  var W = 600, H = 900;
+  var cv = document.createElement('canvas');
+  cv.width = W; cv.height = H;
+  var c = cv.getContext('2d');
+
+  // helper: hex to rgb
+  function hx(hex) {
+    return { r: parseInt(hex.slice(1,3),16), g: parseInt(hex.slice(3,5),16), b: parseInt(hex.slice(5,7),16) };
+  }
+
+  // ── BG gradient
+  var col1 = hx(combo.bg[0]), col2 = hx(combo.bg[1]);
+  var bg = c.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, combo.bg[0]);
+  bg.addColorStop(1, combo.bg[1]);
+  c.fillStyle = bg;
+  c.roundRect(0, 0, W, H, 28);
+  c.fill();
+
+  // ── watermark domain
+  c.font = '500 18px Arial, sans-serif';
+  c.fillStyle = 'rgba(255,255,255,0.35)';
+  c.textAlign = 'right';
+  c.fillText('couple.shadowgram.org/kr', W - 28, 40);
+
+  // ── type badges
+  var bx = 32, by = 60;
+  [[typeA, '#fff'], [typeB, '#fff']].forEach(function(pair, i) {
+    c.beginPath();
+    c.roundRect(bx, by, 90, 34, 17);
+    c.fillStyle = 'rgba(255,255,255,0.22)';
+    c.fill();
+    c.strokeStyle = 'rgba(255,255,255,0.5)';
+    c.lineWidth = 1.5;
+    c.stroke();
+    c.font = 'bold 14px Arial, sans-serif';
+    c.fillStyle = '#fff';
+    c.textAlign = 'center';
+    c.fillText(pair[0], bx + 45, by + 22);
+    bx += 106;
+    if (i === 0) {
+      c.font = '300 20px Arial, sans-serif';
+      c.fillStyle = 'rgba(255,255,255,0.5)';
+      c.textAlign = 'center';
+      c.fillText('\u00d7', bx - 10, by + 23);
+    }
+  });
+
+  // ── combo title
+  c.textAlign = 'left';
+  c.font = 'bold 40px Arial, sans-serif';
+  c.fillStyle = '#fff';
+  var titleY = by + 70;
+  c.fillText(combo.title, 32, titleY);
+
+  // ── sub
+  c.font = '400 18px Arial, sans-serif';
+  c.fillStyle = 'rgba(255,255,255,0.75)';
+  c.fillText(combo.sub, 32, titleY + 36);
+
+  // ── divider
+  c.beginPath();
+  c.moveTo(32, titleY + 58);
+  c.lineTo(W - 32, titleY + 58);
+  c.strokeStyle = 'rgba(255,255,255,0.18)';
+  c.lineWidth = 1;
+  c.stroke();
+
+  // ── hook quote
+  var hookY = titleY + 86;
+  c.font = '300 13px Arial, sans-serif';
+  c.fillStyle = 'rgba(255,255,255,0.5)';
+  c.textAlign = 'left';
+  c.fillText('\uc6b0\ub9ac \ucee4\ud50c\uc758 \ub300\ud654', 32, hookY);
+  hookY += 22;
+  c.font = 'bold 15px Arial, sans-serif';
+  c.fillStyle = 'rgba(255,255,255,0.9)';
+  // word-wrap hook text
+  var hookText = combo.hook || '';
+  var maxW = W - 64;
+  var words = hookText.split(' ');
+  var line = '', lineH = 22;
+  words.forEach(function(w) {
+    var test = line + (line ? ' ' : '') + w;
+    if (c.measureText(test).width > maxW && line) {
+      c.fillText(line, 32, hookY);
+      hookY += lineH;
+      line = w;
+    } else { line = test; }
+  });
+  if (line) { c.fillText(line, 32, hookY); hookY += lineH; }
+
+  // ── radar chart (embedded)
+  var radarY = hookY + 28;
+  var radarCX = W / 2, radarCY = radarY + 145, maxR = 110;
+  var N = 5, aoOff = -Math.PI / 2;
+
+  function raPt(i, r) {
+    var a = aoOff + (i / N) * Math.PI * 2;
+    return { x: radarCX + r * Math.cos(a), y: radarCY + r * Math.sin(a) };
+  }
+
+  // grid
+  [20,40,60,80,100].forEach(function(pct) {
+    var r = (pct/100)*maxR;
+    c.beginPath();
+    for (var i = 0; i < N; i++) {
+      var p = raPt(i, r);
+      i===0 ? c.moveTo(p.x,p.y) : c.lineTo(p.x,p.y);
+    }
+    c.closePath();
+    c.strokeStyle = pct===100 ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.12)';
+    c.lineWidth = pct===100 ? 1.5 : 1;
+    c.stroke();
+  });
+  for (var i=0;i<N;i++) {
+    var p = raPt(i, maxR);
+    c.beginPath(); c.moveTo(radarCX,radarCY); c.lineTo(p.x,p.y);
+    c.strokeStyle='rgba(255,255,255,0.12)'; c.lineWidth=1; c.stroke();
+  }
+
+  // polygons
+  function drawRP(vals, fill, stroke) {
+    c.beginPath();
+    for (var i=0;i<N;i++) {
+      var r=(vals[i]/100)*maxR, p=raPt(i,r);
+      i===0?c.moveTo(p.x,p.y):c.lineTo(p.x,p.y);
+    }
+    c.closePath();
+    c.fillStyle=fill; c.fill();
+    c.strokeStyle=stroke; c.lineWidth=2.5; c.stroke();
+  }
+  drawRP(axisValsB,'rgba(198,40,40,0.25)','#EF5350');
+  drawRP(axisValsA,'rgba(21,101,192,0.25)','#42A5F5');
+
+  // dots
+  function drawRD(vals, col) {
+    for (var i=0;i<N;i++) {
+      var r=(vals[i]/100)*maxR, p=raPt(i,r);
+      c.beginPath(); c.arc(p.x,p.y,5,0,Math.PI*2);
+      c.fillStyle=col; c.fill();
+      c.strokeStyle='rgba(255,255,255,0.8)'; c.lineWidth=1.5; c.stroke();
+    }
+  }
+  drawRD(axisValsB,'#EF5350');
+  drawRD(axisValsA,'#42A5F5');
+
+  // axis labels
+  c.font = 'bold 12px Arial, sans-serif';
+  c.fillStyle = 'rgba(255,255,255,0.85)';
+  c.textAlign = 'center';
+  for (var i=0;i<N;i++) {
+    var p = raPt(i, maxR+20);
+    c.fillText(axisLabels[i], p.x, p.y+4);
+  }
+
+  // legend
+  var legY = radarCY + maxR + 36;
+  [['\ub098','#42A5F5'],['\ud30c\ud2b8\ub108','#EF5350']].forEach(function(pair, idx) {
+    var lx = W/2 - 70 + idx*100;
+    c.beginPath(); c.arc(lx,legY,6,0,Math.PI*2);
+    c.fillStyle=pair[1]; c.fill();
+    c.font='bold 13px Arial, sans-serif';
+    c.fillStyle='rgba(255,255,255,0.85)';
+    c.textAlign='left';
+    c.fillText(pair[0], lx+12, legY+5);
+  });
+
+  // ── tension + magic (2-col boxes)
+  var boxY = legY + 30;
+  var boxes = [
+    { label:'\u26a1 \uae34\uc7a5 \ud3ec\uc778\ud2b8', val: combo.tension },
+    { label:'\u2728 \uc6b0\ub9ac\uc758 \ub9c8\ubc95',  val: combo.magic  },
+  ];
+  var bW = (W-80)/2;
+  boxes.forEach(function(box, idx) {
+    var bsx = 32 + idx*(bW+16);
+    c.beginPath(); c.roundRect(bsx, boxY, bW, 70, 12);
+    c.fillStyle='rgba(255,255,255,0.12)'; c.fill();
+    c.font='bold 10px Arial, sans-serif';
+    c.fillStyle='rgba(255,255,255,0.55)'; c.textAlign='left';
+    c.fillText(box.label, bsx+14, boxY+20);
+    c.font='500 13px Arial, sans-serif';
+    c.fillStyle='rgba(255,255,255,0.9)';
+    // simple wrap
+    var bwords = (box.val||'').split(' '), bline='', bLY=boxY+40;
+    bwords.forEach(function(w) {
+      var t=bline+(bline?' ':'')+w;
+      if(c.measureText(t).width>bW-28&&bline){c.fillText(bline,bsx+14,bLY);bLY+=18;bline=w;}else{bline=t;}
+    });
+    if(bline)c.fillText(bline,bsx+14,bLY);
+  });
+
+  // ── footer
+  c.font='400 13px Arial, sans-serif';
+  c.fillStyle='rgba(255,255,255,0.3)';
+  c.textAlign='center';
+  c.fillText('shadowgram.org  \u00b7  \u00a9 2025 Shadowgram', W/2, H-24);
+
+  // ── download
+  try {
+    var dataUrl = cv.toDataURL('image/png');
+    var a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = 'shadowgram_couple_' + typeA + '_' + typeB + '.png';
+    a.click();
+    showToast('\uc774\ubbf8\uc9c0\uac00 \uc800\uc7a5\ub418\uc5c8\uc5b4\uc694! \uc778\uc2a4\ud0c0\uc5d0 \uacf5\uc720\ud574\ubcf4\uc138\uc694 \uad81');
+  } catch(e) {
+    showToast('\uc800\uc7a5 \uc2e4\ud328 \uc8c4\uc1a1\ud574\uc694. \ub9c1\ud06c\ub97c \ubcf5\uc0ac\ud574 \uacf5\uc720\ud574\ubcf4\uc138\uc694.');
+  }
+
+  btn.textContent = '\ud558 \uacb0\uacfc \uc774\ubbf8\uc9c0 \uc800\uc7a5';
+  btn.disabled = false;
 }
 
 function showToast(msg) {
@@ -1529,10 +1817,14 @@ function showToast(msg) {
 }
 
 /* ════════════════════════════════════════════════════════════
-   INIT — display는 HTML inline style로 초기값 지정, JS만 변경
+   INIT
 ═════════════════════════════════════════════════════════════*/
-// 초기 상태는 HTML의 style="display:..." 로 이미 설정됨
-// 별도 init 호출 불필요
+// Kakao SDK init (JavaScript key — public, domain-restricted)
+(function() {
+  if (window.Kakao && !Kakao.isInitialized()) {
+    Kakao.init('7b55e5f27d0c17e88e70e94d90f26b07');
+  }
+})();
 </script>
 </body>
 </html>
