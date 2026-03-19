@@ -11,7 +11,6 @@
 <meta property="og:description" content="연인과 함께 24문항으로 커플 유형을 알아보세요.">
 <meta property="og:image" content="https://shadowgram.org/couple/kr/og.png">
 <meta property="og:url" content="https://couple.shadowgram.org/kr">
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
 <style>
   /* ── Reset & Base ───────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -868,7 +867,7 @@
       <div class="share-buttons">
         <button class="btn-share kakao" onclick="shareKakao()">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.548 1.516 4.787 3.81 6.188L4.5 21l4.903-2.63C10.238 18.77 11.106 18.9 12 18.9c5.523 0 10-3.477 10-7.8S17.523 3 12 3z"/></svg>
-          카카오톡으로 공유
+          공유하기 (카카오·문자 등)
         </button>
         <button class="btn-share save" onclick="saveResultImage()" id="btn-save">
           🖼️ 결과 이미지 저장
@@ -1533,42 +1532,56 @@ function goUpsell() {
   showToast('커플 리포트 준비 중이에요! 곧 오픈합니다 ✨');
 }
 
-/* ── 카카오톡 공유 ───────────────────────────────────────────*/
+/* ── 카카오톡 공유 (Web Share API + 클립보드 fallback) ───────*/
 function shareKakao() {
   var typeA = getType(state.scoresA);
   var typeB = getType(state.scoresB);
-  var key   = typeA + '\u00d7' + typeB;
-  var combo = COMBOS[key] || COMBOS[typeB + '\u00d7' + typeA] || { title: typeA+' \u00d7 '+typeB+'\ud615', sub: '\uc6b0\ub9ac\ub9cc\uc758 \uc870\ud569' };
+  var key   = typeA + '×' + typeB;
+  var combo = COMBOS[key] || COMBOS[typeB + '×' + typeA] || { title: typeA + ' × ' + typeB + '형', sub: '우리만의 조합' };
 
-  if (window.Kakao && window.Kakao.isInitialized && window.Kakao.isInitialized()) {
-    Kakao.Share.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '\uc6b0\ub9ac \ucee4\ud50c \uc720\ud615\uc740 \u2728 ' + combo.title,
-        description: combo.sub + '\n\ub098\ub3c4 \ud14c\uc2a4\ud2b8\ud574\ubcf4\uc138\uc694!',
-        imageUrl: 'https://shadowgram.org/couple/kr/og.png',
-        link: {
-          mobileWebUrl: 'https://couple.shadowgram.org/kr',
-          webUrl: 'https://couple.shadowgram.org/kr',
-        },
-      },
-      buttons: [
-        {
-          title: '\uc6b0\ub9ac \ucee4\ud50c \uc720\ud615 \ud14c\uc2a4\ud2b8',
-          link: {
-            mobileWebUrl: 'https://couple.shadowgram.org/kr',
-            webUrl: 'https://couple.shadowgram.org/kr',
-          },
-        },
-      ],
+  var shareTitle = '우리 커플 유형은 ✨ ' + combo.title;
+  var shareText  = combo.sub + '\n너도 테스트해봐 👇';
+  var shareUrl   = 'https://couple.shadowgram.org/kr';
+
+  // 모바일 Web Share API (iOS/Android 네이티브 공유시트 — 카카오 포함)
+  if (navigator.share) {
+    navigator.share({
+      title: shareTitle,
+      text:  shareText,
+      url:   shareUrl,
+    }).catch(function(err) {
+      // 사용자가 공유 취소하거나 오류 시 무시
     });
   } else {
-    // Kakao SDK 없으면 링크 공유로 fallback
-    var text = '\uc6b0\ub9ac \ucee4\ud50c \uc720\ud615\uc740 ' + combo.title + '!\n\ub108\ub3c4 \ud14c\uc2a4\ud2b8\ud574\ubd10 \u2192 https://couple.shadowgram.org/kr';
-    navigator.clipboard.writeText(text).then(function() {
-      showToast('\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428! \uce74\uce74\uc624\ud1a1\uc5d0 \ubd99\uc5ec\ub123\uc5b4 \ubcf4\uc138\uc694 \uad81');
-    });
+    // PC fallback: 클립보드 복사 후 토스트 안내
+    var copyText = shareTitle + '\n' + shareText + '\n' + shareUrl;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(copyText).then(function() {
+        showToast('링크 복사 완료! 카카오톡에 붙여넣기 하세요 🔗');
+      }).catch(function() {
+        fallbackCopy(copyText);
+      });
+    } else {
+      fallbackCopy(copyText);
+    }
   }
+}
+
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showToast('링크 복사 완료! 카카오톡에 붙여넣기 하세요 🔗');
+  } catch(e) {
+    showToast('링크: couple.shadowgram.org/kr');
+  }
+  document.body.removeChild(ta);
 }
 
 /* ── 결과 이미지 저장 ────────────────────────────────────────*/
@@ -1819,12 +1832,6 @@ function showToast(msg) {
 /* ════════════════════════════════════════════════════════════
    INIT
 ═════════════════════════════════════════════════════════════*/
-// Kakao SDK init (JavaScript key — public, domain-restricted)
-(function() {
-  if (window.Kakao && !Kakao.isInitialized()) {
-    Kakao.init('7b55e5f27d0c17e88e70e94d90f26b07');
-  }
-})();
 </script>
 </body>
 </html>
