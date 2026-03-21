@@ -277,6 +277,8 @@
   .hw-sub:hover{color:#C9A84C;background:rgba(184,134,11,0.06);}
   .hw-sub .hw-item-icon{font-size:13px;}
   .hw-disabled{opacity:.35;pointer-events:none;}
+  .hw-parent{display:flex;align-items:center;gap:10px;padding:12px 24px;color:#E8E4DC;font-size:13px;cursor:default;}
+  .hw-parent{display:flex;align-items:center;gap:10px;padding:12px 24px;color:#E8E4DC;font-size:13px;cursor:default;}
   </style>
 </head>
 <body>
@@ -504,14 +506,15 @@
   </div>
   <div class="hw-section">
     <div class="hw-section-label">Self</div>
-    <a class="hw-item" href="/self/pt/"><span class="hw-item-icon">&#x1F31F;</span> Shadowgram Self <span class="hw-badge">PT-BR</span></a>
-    <a class="hw-item hw-sub" href="/self/pt/"><span class="hw-item-icon">&#x270F;</span> Test</a>
+    <span class="hw-item hw-parent"><span class="hw-item-icon">&#x1F31F;</span> Shadowgram Self <span class="hw-badge">PT-BR</span></span>
+    <a class="hw-item hw-sub" href="/self/pt/?fresh=1"><span class="hw-item-icon">&#x270F;</span> Test</a>
     <a class="hw-item hw-sub" href="/blog/"><span class="hw-item-icon">&#x1F4DD;</span> Blog</a>
     <a class="hw-item hw-sub" href="/blog/faq.html"><span class="hw-item-icon">&#x2753;</span> FAQ</a>
   </div>
   <div class="hw-section">
     <div class="hw-section-label">Couple</div>
-    <a class="hw-item" href="/couple/kr/"><span class="hw-item-icon">&#x1F491;</span> Shadowgram Couple <span class="hw-badge">KR</span></a>
+    <span class="hw-item hw-parent"><span class="hw-item-icon">&#x1F491;</span> Shadowgram Couple <span class="hw-badge">KR</span></span>
+    <a class="hw-item hw-sub" href="/couple/kr/"><span class="hw-item-icon">&#x270F;</span> Test</a>
     <a class="hw-item hw-sub" href="/couple/kr/shop/"><span class="hw-item-icon">&#x1F6CD;</span> Shop</a>
     <a class="hw-item hw-sub" href="/couple/kr/blog/"><span class="hw-item-icon">&#x1F4DD;</span> Blog</a>
   </div>
