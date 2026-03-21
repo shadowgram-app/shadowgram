@@ -79,20 +79,29 @@
     .share-btns{display:flex;flex-direction:column;gap:10px;}
 .btn-insta{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);color:white;border:none;border-radius:14px;padding:14px;font-size:14px;font-weight:800;font-family:inherit;cursor:pointer;}
     /* 결과카드 */
+    /* ── 결과카드 ── */
     .result-card-wrap{padding:0 20px;margin-bottom:24px;}
-    .result-card{background:#0D0F1C;border:1.5px solid rgba(201,168,76,0.4);border-radius:20px;overflow:hidden;position:relative;}
-    .rc-top{padding:18px 20px 14px;text-align:center;border-bottom:1px solid rgba(201,168,76,0.15);}
-    .rc-brand{font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;opacity:0.7;}
-    .rc-combo-name{font-size:19px;font-weight:900;color:var(--white);line-height:1.3;margin-bottom:4px;}
-    .rc-subtitle{font-size:11px;color:var(--silver);letter-spacing:0.5px;}
+    .result-card{background:#0D0F1C;border:1.5px solid rgba(201,168,76,0.35);border-radius:20px;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.6);}
+    /* 상단: 드라마 제목 + 이유 */
+    .rc-top{padding:14px 18px 12px;text-align:center;background:linear-gradient(180deg,rgba(201,168,76,0.12) 0%,transparent 100%);border-bottom:1px solid rgba(201,168,76,0.15);}
+    .rc-brand{font-size:8px;letter-spacing:3px;color:var(--gold);margin-bottom:6px;opacity:0.6;}
+    .rc-drama-title{font-size:15px;font-weight:900;color:var(--gold);letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;gap:6px;}
+    .rc-drama-icon{font-size:14px;}
+    .rc-why{font-size:11px;color:#C8C4D8;line-height:1.6;padding:0 4px;font-style:italic;opacity:0.9;}
+    /* 이미지 */
     .rc-img-wrap{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,#0A0A18,#0F1525);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
     .rc-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
-    .rc-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--silver);font-size:12px;opacity:0.5;}
+    .rc-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--silver);font-size:12px;opacity:0.4;}
     .rc-img-placeholder .ph-icon{font-size:40px;opacity:0.3;}
-    .rc-bottom{padding:14px 20px 16px;text-align:center;background:rgba(0,0,0,0.3);}
-    .rc-hook{font-size:13px;color:var(--white);line-height:1.6;margin-bottom:8px;font-style:italic;}
-    .rc-url{font-size:9px;letter-spacing:2px;color:var(--gold);opacity:0.6;}
-    .rc-drama{font-size:10px;color:var(--silver);margin-bottom:4px;}
+    /* 하단: 이름 + 배역 */
+    .rc-bottom{padding:12px 18px 14px;text-align:center;background:linear-gradient(0deg,rgba(0,0,0,0.5) 0%,transparent 100%);}
+    .rc-cast{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;}
+    .rc-cast-person{display:flex;flex-direction:column;align-items:center;gap:2px;}
+    .rc-cast-name{font-size:13px;font-weight:900;color:var(--white);}
+    .rc-cast-role{font-size:10px;color:var(--gold);letter-spacing:0.5px;opacity:0.85;}
+    .rc-cast-vs{font-size:18px;color:rgba(201,168,76,0.5);font-weight:300;margin:0 2px;}
+    .rc-combo-badge{font-size:10px;color:var(--silver);letter-spacing:1px;margin-bottom:4px;opacity:0.7;}
+    .rc-url{font-size:8px;letter-spacing:2px;color:var(--gold);opacity:0.5;margin-top:2px;}
     .rc-save-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,#C9A84C,#E8D090);color:#0A0A14;border:none;border-radius:0 0 18px 18px;padding:14px;font-size:14px;font-weight:900;font-family:inherit;cursor:pointer;}
     /* 리포트 CTA */
     .report-cta{margin:0 20px 24px;background:linear-gradient(135deg,#1E1030,#102030);border:1.5px solid var(--gold);border-radius:20px;padding:24px 20px;text-align:center;position:relative;overflow:hidden;}
@@ -298,23 +307,39 @@
   <div class="result-card-wrap fade-in" style="animation-delay:1.6s;" id="result-card-outer">
     <div class="result-card" id="result-card">
       <div class="rc-top">
+        <!-- 상단: 드라마 제목 + 왜 그런지 -->
         <div class="rc-brand">SHADOWGRAM · COUPLE</div>
-        <div class="rc-combo-name" id="rc-combo-name">—</div>
-        <div class="rc-subtitle" id="rc-subtitle">—</div>
+        <div class="rc-drama-title">
+          <span class="rc-drama-icon">🎬</span>
+          <span id="rc-drama-title">—</span>
+        </div>
+        <div class="rc-why" id="rc-why">—</div>
       </div>
+      <!-- 이미지 -->
       <div class="rc-img-wrap">
         <img id="rc-img" src="" alt="" style="display:none;" crossorigin="anonymous">
         <div class="rc-img-placeholder" id="rc-img-placeholder">
-          <div class="ph-icon">🖼️</div>
+          <div class="ph-icon">🎬</div>
           <div>이미지 준비 중</div>
         </div>
       </div>
+      <!-- 하단: 검사자 이름 + 배역 -->
       <div class="rc-bottom">
-        <div class="rc-drama" id="rc-drama">—</div>
-        <div class="rc-hook" id="rc-hook">—</div>
+        <div class="rc-combo-badge" id="rc-combo-badge">—</div>
+        <div class="rc-cast">
+          <div class="rc-cast-person">
+            <span class="rc-cast-name" id="rc-cast-name-a">—</span>
+            <span class="rc-cast-role" id="rc-cast-role-a">—</span>
+          </div>
+          <span class="rc-cast-vs">×</span>
+          <div class="rc-cast-person">
+            <span class="rc-cast-name" id="rc-cast-name-b">—</span>
+            <span class="rc-cast-role" id="rc-cast-role-b">—</span>
+          </div>
+        </div>
         <div class="rc-url">couple.shadowgram.org/kr</div>
       </div>
-      <button class="rc-save-btn" id="rc-save-btn" onclick="saveCard()">📸 결과카드 저장하기 →</button>
+      <button class="rc-save-btn" id="rc-save-btn" onclick="saveCard()">📸 결과카드 저장 · 공유하기 →</button>
     </div>
   </div>
 
@@ -570,6 +595,8 @@ renderPage();
   const params=new URLSearchParams(window.location.search);
   const a=params.get('a')||'SPARK';
   const b=params.get('b')||'VISION';
+  const na=params.get('na')||'';
+  const nb=params.get('nb')||'';
   const key=`${a}_${b}`;
 
   fetch('/couple/data/combo.json')
@@ -578,28 +605,55 @@ renderPage();
       const d=data[key];
       if(!d) return;
       const ko=d.ko;
-      document.getElementById('rc-combo-name').textContent=ko.combination_name||key;
-      document.getElementById('rc-subtitle').textContent=ko.subtitle||'';
-      // 훅 — 따옴표 제거하고 깔끔하게
-      const hookClean=(ko.hook||'').replace(/^"|"$/g,'').replace(/"/g,'');
-      document.getElementById('rc-hook').textContent=hookClean;
-      document.getElementById('rc-drama').textContent=ko.drama?`✦ ${ko.drama}`:'';
 
-      // 이미지 로드 시도
+      // ① 상단: 드라마 제목
+      document.getElementById('rc-drama-title').textContent=ko.drama||ko.combination_name||key;
+
+      // ② 상단: 왜 이 조합인지 (훅 문구 — 대사 형식 정리)
+      const rawHook=(ko.hook||'').replace(/"/g,'').trim();
+      // 대화체 훅이면 따옴표로 감싸서 예쁘게
+      const whyText = rawHook ? `"${rawHook}"` : (ko.subtitle||'');
+      document.getElementById('rc-why').textContent=whyText;
+
+      // ③ 조합 배지 (중간)
+      document.getElementById('rc-combo-badge').textContent=
+        `✦ ${ko.combination_name||key} ✦`;
+
+      // ④ 하단: 검사자 이름 + 배역
+      // 이름 있으면 "민철(도해준)" 형식, 없으면 배우(배역) 형식
+      const roleA = ko.role_m || ko.actor_m || a;
+      const roleB = ko.role_f || ko.actor_f || b;
+      if(na){
+        document.getElementById('rc-cast-name-a').textContent=na;
+        document.getElementById('rc-cast-role-a').textContent=roleA ? `as ${roleA}` : a;
+      } else {
+        document.getElementById('rc-cast-name-a').textContent=ko.actor_m||a;
+        document.getElementById('rc-cast-role-a').textContent=roleA&&ko.actor_m ? `(${roleA})` : '';
+      }
+      if(nb){
+        document.getElementById('rc-cast-name-b').textContent=nb;
+        document.getElementById('rc-cast-role-b').textContent=roleB ? `as ${roleB}` : b;
+      } else {
+        document.getElementById('rc-cast-name-b').textContent=ko.actor_f||b;
+        document.getElementById('rc-cast-role-b').textContent=roleB&&ko.actor_f ? `(${roleB})` : '';
+      }
+
+      // ⑤ 이미지 — images_v2 우선, 없으면 images fallback
       const imgEl=document.getElementById('rc-img');
       const placeholder=document.getElementById('rc-img-placeholder');
-      const imgPath=`/couple/images/${d.image_file}`;
-      imgEl.onload=()=>{
-        imgEl.style.display='block';
-        placeholder.style.display='none';
-      };
+      imgEl.onload=()=>{imgEl.style.display='block';placeholder.style.display='none';};
       imgEl.onerror=()=>{
-        imgEl.style.display='none';
-        placeholder.style.display='flex';
+        // v2 실패 시 v1 시도
+        if(imgEl.src.includes('images_v2')){
+          imgEl.src=`/couple/images/${d.image_file}`;
+        } else {
+          imgEl.style.display='none';
+          placeholder.style.display='flex';
+        }
       };
-      imgEl.src=imgPath;
+      imgEl.src=`/couple/images_v2/${d.image_file}`;
     })
-    .catch(()=>{/* combo.json 없으면 카드 숨김 */
+    .catch(()=>{
       const outer=document.getElementById('result-card-outer');
       if(outer) outer.style.display='none';
     });
@@ -625,17 +679,26 @@ function saveCard(){
     }).then(canvas=>{
       const params=new URLSearchParams(window.location.search);
       const a=params.get('a')||'SPARK', b=params.get('b')||'VISION';
+      const na=params.get('na')||'', nb=params.get('nb')||'';
+      const drama=document.getElementById('rc-drama-title').textContent||'';
+      const nameStr=na&&nb?`${na}×${nb}`:`${a}_${b}`;
+      // 이미지 저장
       const link=document.createElement('a');
-      link.download=`shadowgram_couple_${a}_${b}.png`;
+      link.download=`shadowgram_${nameStr}.png`;
       link.href=canvas.toDataURL('image/png');
       link.click();
-      btn.textContent='✅ 저장됐어요! 인스타에 올려봐요 🔥';
+      // 저장 후 바로 공유 옵션 제공
+      btn.textContent='✅ 저장! 이제 인스타에 올려봐요 🔥';
       btn.disabled=false;
-      setTimeout(()=>{btn.textContent='📸 결과카드 저장하기 →';},3000);
+      // 공유 메시지도 같이 클립보드에 올려두기
+      const shareUrl=getShareUrl();
+      const msg=(na&&nb?`${na} × ${nb}의 커플 유형 — ${drama}\n`:`우리 커플 유형 — ${drama}\n`)+'당신들도 체크해봐요 👉 '+shareUrl;
+      if(navigator.clipboard) navigator.clipboard.writeText(msg).catch(()=>{});
+      setTimeout(()=>{btn.textContent='📸 결과카드 저장 · 공유하기 →';},4000);
     }).catch(()=>{
-      btn.textContent='📸 결과카드 저장하기 →';
+      btn.textContent='📸 결과카드 저장 · 공유하기 →';
       btn.disabled=false;
-      showToast('저장에 실패했어요. 스크린샷을 이용해 주세요 📱');
+      showToast('저장 실패. 스크린샷을 이용해 주세요 📱');
     });
   }
 
@@ -736,8 +799,21 @@ function shareInsta(){
   const url=getShareUrl();
   const params=new URLSearchParams(window.location.search);
   const na=params.get('na')||'', nb=params.get('nb')||'';
-  const names=[na,nb].filter(Boolean).join(' · ');
-  const msg=(names?`${names}의 커플 유형이 나왔어요 💫\n`:'우리 커플 완전 신박해 🔥\n')+'당신들도 체크해봐요 👉 '+url;
+  const names=[na,nb].filter(Boolean).join(' × ');
+  const drama=document.getElementById('rc-drama-title')?.textContent||'';
+  const roleA=document.getElementById('rc-cast-role-a')?.textContent||'';
+  const roleB=document.getElementById('rc-cast-role-b')?.textContent||'';
+  // 드라마 제목 + 배역 포함한 바이럴 메시지
+  let msg='';
+  if(names){
+    msg=`${names}의 커플 유형이 나왔어요 💫\n`;
+    if(drama) msg+=`🎬 ${drama}\n`;
+    if(roleA||roleB) msg+=`${na?`${na} ${roleA}`:''} ${nb?`× ${nb} ${roleB}`:''}\n`.trim()+'\n';
+  } else {
+    msg=`우리 커플 완전 신박해 🔥\n`;
+    if(drama) msg+=`🎬 ${drama} 그 커플이 우리래요\n`;
+  }
+  msg+='당신들도 체크해봐요 👉 '+url;
   if(navigator.share){
     navigator.share({text:msg}).catch(()=>{copyToClipboard(msg,'📸 링크 복사됐어요! 붙여넣기 해보세요');});
   }else{copyToClipboard(msg,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}

@@ -5,7 +5,7 @@
     "ko": {
       "combination_name": "불꽃×불꽃형",
       "subtitle": "세계 최고의 브레인스토밍 파트너",
-      "hook": "\"야 나 방금 엄청난 거 생각났어\" \"알아, 나도 5분 전에\"",
+      "hook": "야 나 방금 엄청난 거 생각났어\" \"알아, 나도 5분 전에",
       "tension": "둘 다 실행을 미룬다",
       "magic": "가능성의 총량이 두 배",
       "drama": "청춘기록",
@@ -13,7 +13,11 @@
       "char_f": "박소담(한지아)",
       "mood": "활기찬 도시/밝은 주황+전기금/아이디어 폭발 제스처/카페 브레인스토밍",
       "hashtag": "#SPARK_SPARK커플#아이디어폭발#브레인스토밍커플#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "도경석",
+      "role_f": "한지아",
+      "actor_m": "차은우",
+      "actor_f": "박소담"
     },
     "mj_prompt": "Two people at a cafe table covered in sticky notes, both gesturing excitedly with ideas floating around them, vibrant orange and electric gold palette, Korean webtoon style, energetic atmosphere, no text, 1:1 --v 6"
   },
@@ -23,7 +27,7 @@
     "ko": {
       "combination_name": "불꽃×운명형",
       "subtitle": "즉흥의 에너지를 방향으로 바꾸는 조합",
-      "hook": "\"지금 바로 하고 싶어\" \"3개월 후를 봐, 그게 더 완벽해\"",
+      "hook": "지금 바로 하고 싶어\" \"3개월 후를 봐, 그게 더 완벽해",
       "tension": "타이밍 감각이 완전히 다름",
       "magic": "창의력+통찰, 최강 비전 제조기",
       "drama": "사랑의 불시착",
@@ -31,7 +35,11 @@
       "char_f": "손예진(윤세리)",
       "mood": "안개+별빛/딥인디고+전기금/한쪽은 열정적 제스처 한쪽은 고요한 시선/교차로",
       "hashtag": "#SPARK_VISION커플#즉흥vs방향#불꽃운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "리정혁",
+      "role_f": "윤세리",
+      "actor_m": "현빈",
+      "actor_f": "손예진"
     },
     "mj_prompt": "A couple at a crossroads at dusk, one pointing excitedly forward with warm spark energy, the other gazing at the horizon with calm certainty, deep indigo and electric gold palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -41,7 +49,7 @@
     "ko": {
       "combination_name": "불꽃×닻형",
       "subtitle": "자유로운 영혼과 흔들리지 않는 항구",
-      "hook": "\"또 갑자기 여행 가자고?\" \"짐은 내가 쌌어\"",
+      "hook": "또 갑자기 여행 가자고?\" \"짐은 내가 쌌어",
       "tension": "SPARK 즉흥 vs STEADY 계획",
       "magic": "세상에서 가장 안전한 모험",
       "drama": "응답하라 1988",
@@ -49,7 +57,11 @@
       "char_f": "혜리(성덕선)",
       "mood": "노을빛 골목/웜앰버+딥틸/배낭 멘 자유로운 인물+묵묵히 짐 싸는 인물",
       "hashtag": "#SPARK_STEADY커플#자유vs안정#불꽃닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "정환",
+      "role_f": "성덕선",
+      "actor_m": "류준열",
+      "actor_f": "혜리"
     },
     "mj_prompt": "A lively woman with a backpack pulling a calm steady man by the hand toward an open road at golden hour, he smiles quietly with a packed bag already ready, warm amber and deep teal palette, Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -59,7 +71,7 @@
     "ko": {
       "combination_name": "불꽃×플레이형",
       "subtitle": "24시간이 모자라는 에너지 폭발 커플",
-      "hook": "\"오늘 뭐해?\" \"몰라 근데 재밌는 거 하자\" \"ㅇㅋ 출발\"",
+      "hook": "오늘 뭐해?\" \"몰라 근데 재밌는 거 하자\" \"ㅇㅋ 출발",
       "tension": "깊이보다 넓이, 계획보다 현재",
       "magic": "지루한 날이 단 하루도 없음",
       "drama": "청춘시대",
@@ -67,7 +79,11 @@
       "char_f": "박혜수",
       "mood": "도시 거리/밝은 주황+크림슨/점프 동작+스핀/컨페티",
       "hashtag": "#SPARK_PLAYER커플#에너지폭발#즉흥커플#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이종석",
+      "actor_f": "박혜수"
     },
     "mj_prompt": "A vibrant couple mid-laugh in a bright urban street, one leaping and one spinning, confetti-like energy bursts, warm orange and crimson palette, dynamic Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -77,7 +93,7 @@
     "ko": {
       "combination_name": "불꽃×온기형",
       "subtitle": "아이디어에 온도를 더하는 커플",
-      "hook": "\"이거 어때?\" \"완벽해, 근데 여기서 사람들이 더 좋아할 것 같아\"",
+      "hook": "이거 어때?\" \"완벽해, 근데 여기서 사람들이 더 좋아할 것 같아",
       "tension": "SPARK 콘셉트 vs HARMONY 사람 먼저",
       "magic": "세상을 따뜻하게 바꾸는 아이디어",
       "drama": "응답하라 1988",
@@ -85,7 +101,11 @@
       "char_f": "혜리(성덕선)",
       "mood": "레트로 골목/웜앰버+핑크골드/수줍은 시선+밝은 미소/저녁 노을",
       "hashtag": "#SPARK_HARMONY커플#아이디어온기#불꽃온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "최택",
+      "role_f": "성덕선",
+      "actor_m": "박보검",
+      "actor_f": "혜리"
     },
     "mj_prompt": "A shy young man waiting at the end of a narrow vintage Korean alley at sunset, a cheerful warm-hearted woman approaches with a bright smile, retro 1980s Seoul aesthetic, warm amber and faded orange palette, nostalgic film grain texture, no real faces, no text, 1:1 --v 6"
   },
@@ -95,7 +115,7 @@
     "ko": {
       "combination_name": "불꽃×영혼형",
       "subtitle": "겉은 번쩍, 속은 깊은 조합",
-      "hook": "\"왜 이렇게 조용해?\" \"생각 중이야\" \"무슨 생각?\" \"우리 얘기\"",
+      "hook": "왜 이렇게 조용해?\" \"생각 중이야\" \"무슨 생각?\" \"우리 얘기",
       "tension": "SPARK 과잉 자극 vs SOUL 과잉 내면",
       "magic": "화려한 외면+진심 어린 내면",
       "drama": "응답하라 1994",
@@ -103,7 +123,11 @@
       "char_f": "고아라(성나정)",
       "mood": "반문 열린 문/웜골드+딥퍼플/한쪽은 활기 한쪽은 사색/빛의 대비",
       "hashtag": "#SPARK_SOUL커플#번쩍깊이#불꽃영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "칠봉이",
+      "role_f": "성나정",
+      "actor_m": "유연석",
+      "actor_f": "고아라"
     },
     "mj_prompt": "A bright energetic man extending his hand through a half-open door to a quietly sitting introspective woman inside, warm light flooding from outside, she looks up with a tentative smile, deep indigo interior vs warm gold exterior, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -113,7 +137,7 @@
     "ko": {
       "combination_name": "불꽃×논리형",
       "subtitle": "아이디어 생성기+현실 검증기",
-      "hook": "\"이건 될 것 같아!\" \"근거 세 가지만 대봐\" \"...그냥 느낌?\" \"그럼 일단 해\"",
+      "hook": "이건 될 것 같아!\" \"근거 세 가지만 대봐\" \"...그냥 느낌?\" \"그럼 일단 해",
       "tension": "느낌 vs 증거",
       "magic": "창의+정확=실제로 작동하는 아이디어",
       "drama": "오 나의 귀신님",
@@ -121,7 +145,11 @@
       "char_f": "김유정(홍설)",
       "mood": "현대 오피스/쿨그레이+오렌지/아이디어 제스처+팔짱 낀 논리형",
       "hashtag": "#SPARK_LOGIC커플#아이디어논리#불꽃논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "백경",
+      "role_f": "홍설",
+      "actor_m": "안효섭",
+      "actor_f": "김유정"
     },
     "mj_prompt": "A creative woman gesturing excitedly with idea bubbles, a composed analytical man sitting across with arms folded and a slight approving smirk, modern office setting, cool grey and bright orange palette, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -131,7 +159,7 @@
     "ko": {
       "combination_name": "불꽃×실행형",
       "subtitle": "아이디어가 현실이 되는 커플",
-      "hook": "\"아이디어는 내가 낼게\" \"실행은 내가 할게\" \"우리 최강 아니야?\"",
+      "hook": "아이디어는 내가 낼게\" \"실행은 내가 할게\" \"우리 최강 아니야?",
       "tension": "SPARK 변덕 vs LEADER 완수 집착",
       "magic": "아이디어가 사라지기 전에 실현됨",
       "drama": "꽃보다 남자",
@@ -139,7 +167,11 @@
       "char_f": "구혜선(금잔디)",
       "mood": "도시 야경/전기금+딥인디고/한쪽은 아이디어 스케치 한쪽은 실행 지시",
       "hashtag": "#SPARK_LEADER커플#아이디어실행#불꽃실행형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "구준표",
+      "role_f": "금잔디",
+      "actor_m": "이민호",
+      "actor_f": "구혜선"
     },
     "mj_prompt": "A woman sketching ideas on a whiteboard, a confident man beside her already making calls to execute, city skyline background at night, electric gold and deep indigo palette, bold Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -149,7 +181,7 @@
     "ko": {
       "combination_name": "운명×불꽃형",
       "subtitle": "조용한 예언자가 불꽃에 방향을 선물한다",
-      "hook": "\"어디로 가는지 알아?\" \"몰라, 근데 따라가면 되잖아\" \"...맞아\"",
+      "hook": "어디로 가는지 알아?\" \"몰라, 근데 따라가면 되잖아\" \"...맞아",
       "tension": "VISION 깊이 vs SPARK 속도",
       "magic": "본능과 직관이 만나는 최강 콤비",
       "drama": "사랑의 불시착",
@@ -157,7 +189,11 @@
       "char_f": "손예진(윤세리)",
       "mood": "초원+별빛/네이비+전기금/한쪽 고요한 시선 한쪽 활기찬 걸음",
       "hashtag": "#VISION_SPARK커플#운명불꽃#예언자커플#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "리정혁",
+      "role_f": "윤세리",
+      "actor_m": "현빈",
+      "actor_f": "손예진"
     },
     "mj_prompt": "A calm man with deep knowing eyes standing still, a lively woman walking ahead turning back to him with a bright smile, open starlit field, navy and electric gold palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -167,7 +203,7 @@
     "ko": {
       "combination_name": "운명×운명형",
       "subtitle": "말하지 않아도 이미 알고 있는 두 사람",
-      "hook": "\"말 안 해도 알아?\" \"응\" \"...신기해\" \"나도 그랬어\"",
+      "hook": "말 안 해도 알아?\" \"응\" \"...신기해\" \"나도 그랬어",
       "tension": "둘 다 말 아낌→오해 누적",
       "magic": "인류 역사상 가장 텔레파시 같은 커플",
       "drama": "도깨비",
@@ -175,7 +211,11 @@
       "char_f": "김고은(지은탁)",
       "mood": "안개 낀 골목/꽃잎/딥인디고+실버/동시에 시선 교환",
       "hashtag": "#VISION_VISION커플#눈빛소통#운명형커플#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "도해준",
+      "role_f": "지은탁",
+      "actor_m": "공유",
+      "actor_f": "김고은"
     },
     "mj_prompt": "Two people sitting across from each other in a dimly lit cafe, both looking up at the exact same moment, eyes meeting, soft smile, indigo and violet color palette, mystical atmosphere, cherry blossoms falling, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -185,7 +225,7 @@
     "ko": {
       "combination_name": "운명×닻형",
       "subtitle": "미래를 보는 눈+현재를 지키는 힘",
-      "hook": "\"5년 후 이게 다 연결될 거야\" \"그래서 오늘 밥은 먹었어?\"",
+      "hook": "5년 후 이게 다 연결될 거야\" \"그래서 오늘 밥은 먹었어?",
       "tension": "VISION 추상 vs STEADY 구체",
       "magic": "비전이 땅에 뿌리를 내린다",
       "drama": "비밀의 숲",
@@ -193,7 +233,11 @@
       "char_f": "서혜진(한여진)",
       "mood": "도시+자연 경계/씨그린+인디고/한쪽 수평선 응시 한쪽 식탁 차림",
       "hashtag": "#VISION_STEADY커플#미래현재#운명닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "황시목",
+      "role_f": "한여진",
+      "actor_m": "김남길",
+      "actor_f": "서혜진"
     },
     "mj_prompt": "A man gazing at a distant horizon with visionary eyes, a woman gently placing a warm meal on the table beside him, half cityscape half nature background, sea green and indigo palette, Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -203,7 +247,7 @@
     "ko": {
       "combination_name": "운명×플레이형",
       "subtitle": "미래 통찰과 현재 폭발의 긴장감",
-      "hook": "\"생각만 하지 말고 지금 해봐\" \"지금 할 때가 아니야\" \"언제?\" \"...봐야 알아\"",
+      "hook": "생각만 하지 말고 지금 해봐\" \"지금 할 때가 아니야\" \"언제?\" \"...봐야 알아",
       "tension": "타이밍 전쟁",
       "magic": "최고의 순간에 최고의 행동",
       "drama": "청춘시대",
@@ -211,7 +255,11 @@
       "char_f": "박민영(강티나)",
       "mood": "교차로/황혼/크림슨+인디고/한쪽 달리는 자세 한쪽 정지",
       "hashtag": "#VISION_PLAYER커플#미래vs현재#운명플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "이영준",
+      "role_f": "강티나",
+      "actor_m": "박서준",
+      "actor_f": "박민영"
     },
     "mj_prompt": "A woman frozen in a powerful action pose mid-run, a man beside her standing absolutely still with calm certainty, crossroads at golden dusk, crimson and deep indigo palette, dynamic tension, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -221,7 +269,7 @@
     "ko": {
       "combination_name": "운명×온기형",
       "subtitle": "내면의 깊이와 관계의 따뜻함이 만나는 자리",
-      "hook": "\"당신이 특별한 이유를 처음부터 알았어\" \"나도 알고 있었어\"",
+      "hook": "당신이 특별한 이유를 처음부터 알았어\" \"나도 알고 있었어",
       "tension": "VISION 내향 vs HARMONY 외향",
       "magic": "세상에서 가장 이해받는 느낌",
       "drama": "달의 연인",
@@ -229,7 +277,11 @@
       "char_f": "IU(해수)",
       "mood": "달빛 정원/로즈골드+딥인디고/두 인물 서로 바라보는 따뜻한 시선",
       "hashtag": "#VISION_HARMONY커플#깊이온기#운명온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "왕소",
+      "role_f": "해수",
+      "actor_m": "이준기",
+      "actor_f": "IU"
     },
     "mj_prompt": "Two figures standing in a moonlit garden, one with deep introspective eyes and calm presence, the other radiating warm gentle light, rose gold and deep indigo palette, soft romantic Korean fantasy illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -239,7 +291,7 @@
     "ko": {
       "combination_name": "운명×영혼형",
       "subtitle": "두 사람의 우주가 충돌하는 조합",
-      "hook": "\"어디서 본 것 같아\" \"전생이었겠지\" \"...진짜로?\"",
+      "hook": "어디서 본 것 같아\" \"전생이었겠지\" \"...진짜로?",
       "tension": "너무 깊어서 가끔 무거움",
       "magic": "평생 탐구해도 다 못 볼 깊이",
       "drama": "슬기로운 의사생활",
@@ -247,7 +299,11 @@
       "char_f": "전미도",
       "mood": "우주적 공간/딥퍼플+실버/두 인물 서로 공명하는 눈빛/은하수",
       "hashtag": "#VISION_SOUL커플#우주충돌#운명영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "조승우",
+      "actor_f": "전미도"
     },
     "mj_prompt": "Two figures standing under a vast galaxy night sky, both gazing at each other with deep resonant eyes, swirling cosmic energy between them, deep purple and silver starlight palette, mystical Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -257,7 +313,7 @@
     "ko": {
       "combination_name": "운명×논리형",
       "subtitle": "다른 경로로 같은 결론에 도달하는 파트너",
-      "hook": "\"나도 그 결론에 도달했어\" \"어떻게?\" \"직관으로\" \"나는 데이터로\"",
+      "hook": "나도 그 결론에 도달했어\" \"어떻게?\" \"직관으로\" \"나는 데이터로",
       "tension": "증명 방식이 달라서 충돌",
       "magic": "가장 치밀한 지적 파트너십",
       "drama": "별에서 온 그대",
@@ -265,7 +321,11 @@
       "char_f": "전지현(천송이)",
       "mood": "도서관+별빛/쿨블루+인디고/각각 책과 별을 보다가 같은 곳을 가리킴",
       "hashtag": "#VISION_LOGIC커플#직관논리#운명논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "도민준",
+      "role_f": "천송이",
+      "actor_m": "김수현",
+      "actor_f": "전지현"
     },
     "mj_prompt": "Two intellectuals in a vast library, one with an open book filled with data, the other with eyes closed in deep intuition, both pointing at the same conclusion on the wall, cool blue and indigo palette, Korean fantasy illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -275,7 +335,7 @@
     "ko": {
       "combination_name": "운명×리더형",
       "subtitle": "빅픽처 설계자+실행 총사령관",
-      "hook": "\"10년 후를 봐\" \"그래서 지금 이렇게 움직여야 해\" \"맞아\"",
+      "hook": "10년 후를 봐\" \"그래서 지금 이렇게 움직여야 해\" \"맞아",
       "tension": "VISION 느린 결정 vs LEADER 즉각 실행",
       "magic": "세상을 바꾸는 조합",
       "drama": "아이리스",
@@ -283,7 +343,11 @@
       "char_f": "김태희(차유진)",
       "mood": "도시 야경+지도/딥인디고+전기금/전략 지도 앞 두 인물",
       "hashtag": "#VISION_LEADER커플#빅픽처#운명리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "이창진",
+      "role_f": "차유진",
+      "actor_m": "이병헌",
+      "actor_f": "김태희"
     },
     "mj_prompt": "Two powerful figures standing before a large strategic map, one pointing at long-term vision across the horizon, the other already marking immediate action points, city skyline at night background, deep indigo and electric gold palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -293,7 +357,7 @@
     "ko": {
       "combination_name": "닻×불꽃형",
       "subtitle": "안정이 자유를 응원하는 세상에서 가장 든든한 관계",
-      "hook": "\"또 엉뚱한 거 하러 가?\" \"맛있는 거 싸줄게\"",
+      "hook": "또 엉뚱한 거 하러 가?\" \"맛있는 거 싸줄게",
       "tension": "STEADY 안정욕구 vs SPARK 변화욕구",
       "magic": "어디서든 돌아올 집이 있다는 것",
       "drama": "내 머릿속의 지우개",
@@ -301,7 +365,11 @@
       "char_f": "문근영",
       "mood": "골목+따뜻한 집 불빛/웜앰버+씨그린/한쪽 배낭 한쪽 도시락",
       "hashtag": "#STEADY_SPARK커플#안정자유#닻불꽃형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "류덕환",
+      "actor_f": "문근영"
     },
     "mj_prompt": "A woman with a backpack heading out into the world, a gentle man at the doorway waving with a packed lunchbox and warm smile, cozy home warm light, amber and sea green palette, nostalgic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -311,7 +379,7 @@
     "ko": {
       "combination_name": "닻×운명형",
       "subtitle": "현실과 비전 사이를 잇는 다리",
-      "hook": "\"너무 멀리 보지 마\" \"가까운 것도 봐야지\" \"...고마워\"",
+      "hook": "너무 멀리 보지 마\" \"가까운 것도 봐야지\" \"...고마워",
       "tension": "STEADY 현실 vs VISION 추상",
       "magic": "꿈이 실현되는 커플",
       "drama": "최고의 사랑",
@@ -319,7 +387,11 @@
       "char_f": "공효진",
       "mood": "도시+자연/씨그린+인디고/한쪽 수평선 한쪽 현재 밥상",
       "hashtag": "#STEADY_VISION커플#현실비전#닻운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "조정석",
+      "actor_f": "공효진"
     },
     "mj_prompt": "A woman gently tapping a man on the shoulder who is gazing too far into the distance, pointing him back to the beautiful present moment around them, sea green and indigo palette, warm Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -329,7 +401,7 @@
     "ko": {
       "combination_name": "닻×닻형",
       "subtitle": "10년 후에도 변함없는, 세상에서 가장 안정적인 커플",
-      "hook": "\"10년 뒤에도 똑같겠지?\" \"그게 좋잖아\" \"응, 좋아\"",
+      "hook": "10년 뒤에도 똑같겠지?\" \"그게 좋잖아\" \"응, 좋아",
       "tension": "변화와 성장이 느릴 수 있음",
       "magic": "폭풍이 와도 절대 흔들리지 않음",
       "drama": "나의 특별한 형제",
@@ -337,7 +409,11 @@
       "char_f": "라미란",
       "mood": "아늑한 거실/웜앰버+딥틸/나란히 앉아 같은 방향 바라보기",
       "hashtag": "#STEADY_STEADY커플#변함없음#닻닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "유해진",
+      "actor_f": "라미란"
     },
     "mj_prompt": "A couple sitting side by side on a cozy sofa, both looking the same direction with quiet contentment, warm lamplight, a cup of tea each, amber and deep teal palette, cozy Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -347,7 +423,7 @@
     "ko": {
       "combination_name": "닻×플레이형",
       "subtitle": "집 안의 평화와 집 밖의 모험",
-      "hook": "\"집에 있어\" \"나랑 바다 보러 가자\" \"...우리 집에서 바다 얼마나 멀어?\"",
+      "hook": "집에 있어\" \"나랑 바다 보러 가자\" \"...우리 집에서 바다 얼마나 멀어?",
       "tension": "에너지 레벨 차이",
       "magic": "PLAYER가 세상을 데려오고 STEADY가 정착시킴",
       "drama": "피노키오",
@@ -355,7 +431,11 @@
       "char_f": "이성경",
       "mood": "해안+아늑한 집/크림슨+씨그린/한쪽 파도 향해 달리기 한쪽 담요 들고 기다림",
       "hashtag": "#STEADY_PLAYER커플#집vs모험#닻플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이광수",
+      "actor_f": "이성경"
     },
     "mj_prompt": "A man running excitedly toward the ocean waves, a woman standing at the shoreline holding two blankets with a patient warm smile, crimson and sea green palette, Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -365,7 +445,7 @@
     "ko": {
       "combination_name": "닻×온기형",
       "subtitle": "두 사람이 있으면 그게 집",
-      "hook": "\"오늘도 맛있는 거 했어?\" \"네가 오면 더 맛있어\"",
+      "hook": "오늘도 맛있는 거 했어?\" \"네가 오면 더 맛있어",
       "tension": "너무 평화로워서 자극 부족",
       "magic": "지구상에서 가장 따뜻한 커플",
       "drama": "극한직업",
@@ -373,7 +453,11 @@
       "char_f": "오달수 (코믹)",
       "mood": "따뜻한 주방/핑크골드+씨그린/요리하는 두 사람 웃음",
       "hashtag": "#STEADY_HARMONY커플#집온기#닻온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "코믹",
+      "actor_m": "류승룡",
+      "actor_f": "오달수"
     },
     "mj_prompt": "Two people cooking together in a warm kitchen, laughing and nudging each other, steam rising from pots, warm golden light, pink gold and sea green palette, cozy cheerful Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -383,7 +467,7 @@
     "ko": {
       "combination_name": "닻×영혼형",
       "subtitle": "현실이 감성을 포근히 감싸는 관계",
-      "hook": "\"울어도 돼\" \"나 여기 있어\"",
+      "hook": "울어도 돼\" \"나 여기 있어",
       "tension": "STEADY 말 없음 vs SOUL 표현 갈망",
       "magic": "가장 안전한 감성 기지",
       "drama": "트릭컬",
@@ -391,7 +475,11 @@
       "char_f": "이나영",
       "mood": "저녁 창가/웜차콜+소프트엠버/비 내리는 창 옆 기대는 두 사람",
       "hashtag": "#STEADY_SOUL커플#현실감성#닻영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "감우성",
+      "actor_f": "이나영"
     },
     "mj_prompt": "A gentle man sitting quietly beside a woman who leans on his shoulder, eyes closed, peaceful expression, evening window light, soft rain outside, warm charcoal and soft ember palette, Korean illustration style, intimate atmosphere, no real faces, no text, 1:1 --v 6"
   },
@@ -401,7 +489,7 @@
     "ko": {
       "combination_name": "닻×논리형",
       "subtitle": "말없이 옆에 있어주는 파트너십",
-      "hook": "\"말 안 해도 알아\" \"...그래\"",
+      "hook": "말 안 해도 알아\" \"...그래",
       "tension": "둘 다 표현이 적어 거리감 생길 수 있음",
       "magic": "침묵이 불편하지 않은 커플",
       "drama": "베토벤 바이러스",
@@ -409,7 +497,11 @@
       "char_f": "김명민",
       "mood": "미니멀 서재/쿨블루+씨그린/각자 책 읽다 가끔 끄덕",
       "hashtag": "#STEADY_LOGIC커플#말없이통함#닻논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "손현주",
+      "actor_f": "김명민"
     },
     "mj_prompt": "Two people sitting at separate desks facing each other, both reading, occasional glance and quiet nod, minimal monochrome workspace, cool blue and sea green palette, clean modern Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -419,7 +511,7 @@
     "ko": {
       "combination_name": "닻×리더형",
       "subtitle": "전진하는 힘을 지탱하는 기반",
-      "hook": "\"앞만 보고 달려\" \"나는 뒤에서 지킬게\"",
+      "hook": "앞만 보고 달려\" \"나는 뒤에서 지킬게",
       "tension": "LEADER 속도 vs STEADY 지속성",
       "magic": "무너지지 않는 팀",
       "drama": "시그널",
@@ -427,7 +519,11 @@
       "char_f": "김혜수",
       "mood": "도시+요새/딥인디고+씨그린/한쪽 전진 한쪽 굳건히 서서 지탱",
       "hashtag": "#STEADY_LEADER커플#전진지탱#닻리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "손현주",
+      "actor_f": "김혜수"
     },
     "mj_prompt": "A confident woman charging forward in a determined stride, a steady man standing firm behind her as an unmovable support, urban fortress background, deep indigo and sea green palette, bold cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -437,7 +533,7 @@
     "ko": {
       "combination_name": "플레이×불꽃형",
       "subtitle": "지금 이 순간이 전부인 에너지 듀오",
-      "hook": "\"생각 그만하고 지금 나가자\" \"ㅇㅋ 신발 신어\"",
+      "hook": "생각 그만하고 지금 나가자\" \"ㅇㅋ 신발 신어",
       "tension": "실행하고 나서야 생각함",
       "magic": "살면서 가장 많은 경험을 쌓는 커플",
       "drama": "당신이 잠든 사이에",
@@ -445,7 +541,11 @@
       "char_f": "박혜수",
       "mood": "도시 거리 밤/크림슨+오렌지/두 사람 달리는 실루엣",
       "hashtag": "#PLAYER_SPARK커플#지금이순간#플레이불꽃형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이종석",
+      "actor_f": "박혜수"
     },
     "mj_prompt": "Two people sprinting together through a neon-lit city street at night, both laughing mid-run, motion blur effect, crimson and orange palette, energetic Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -455,7 +555,7 @@
     "ko": {
       "combination_name": "플레이×운명형",
       "subtitle": "현재 폭발 vs 미래 통찰, 긴장감 넘치는 조합",
-      "hook": "\"지금 즐기면 되잖아\" \"나중을 생각해야지\" \"나중이 어딘데?\" \"...봐야 알아\"",
+      "hook": "지금 즐기면 되잖아\" \"나중을 생각해야지\" \"나중이 어딘데?\" \"...봐야 알아",
       "tension": "타임라인이 완전히 다름",
       "magic": "최고의 순간에 최고의 방향",
       "drama": "도깨비 프리퀄 감성",
@@ -463,7 +563,11 @@
       "char_f": "유인나(이설)",
       "mood": "황혼 교차로/크림슨+딥인디고/한쪽 달리고 한쪽 정지",
       "hashtag": "#PLAYER_VISION커플#현재미래긴장#플레이운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "구웅",
+      "role_f": "이설",
+      "actor_m": "이동욱",
+      "actor_f": "유인나"
     },
     "mj_prompt": "A woman frozen in a powerful action pose mid-run, a man beside her standing absolutely still with calm certainty, crossroads at golden dusk, crimson and deep indigo palette, dynamic tension, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -473,7 +577,7 @@
     "ko": {
       "combination_name": "플레이×닻형",
       "subtitle": "모험 파트너+돌아올 베이스캠프",
-      "hook": "\"가자\" \"어디?\" \"일단 가자\" \"...짐은 내가 챙길게\"",
+      "hook": "가자\" \"어디?\" \"일단 가자\" \"...짐은 내가 챙길게",
       "tension": "PLAYER 충동 vs STEADY 신중",
       "magic": "모험이 있고 집이 있는 완벽한 균형",
       "drama": "너를 기억해",
@@ -481,7 +585,11 @@
       "char_f": "김소현",
       "mood": "해변+집 불빛/크림슨+씨그린/한쪽 파도 달리기 한쪽 짐 챙김",
       "hashtag": "#PLAYER_STEADY커플#모험베이스#플레이닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "박형식",
+      "actor_f": "김소현"
     },
     "mj_prompt": "A man running excitedly toward the ocean waves, a woman standing at the shoreline holding two bags with a patient warm smile ready to go, crimson and sea green palette, Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -491,7 +599,7 @@
     "ko": {
       "combination_name": "플레이×플레이형",
       "subtitle": "에너지 2배, 사고도 2배, 행복도 2배",
-      "hook": "\"우리 이거 실제로 해보자\" \"ㅇㅋ 고\" \"언제?\" \"지금\"",
+      "hook": "우리 이거 실제로 해보자\" \"ㅇㅋ 고\" \"언제?\" \"지금",
       "tension": "둘 다 브레이크가 없음",
       "magic": "세상에서 가장 재밌는 커플",
       "drama": "눈물의 여왕",
@@ -499,7 +607,11 @@
       "char_f": "김지원(홍해인)",
       "mood": "야외 모험/크림슨+선명한 옐로/두 사람 점프",
       "hashtag": "#PLAYER_PLAYER커플#에너지2배#플레이플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "차달건",
+      "role_f": "홍해인",
+      "actor_m": "지창욱",
+      "actor_f": "김지원"
     },
     "mj_prompt": "Two people jumping simultaneously at a scenic outdoor location, both mid-air with huge grins, confetti and energy bursts, crimson and bright yellow palette, ultra dynamic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -509,7 +621,7 @@
     "ko": {
       "combination_name": "플레이×온기형",
       "subtitle": "신나는 에너지+사람 챙기는 마음",
-      "hook": "\"맛집 찾았어! 얼른 가자\" \"걔네도 데려가자\" \"...다 연락해?\"",
+      "hook": "맛집 찾았어! 얼른 가자\" \"걔네도 데려가자\" \"...다 연락해?",
       "tension": "PLAYER 속도 vs HARMONY 관계 챙김",
       "magic": "파티가 자동으로 생기는 커플",
       "drama": "내 아이디 강남미인",
@@ -517,7 +629,11 @@
       "char_f": "김지은",
       "mood": "파티 공간/크림슨+핑크골드/한쪽 신나게 달리고 한쪽 사람들 챙기기",
       "hashtag": "#PLAYER_HARMONY커플#신남온기#플레이온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "옥택연",
+      "actor_f": "김지은"
     },
     "mj_prompt": "A man excitedly waving everyone to join, a woman beside him thoughtfully making sure each person feels included, vibrant party atmosphere, crimson and pink gold palette, cheerful Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -527,7 +643,7 @@
     "ko": {
       "combination_name": "플레이×영혼형",
       "subtitle": "겉으로 보이는 것과 내면의 깊이",
-      "hook": "\"왜 이렇게 진지해?\" \"원래 이래\" \"...그래서 좋아\"",
+      "hook": "왜 이렇게 진지해?\" \"원래 이래\" \"...그래서 좋아",
       "tension": "PLAYER 표면 vs SOUL 내면",
       "magic": "SOUL이 PLAYER의 진심을 처음으로 꺼내줌",
       "drama": "밥 잘 사주는 예쁜 누나",
@@ -535,7 +651,11 @@
       "char_f": "한지민",
       "mood": "조용한 카페/크림슨+딥퍼플/장난스러운 웃음 vs 깊은 시선",
       "hashtag": "#PLAYER_SOUL커플#겉깊이#플레이영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "남주혁",
+      "actor_f": "한지민"
     },
     "mj_prompt": "A playful man caught mid-laugh, a woman sitting across gazing at him with soft deep eyes that see through to his true self, quiet cafe setting, crimson and deep purple palette, warm Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -545,7 +665,7 @@
     "ko": {
       "combination_name": "플레이×논리형",
       "subtitle": "행동파+계산기, 말이 되는 즉흥",
-      "hook": "\"일단 치고 나가자\" \"승산이 73%야, 가자\"",
+      "hook": "일단 치고 나가자\" \"승산이 73%야, 가자",
       "tension": "계산이 끝나기 전에 이미 시작함",
       "magic": "해보고 분석하는 최강 학습 커플",
       "drama": "신사의 품격",
@@ -553,7 +673,11 @@
       "char_f": "한효주",
       "mood": "전략 보드+실전/쿨블루+크림슨/한쪽 데이터 한쪽 이미 출발",
       "hashtag": "#PLAYER_LOGIC커플#행동계산#플레이논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이정재",
+      "actor_f": "한효주"
     },
     "mj_prompt": "A man already sprinting ahead, a woman behind him holding a tablet showing 73% success probability with a slight smirk, urban action setting, crimson and cool blue palette, dynamic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -563,7 +687,7 @@
     "ko": {
       "combination_name": "플레이×리더형",
       "subtitle": "현장 에너지+전략 실행력",
-      "hook": "\"내가 뚫으면 네가 마무리해\" \"당연하지\"",
+      "hook": "내가 뚫으면 네가 마무리해\" \"당연하지",
       "tension": "PLAYER 즉흥 vs LEADER 계획 충돌",
       "magic": "현장에서 이기는 커플",
       "drama": "하얀거탑",
@@ -571,7 +695,11 @@
       "char_f": "김정은(오은영)",
       "mood": "전장/딥인디고+크림슨/한쪽 돌파 한쪽 마무리 지시",
       "hashtag": "#PLAYER_LEADER커플#현장전략#플레이리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "장준혁",
+      "role_f": "오은영",
+      "actor_m": "지성",
+      "actor_f": "김정은"
     },
     "mj_prompt": "A man charging through the front line, a woman standing strategically behind commanding the finish with confidence, urban battlefield setting, deep indigo and crimson palette, bold cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -581,7 +709,7 @@
     "ko": {
       "combination_name": "온기×불꽃형",
       "subtitle": "관계의 온도를 높이는 두 사람",
-      "hook": "\"너 아이디어 진짜 좋다\" \"그렇지?ㅎㅎ\" \"근데 사람들이 어떻게 받을지 생각해봐\"",
+      "hook": "너 아이디어 진짜 좋다\" \"그렇지?ㅎㅎ\" \"근데 사람들이 어떻게 받을지 생각해봐",
       "tension": "HARMONY 관계 vs SPARK 아이디어 우선",
       "magic": "사람의 마음을 움직이는 아이디어",
       "drama": "동백꽃 필 무렵",
@@ -589,7 +717,11 @@
       "char_f": "이유영",
       "mood": "봄 벚꽃 거리/핑크골드+오렌지/한쪽 아이디어 스케치 한쪽 사람들 살피기",
       "hashtag": "#HARMONY_SPARK커플#온기불꽃#온기불꽃형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이준혁",
+      "actor_f": "이유영"
     },
     "mj_prompt": "A woman sketching ideas while a man beside her gently points toward the people around them who might be affected, spring cherry blossom street, pink gold and warm orange palette, Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -599,7 +731,7 @@
     "ko": {
       "combination_name": "온기×운명형",
       "subtitle": "사람 마음을 읽는 두 가지 방식",
-      "hook": "\"그 사람 기분 느껴져?\" \"응, 나도\" \"같이 얘기해줄까?\" \"내가 한다\"",
+      "hook": "그 사람 기분 느껴져?\" \"응, 나도\" \"같이 얘기해줄까?\" \"내가 한다",
       "tension": "공감 방식이 달라 충돌",
       "magic": "어떤 사람도 이해하는 커플",
       "drama": "달의 연인",
@@ -607,7 +739,11 @@
       "char_f": "IU",
       "mood": "달빛 정원/로즈골드+인디고/두 사람이 같은 사람을 다른 방식으로 위로",
       "hashtag": "#HARMONY_VISION커플#마음읽기#온기운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이준기",
+      "actor_f": "IU"
     },
     "mj_prompt": "Two figures in a moonlit garden, one approaching someone with warm open arms, the other watching from a distance with deep knowing eyes, rose gold and deep indigo palette, Korean fantasy illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -617,7 +753,7 @@
     "ko": {
       "combination_name": "온기×닻형",
       "subtitle": "가장 따뜻한 일상을 만드는 조합",
-      "hook": "\"밥 먹었어?\" \"너 먹으면서 왜 물어봐\" \"같이 먹고 싶어서\"",
+      "hook": "밥 먹었어?\" \"너 먹으면서 왜 물어봐\" \"같이 먹고 싶어서",
       "tension": "너무 편안해서 자극 부족",
       "magic": "세상 어디에도 없는 포근함",
       "drama": "질투의 화신",
@@ -625,7 +761,11 @@
       "char_f": "공효진",
       "mood": "따뜻한 주방/핑크골드+씨그린/함께 밥 먹는 평화로운 장면",
       "hashtag": "#HARMONY_STEADY커플#따뜻한일상#온기닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "신하균",
+      "actor_f": "공효진"
     },
     "mj_prompt": "A couple sharing a warm meal at home, both smiling softly at each other over steaming bowls, cozy kitchen golden light, pink gold and sea green palette, intimate Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -635,7 +775,7 @@
     "ko": {
       "combination_name": "온기×플레이형",
       "subtitle": "사람들 모이는 파티를 자동 생성하는 커플",
-      "hook": "\"오늘 우리 집 와, 다 불러\" \"맛있는 거 내가 사올게\"",
+      "hook": "오늘 우리 집 와, 다 불러\" \"맛있는 거 내가 사올게",
       "tension": "HARMONY 관계 깊이 vs PLAYER 넓이",
       "magic": "모두가 좋아하는 커플",
       "drama": "내 아이디 강남미인",
@@ -643,7 +783,11 @@
       "char_f": "김지은",
       "mood": "파티/핑크골드+크림슨/한쪽 사람 초대 한쪽 음식 들고 달려오기",
       "hashtag": "#HARMONY_PLAYER커플#파티생성#온기플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "옥택연",
+      "actor_f": "김지은"
     },
     "mj_prompt": "A woman warmly welcoming people at a party door, a man rushing in from outside carrying bags of food with a huge grin, warm party atmosphere, pink gold and crimson palette, cheerful Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -653,7 +797,7 @@
     "ko": {
       "combination_name": "온기×온기형",
       "subtitle": "사랑이 과부하될 수도 있는, 세상에서 가장 따뜻한 조합",
-      "hook": "\"나 너무 좋아\" \"나도 너무 좋아\" \"야 좀 그만해ㅋㅋ\" \"싫어\"",
+      "hook": "나 너무 좋아\" \"나도 너무 좋아\" \"야 좀 그만해ㅋㅋ\" \"싫어",
       "tension": "서로 배려하다가 정작 본인 말을 못함",
       "magic": "세상 모든 관계가 이 커플 주변에 따뜻해짐",
       "drama": "결혼작사 이혼작곡",
@@ -661,7 +805,11 @@
       "char_f": "신혜선",
       "mood": "따뜻한 공간/핑크골드+로즈/두 사람 서로 먼저 챙기는 장면",
       "hashtag": "#HARMONY_HARMONY커플#사랑과부화#온기온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "강하늘",
+      "actor_f": "신혜선"
     },
     "mj_prompt": "Two people simultaneously handing each other a gift, both looking surprised, surrounded by a warm rosy glow of affection, pink gold and rose palette, sweet overflowing love atmosphere, Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -671,7 +819,7 @@
     "ko": {
       "combination_name": "온기×영혼형",
       "subtitle": "진심으로 감싸는 두 사람",
-      "hook": "\"네 기분 어때?\" \"나도 그런 적 있었어\" \"...어떻게 알았어?\"",
+      "hook": "네 기분 어때?\" \"나도 그런 적 있었어\" \"...어떻게 알았어?",
       "tension": "HARMONY 외향 vs SOUL 내향",
       "magic": "가장 깊이 이해받는 관계",
       "drama": "마이 네임",
@@ -679,7 +827,11 @@
       "char_f": "한소희",
       "mood": "조용한 공간/핑크골드+딥퍼플/따뜻한 포옹 혹은 손잡기",
       "hashtag": "#HARMONY_SOUL커플#진심감쌈#온기영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "위하준",
+      "actor_f": "한소희"
     },
     "mj_prompt": "A woman gently placing her hand over a quietly withdrawn man's hand, his eyes slowly softening, intimate quiet room, warm pink gold and deep purple palette, tender Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -689,7 +841,7 @@
     "ko": {
       "combination_name": "온기×논리형",
       "subtitle": "따뜻한 말 vs 정확한 말, 긴장과 성장",
-      "hook": "\"걱정돼서 연락했어\" \"걱정할 필요 없는데\" \"...그래도 걱정되잖아\"",
+      "hook": "걱정돼서 연락했어\" \"걱정할 필요 없는데\" \"...그래도 걱정되잖아",
       "tension": "공감 vs 해결책 대립",
       "magic": "감성과 이성이 동시에 채워지는 관계",
       "drama": "너는 내 운명",
@@ -697,7 +849,11 @@
       "char_f": "전도연",
       "mood": "현대 인테리어/핑크골드+쿨그레이/한쪽 손 내밀기 한쪽 고개 돌려 수용",
       "hashtag": "#HARMONY_LOGIC커플#따뜻논리#온기논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "황정민",
+      "actor_f": "전도연"
     },
     "mj_prompt": "A warm woman placing her hand gently on the arm of a composed analytical man looking at data on a screen, he turns with a softened expression, soft ember and cool grey palette, cozy interior, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -707,7 +863,7 @@
     "ko": {
       "combination_name": "온기×리더형",
       "subtitle": "팀을 이끄는 두 가지 방식",
-      "hook": "\"결과만 봐\" \"사람도 봐야 해\" \"둘 다 봐\" \"그래\"",
+      "hook": "결과만 봐\" \"사람도 봐야 해\" \"둘 다 봐\" \"그래",
       "tension": "리더십 스타일 충돌",
       "magic": "사람도 잡고 성과도 잡는 최강 파트너십",
       "drama": "용팔이",
@@ -715,7 +871,11 @@
       "char_f": "진세연",
       "mood": "오피스 야경/핑크골드+딥인디고/두 리더가 서로 다른 방향 가리키다 중간에서 합의",
       "hashtag": "#HARMONY_LEADER커플#결과vs사람#온기리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "장혁",
+      "actor_f": "진세연"
     },
     "mj_prompt": "Two leaders in formal attire standing in a glass office at night, one pointing at charts and results, the other gesturing toward the team behind them, they look at each other and nod in agreement, pink gold and deep indigo palette, Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -725,7 +885,7 @@
     "ko": {
       "combination_name": "영혼×불꽃형",
       "subtitle": "고요한 내면이 새로운 세계로 열리는 관계",
-      "hook": "\"처음으로 밖으로 나오고 싶었어\" \"나랑 같이?\"",
+      "hook": "처음으로 밖으로 나오고 싶었어\" \"나랑 같이?",
       "tension": "SOUL 과잉 자극 우려 vs SPARK 과잉 에너지",
       "magic": "SOUL이 처음으로 세상과 연결되는 순간",
       "drama": "응답하라 1994",
@@ -733,7 +893,11 @@
       "char_f": "고아라(성나정)",
       "mood": "반문/딥퍼플+골드/한쪽 문 안 한쪽 손 내밀기",
       "hashtag": "#SOUL_SPARK커플#내면개방#영혼불꽃형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "칠봉이",
+      "role_f": "성나정",
+      "actor_m": "유연석",
+      "actor_f": "고아라"
     },
     "mj_prompt": "A bright energetic woman extending her hand through a half-open door to a quietly sitting introspective man inside, warm light flooding from outside, he looks up with a tentative smile, deep indigo interior vs warm gold exterior, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -743,7 +907,7 @@
     "ko": {
       "combination_name": "영혼×운명형",
       "subtitle": "말보다 감각으로 이해하는 두 사람",
-      "hook": "\"말 안 해도 돼\" \"알아\" \"...신기해\" \"나도\"",
+      "hook": "말 안 해도 돼\" \"알아\" \"...신기해\" \"나도",
       "tension": "깊이가 너무 깊어 현실이 사라짐",
       "magic": "우주에서 가장 깊은 공명",
       "drama": "악마판사",
@@ -751,7 +915,11 @@
       "char_f": "신민아",
       "mood": "우주적 공간/딥퍼플+실버/두 사람 은하수 아래 눈빛 교환",
       "hashtag": "#SOUL_VISION커플#감각소통#영혼운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "변요한",
+      "actor_f": "신민아"
     },
     "mj_prompt": "Two figures standing under a vast galaxy sky, both gazing at each other with deep resonant eyes, cosmic energy swirling between them, deep purple and silver starlight palette, mystical Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -761,7 +929,7 @@
     "ko": {
       "combination_name": "영혼×닻형",
       "subtitle": "섬세한 내면을 지켜주는 파트너",
-      "hook": "\"혼자 있어도 돼\" \"나 여기 있을게\"",
+      "hook": "혼자 있어도 돼\" \"나 여기 있을게",
       "tension": "SOUL 감정 기복 vs STEADY 일관성",
       "magic": "가장 안전한 감성 공간",
       "drama": "비밀의 숲2",
@@ -769,7 +937,11 @@
       "char_f": "배두나",
       "mood": "저녁 창가/딥퍼플+씨그린/비 오는 창 기대는 두 사람",
       "hashtag": "#SOUL_STEADY커플#내면수호#영혼닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이제훈",
+      "actor_f": "배두나"
     },
     "mj_prompt": "A man sitting quietly beside a woman who leans on his shoulder with closed eyes and peaceful expression, rainy evening window, deep purple and sea green palette, intimate Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -779,7 +951,7 @@
     "ko": {
       "combination_name": "영혼×플레이형",
       "subtitle": "조용한 감성을 세상 밖으로 꺼내주는 관계",
-      "hook": "\"왜 그렇게 웃어?\" \"네가 웃겨\" \"내가?\" \"응, 항상\"",
+      "hook": "왜 그렇게 웃어?\" \"네가 웃겨\" \"내가?\" \"응, 항상",
       "tension": "SOUL 과자극 우려 vs PLAYER 에너지 과잉",
       "magic": "PLAYER가 SOUL의 진심 웃음을 이끌어냄",
       "drama": "밥 잘 사주는 예쁜 누나",
@@ -787,7 +959,11 @@
       "char_f": "한지민",
       "mood": "조용한 카페/딥퍼플+크림슨/장난스러운 웃음 vs 깊은 시선",
       "hashtag": "#SOUL_PLAYER커플#감성개방#영혼플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "남주혁",
+      "actor_f": "한지민"
     },
     "mj_prompt": "A playful woman caught mid-laugh, a man sitting across gazing at her with soft deep eyes that see through to her true self, quiet cafe setting, deep purple and crimson palette, warm Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -797,7 +973,7 @@
     "ko": {
       "combination_name": "영혼×온기형",
       "subtitle": "진심이 진심을 알아보는 조합",
-      "hook": "\"괜찮아\" \"괜찮지 않은데 왜 물어봐\" \"...미안\"",
+      "hook": "괜찮아\" \"괜찮지 않은데 왜 물어봐\" \"...미안",
       "tension": "SOUL 독립 vs HARMONY 챙김 충돌",
       "magic": "가장 진심 어린 관계",
       "drama": "스물다섯 스물하나",
@@ -805,7 +981,11 @@
       "char_f": "조이현",
       "mood": "봄 공원/딥퍼플+핑크골드/한쪽 물음 한쪽 솔직한 고백",
       "hashtag": "#SOUL_HARMONY커플#진심진심#영혼온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "김강훈",
+      "actor_f": "조이현"
     },
     "mj_prompt": "A woman looking down with quiet vulnerability, a man kneeling slightly to meet her gaze with genuine concern, spring park setting, deep purple and pink gold palette, tender Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -815,7 +995,7 @@
     "ko": {
       "combination_name": "영혼×영혼형",
       "subtitle": "가장 깊은 공명, 가장 강렬한 감정도 가능",
-      "hook": "\"우리가 아프면 우리가 가장 아파\" \"그래도 네가 있어서 괜찮아\"",
+      "hook": "우리가 아프면 우리가 가장 아파\" \"그래도 네가 있어서 괜찮아",
       "tension": "감정 소용돌이가 두 배",
       "magic": "세상에서 가장 깊이 이해하는 파트너",
       "drama": "더 우먼",
@@ -823,7 +1003,11 @@
       "char_f": "이솜",
       "mood": "폭풍+고요/딥퍼플+소프트엠버/폭풍 속 두 사람 손잡기",
       "hashtag": "#SOUL_SOUL커플#깊은공명#영혼영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "류준열",
+      "actor_f": "이솜"
     },
     "mj_prompt": "Two figures holding hands in the center of a swirling emotional storm, both looking at each other with profound understanding, deep purple and soft ember palette, intense introspective Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -833,7 +1017,7 @@
     "ko": {
       "combination_name": "영혼×논리형",
       "subtitle": "감성과 논리의 조용한 대화",
-      "hook": "\"왜 그랬어?\" \"몰라, 그냥 그랬어\" \"...그래\"",
+      "hook": "왜 그랬어?\" \"몰라, 그냥 그랬어\" \"...그래",
       "tension": "이유 없는 감정 vs 이유 필요한 논리",
       "magic": "설명 안 해도 되는 파트너",
       "drama": "결백",
@@ -841,7 +1025,11 @@
       "char_f": "엄정화",
       "mood": "미니멀 공간/딥퍼플+쿨블루/두 사람 나란히 침묵",
       "hashtag": "#SOUL_LOGIC커플#감성논리#영혼논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이상엽",
+      "actor_f": "엄정화"
     },
     "mj_prompt": "Two people sitting side by side in a minimal quiet room, not speaking, both with closed eyes in shared understanding, deep purple and cool blue palette, minimalist Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -851,7 +1039,7 @@
     "ko": {
       "combination_name": "영혼×리더형",
       "subtitle": "목표 지향과 내면 지향의 보완",
-      "hook": "\"왜 그렇게 달려가?\" \"나도 함께 데려가줘\"",
+      "hook": "왜 그렇게 달려가?\" \"나도 함께 데려가줘",
       "tension": "LEADER 목표 vs SOUL 과정",
       "magic": "LEADER가 처음으로 멈추는 법을 배움",
       "drama": "멜로가 체질",
@@ -859,7 +1047,11 @@
       "char_f": "전여빈",
       "mood": "도시 계단/딥퍼플+전기금/달리는 사람이 멈춰 손 내밀기",
       "hashtag": "#SOUL_LEADER커플#목표내면#영혼리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이선균",
+      "actor_f": "전여빈"
     },
     "mj_prompt": "A determined woman sprinting up city steps pausing mid-step as a quiet man reaches up and gently takes her hand, deep purple and electric gold palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -869,7 +1061,7 @@
     "ko": {
       "combination_name": "논리×불꽃형",
       "subtitle": "아이디어 회의에서 시작된 연애",
-      "hook": "\"이건 논리적으로 말이 돼\" \"그래서 사랑하면 되잖아\" \"...맞네\"",
+      "hook": "이건 논리적으로 말이 돼\" \"그래서 사랑하면 되잖아\" \"...맞네",
       "tension": "증거 vs 직관",
       "magic": "검증된 창의력",
       "drama": "베토벤 바이러스",
@@ -877,7 +1069,11 @@
       "char_f": "이요원",
       "mood": "오피스+화이트보드/쿨블루+오렌지/아이디어 vs 검증 제스처",
       "hashtag": "#LOGIC_SPARK커플#논리불꽃#논리불꽃형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "김명민",
+      "actor_f": "이요원"
     },
     "mj_prompt": "A woman writing wild creative ideas on a whiteboard, a man beside her crossing off logically impossible ones with a red marker then circling the best one with approval, cool blue and bright orange palette, Korean webtoon style, no real faces, no text, 1:1 --v 6"
   },
@@ -887,7 +1083,7 @@
     "ko": {
       "combination_name": "논리×운명형",
       "subtitle": "다른 경로, 같은 진실",
-      "hook": "\"나도 그 결론에 도달했어\" \"다른 경로로?\" \"응, 직관\" \"나는 데이터\"",
+      "hook": "나도 그 결론에 도달했어\" \"다른 경로로?\" \"응, 직관\" \"나는 데이터",
       "tension": "증명 방식 충돌",
       "magic": "어떤 문제도 해결하는 조합",
       "drama": "별에서 온 그대",
@@ -895,7 +1091,11 @@
       "char_f": "전지현(천송이)",
       "mood": "도서관+별빛/쿨블루+인디고/각자 책+별 보다가 같은 곳 가리킴",
       "hashtag": "#LOGIC_VISION커플#다른경로같은진실#논리운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "도민준",
+      "role_f": "천송이",
+      "actor_m": "김수현",
+      "actor_f": "전지현"
     },
     "mj_prompt": "Two intellectuals in a vast library, one with an open data book, the other with closed intuitive eyes, both simultaneously pointing at the same answer on the wall, cool blue and indigo palette, Korean fantasy illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -905,7 +1105,7 @@
     "ko": {
       "combination_name": "논리×닻형",
       "subtitle": "시스템 설계자+유지 관리자",
-      "hook": "\"시스템 만들게\" \"나는 유지할게\" \"완벽하다\"",
+      "hook": "시스템 만들게\" \"나는 유지할게\" \"완벽하다",
       "tension": "둘 다 감정 표현 부족",
       "magic": "가장 효율적인 커플",
       "drama": "쉬리",
@@ -913,7 +1113,11 @@
       "char_f": "김윤진",
       "mood": "미니멀 워크스페이스/쿨블루+씨그린/설계도+유지 관리 체크리스트",
       "hashtag": "#LOGIC_STEADY커플#시스템유지#논리닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "최민식",
+      "actor_f": "김윤진"
     },
     "mj_prompt": "A man drawing a precise system blueprint, a woman beside him methodically checking the maintenance list with quiet confidence, minimal monochrome workspace, cool blue and sea green palette, efficient Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -923,7 +1127,7 @@
     "ko": {
       "combination_name": "논리×플레이형",
       "subtitle": "계산하고 바로 실행하는 조합",
-      "hook": "\"가능성 계산했어\" \"그럼 바로 가자\" \"잠깐 변수가—\" \"그건 나중에\"",
+      "hook": "가능성 계산했어\" \"그럼 바로 가자\" \"잠깐 변수가—\" \"그건 나중에",
       "tension": "계산이 끝나기 전에 PLAYER가 출발함",
       "magic": "계획도 있고 실행도 있는 완벽한 조합",
       "drama": "신사의 품격",
@@ -931,7 +1135,11 @@
       "char_f": "한효주",
       "mood": "전략+실전/쿨블루+크림슨/한쪽 태블릿 데이터 한쪽 이미 출발",
       "hashtag": "#LOGIC_PLAYER커플#계산즉실행#논리플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이정재",
+      "actor_f": "한효주"
     },
     "mj_prompt": "A man already sprinting ahead, a woman behind him holding a tablet showing calculated success data with a slight knowing smirk, urban action setting, cool blue and crimson palette, dynamic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -941,7 +1149,7 @@
     "ko": {
       "combination_name": "논리×온기형",
       "subtitle": "차가운 분석과 따뜻한 배려의 만남",
-      "hook": "\"걱정돼서 연락했어\" \"걱정할 필요 없는데\" \"그래도 걱정됐어\" \"...고마워\"",
+      "hook": "걱정돼서 연락했어\" \"걱정할 필요 없는데\" \"그래도 걱정됐어\" \"...고마워",
       "tension": "\"왜 운 거야\" \"그냥 슬펐어\" \"이유가 있잖아\"",
       "magic": "감정도 알고 이유도 아는 파트너",
       "drama": "오 나의 귀신님",
@@ -949,7 +1157,11 @@
       "char_f": "박민영",
       "mood": "현대 인테리어/쿨블루+핑크골드/냉온탕 표정 교차",
       "hashtag": "#LOGIC_HARMONY커플#냉온탕#논리온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이동욱",
+      "actor_f": "박민영"
     },
     "mj_prompt": "A warm woman reaching out with concern, a composed analytical man turning toward her with a slowly softening expression, soft ember and cool grey interior, Korean webtoon style, emotional contrast, no real faces, no text, 1:1 --v 6"
   },
@@ -959,7 +1171,7 @@
     "ko": {
       "combination_name": "논리×영혼형",
       "subtitle": "말없이 서로의 깊이를 알아보는 관계",
-      "hook": "\"설명 안 해도 돼\" \"...어떻게 알았어?\" \"논리적으로 추론했어\"",
+      "hook": "설명 안 해도 돼\" \"...어떻게 알았어?\" \"논리적으로 추론했어",
       "tension": "이유 없는 감정을 LOGIC이 분석하려 함",
       "magic": "유일하게 SOUL을 분석하지 않는 LOGIC",
       "drama": "결백",
@@ -967,7 +1179,11 @@
       "char_f": "엄정화",
       "mood": "미니멀 공간/쿨블루+딥퍼플/나란히 침묵 속 공명",
       "hashtag": "#LOGIC_SOUL커플#말없이깊이#논리영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이상엽",
+      "actor_f": "엄정화"
     },
     "mj_prompt": "Two people sitting side by side in a minimal space, both quiet, the analytical one glancing sideways with rare softness, deep purple and cool blue palette, minimalist intimate Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -977,7 +1193,7 @@
     "ko": {
       "combination_name": "논리×논리형",
       "subtitle": "세상에서 가장 조용하고 효율적인 커플",
-      "hook": "\"10초 침묵\" \"그래 맞아\" \"응\"",
+      "hook": "10초 침묵\" \"그래 맞아\" \"응",
       "tension": "감정 표현이 구조적으로 부재",
       "magic": "말이 없어도 신뢰가 100%",
       "drama": "공공의 적",
@@ -985,7 +1201,11 @@
       "char_f": "전도연",
       "mood": "미니멀 서재/쿨블루+쿨그레이/각자 독서+가끔 끄덕",
       "hashtag": "#LOGIC_LOGIC커플#침묵소통#논리논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "설경구",
+      "actor_f": "전도연"
     },
     "mj_prompt": "Two people sitting at separate desks facing each other, both reading, occasional glance and quiet nod, minimal cool grey workspace, cool blue and steel grey palette, clean modern Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -995,7 +1215,7 @@
     "ko": {
       "combination_name": "논리×리더형",
       "subtitle": "전략가+실행가, 세상을 바꾸는 조합",
-      "hook": "\"내가 설계하면 네가 치면 돼\" \"언제 준비돼?\" \"5분 후\"",
+      "hook": "내가 설계하면 네가 치면 돼\" \"언제 준비돼?\" \"5분 후",
       "tension": "LOGIC 완벽 추구 vs LEADER 속도 추구",
       "magic": "CEO+CFO 조합, 무서운 팀",
       "drama": "검사내전",
@@ -1003,7 +1223,11 @@
       "char_f": "김남주",
       "mood": "야경 오피스/쿨블루+전기금/전략 지도 앞 두 인물 합의",
       "hashtag": "#LOGIC_LEADER커플#설계실행#논리리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이정재",
+      "actor_f": "김남주"
     },
     "mj_prompt": "Two powerful figures in a glass-walled office at night, one presenting a precise strategic blueprint, the other already nodding and reaching for the phone to execute, cool blue and electric gold palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1013,7 +1237,7 @@
     "ko": {
       "combination_name": "리더×불꽃형",
       "subtitle": "목표 달성에 창의력을 더하다",
-      "hook": "\"아이디어 좋아\" \"3주 안에 런칭하자\" \"3주?!\" \"2주도 돼\"",
+      "hook": "아이디어 좋아\" \"3주 안에 런칭하자\" \"3주?!\" \"2주도 돼",
       "tension": "LEADER 속도 vs SPARK 완성도",
       "magic": "아이디어가 사라지기 전에 세상에 나옴",
       "drama": "꽃보다 남자",
@@ -1021,7 +1245,11 @@
       "char_f": "구혜선",
       "mood": "도시 야경+화이트보드/전기금+오렌지/실행 지시+아이디어 스케치",
       "hashtag": "#LEADER_SPARK커플#목표창의#리더불꽃형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이민호",
+      "actor_f": "구혜선"
     },
     "mj_prompt": "A man pointing decisively at a launch timeline on a whiteboard, a woman beside him sketching the creative concept faster than expected, city skyline at night, electric gold and warm orange palette, bold Korean illustration style, no real faces, no text, 1:1 --v 6"
   },
@@ -1031,7 +1259,7 @@
     "ko": {
       "combination_name": "리더×운명형",
       "subtitle": "장기 전략의 완벽한 듀오",
-      "hook": "\"10년 계획 만들자\" \"이미 있어\" \"...언제 만든 거야?\" \"3년 전\"",
+      "hook": "10년 계획 만들자\" \"이미 있어\" \"...언제 만든 거야?\" \"3년 전",
       "tension": "LEADER 단기 실행 vs VISION 장기 통찰",
       "magic": "세상에서 가장 치밀한 빅픽처",
       "drama": "아이리스",
@@ -1039,7 +1267,11 @@
       "char_f": "김태희",
       "mood": "전략 맵+야경/전기금+딥인디고/10년 타임라인 앞 두 인물",
       "hashtag": "#LEADER_VISION커플#장기전략#리더운명형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이병헌",
+      "actor_f": "김태희"
     },
     "mj_prompt": "Two powerful figures standing before a vast 10-year strategic timeline map, one pointing at immediate next steps, the other having already mapped the final destination, city skyline at night, electric gold and deep indigo palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1049,7 +1281,7 @@
     "ko": {
       "combination_name": "리더×닻형",
       "subtitle": "전진하는 힘+흔들리지 않는 기반",
-      "hook": "\"앞만 보고 달려\" \"나는 뒤에서 지킬게\" \"약속해?\" \"응\"",
+      "hook": "앞만 보고 달려\" \"나는 뒤에서 지킬게\" \"약속해?\" \"응",
       "tension": "LEADER 고속 vs STEADY 안정 속도",
       "magic": "무너지지 않고 계속 전진",
       "drama": "넝쿨째 굴러온 당신",
@@ -1057,7 +1289,11 @@
       "char_f": "문채원",
       "mood": "도시+요새/전기금+씨그린/전진+지탱",
       "hashtag": "#LEADER_STEADY커플#전진기반#리더닻형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "이서진",
+      "actor_f": "문채원"
     },
     "mj_prompt": "A woman charging forward with determination, a steady man standing firm behind her as an unmovable foundation with quiet strength, urban fortress backdrop, electric gold and sea green palette, bold cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1067,7 +1303,7 @@
     "ko": {
       "combination_name": "리더×플레이형",
       "subtitle": "전략+현장 장악력",
-      "hook": "\"계획대로\" \"변수가 생겼어\" \"그럼 즉흥으로\" \"나 그거 더 잘해\"",
+      "hook": "계획대로\" \"변수가 생겼어\" \"그럼 즉흥으로\" \"나 그거 더 잘해",
       "tension": "계획 중독 vs 즉흥 중독",
       "magic": "예상치 못한 상황에서 가장 강함",
       "drama": "내 사랑 싸가지",
@@ -1075,7 +1311,11 @@
       "char_f": "신민아",
       "mood": "전장/전기금+크림슨/전략 지시+현장 돌파",
       "hashtag": "#LEADER_PLAYER커플#전략현장#리더플레이형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "차태현",
+      "actor_f": "신민아"
     },
     "mj_prompt": "A man pointing at the strategic plan on a map, a woman already improvising brilliantly in the field ahead of him, urban action setting, electric gold and crimson palette, dynamic cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1085,7 +1325,7 @@
     "ko": {
       "combination_name": "리더×온기형",
       "subtitle": "강한 리더십+사람 마음 얻기",
-      "hook": "\"결과만 보면 돼\" \"사람도 봐야 해\" \"...맞아, 고마워\"",
+      "hook": "결과만 보면 돼\" \"사람도 봐야 해\" \"...맞아, 고마워",
       "tension": "LEADER 효율 vs HARMONY 관계",
       "magic": "목표도 달성하고 사람도 잃지 않음",
       "drama": "청담동 스캔들",
@@ -1093,7 +1333,11 @@
       "char_f": "오연수",
       "mood": "오피스 야경/전기금+핑크골드/결과 차트+팀원 챙기기",
       "hashtag": "#LEADER_HARMONY커플#결과사람#리더온기형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "김주혁",
+      "actor_f": "오연수"
     },
     "mj_prompt": "A confident man looking at impressive results on a screen, a woman beside him gently pointing to the tired team behind them, he pauses and nods, electric gold and pink gold palette, Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1103,7 +1347,7 @@
     "ko": {
       "combination_name": "리더×영혼형",
       "subtitle": "성과 지향과 가치 지향의 갈등과 성장",
-      "hook": "\"왜 그렇게 달려가?\" \"멈추면 무너져\" \"내가 잡아줄게\"",
+      "hook": "왜 그렇게 달려가?\" \"멈추면 무너져\" \"내가 잡아줄게",
       "tension": "LEADER 목표 vs SOUL 과정 가치",
       "magic": "LEADER가 처음으로 속도를 줄이는 관계",
       "drama": "커피프린스",
@@ -1111,7 +1355,11 @@
       "char_f": "윤은혜",
       "mood": "계단+도시/전기금+딥퍼플/달리는 인물이 멈춰 손 내밀기",
       "hashtag": "#LEADER_SOUL커플#성과가치#리더영혼형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "장근석",
+      "actor_f": "윤은혜"
     },
     "mj_prompt": "A determined woman sprinting up city steps suddenly pausing as a quiet man below gently reaches up and takes her hand, she looks back with surprised softness, electric gold and deep purple palette, cinematic Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1121,7 +1369,7 @@
     "ko": {
       "combination_name": "리더×논리형",
       "subtitle": "CEO+CFO, 세상을 바꾸는 커플",
-      "hook": "\"실행\" \"리스크 계산 완료\" \"그럼 바로\" \"3,2,1—\"",
+      "hook": "실행\" \"리스크 계산 완료\" \"그럼 바로\" \"3,2,1—",
       "tension": "LEADER 속도 vs LOGIC 완벽주의",
       "magic": "실행력+정밀도=무적",
       "drama": "베토벤 바이러스",
@@ -1129,7 +1377,11 @@
       "char_f": "김하늘",
       "mood": "야경 오피스/전기금+쿨블루/카운트다운 손짓+실행 버튼",
       "hashtag": "#LEADER_LOGIC커플#CEO_CFO#리더논리형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "장혁",
+      "actor_f": "김하늘"
     },
     "mj_prompt": "A man with his finger on the launch button counting down, a woman beside him confirming the final risk calculation with a nod, glass office city night view, electric gold and cool blue palette, cinematic bold Korean illustration, no real faces, no text, 1:1 --v 6"
   },
@@ -1139,7 +1391,7 @@
     "ko": {
       "combination_name": "리더×리더형",
       "subtitle": "세상에서 가장 생산적이고 가장 치열한 커플",
-      "hook": "\"내가 맞아\" \"아니 내가 맞아\" \"(5분 뒤) 둘 다 맞았어\"",
+      "hook": "내가 맞아\" \"아니 내가 맞아\" \"(5분 뒤) 둘 다 맞았어",
       "tension": "누구도 지지 않으려 함",
       "magic": "싸워도 다음날 더 강해지는 커플",
       "drama": "49일 / 하얀거탑",
@@ -1147,7 +1399,11 @@
       "char_f": "김하늘",
       "mood": "도시 야경/전기금+딥인디고/등 맞대고 팔짱+비슷한 미소",
       "hashtag": "#LEADER_LEADER커플#둘다맞음#리더리더형#커플유형#shadowgramcouple",
-      "cta": "couple.shadowgram.org/kr"
+      "cta": "couple.shadowgram.org/kr",
+      "role_m": "",
+      "role_f": "",
+      "actor_m": "장혁",
+      "actor_f": "김하늘"
     },
     "mj_prompt": "Two powerful figures in formal attire standing back to back at floor-to-ceiling city night view windows, both with arms crossed and slight confident smirk, deep navy and electric gold palette, sharp dramatic lighting, bold Korean graphic illustration style, no real faces, no text, 1:1 --v 6"
   }
