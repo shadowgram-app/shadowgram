@@ -188,11 +188,6 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(
   .hw-btn.open span:nth-child(2) { opacity: 0; }
   .hw-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   
-  .lang-switcher { display: flex; align-items: center; gap: 4px; margin-left: auto; }
-  .lang-btn { font-size: 10px; letter-spacing: 1px; font-weight: 700; color: #A0A8B8; background: none; border: 1px solid rgba(255,255,255,0.1); border-radius: 5px; padding: 4px 8px; cursor: pointer; transition: all .2s; text-transform: uppercase; }
-  .lang-btn:hover { border-color: rgba(184,134,11,0.5); color: #C9A84C; }
-  .lang-btn.active { border-color: rgba(184,134,11,0.6); color: #C9A84C; background: rgba(184,134,11,0.1); }
-  
   /* ── DRAWER COMMON ── */
   .hw-overlay{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0);pointer-events:none;transition:background .3s;}
   .hw-overlay.open{background:rgba(0,0,0,0.6);pointer-events:all;}
@@ -223,7 +218,6 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(
     <span></span><span></span><span></span>
   </button>
     <a class="gnav-logo" href="/couple/kr/">SHADOWGRAM</a>
-  <div class="lang-switcher"><button class="lang-btn  active" onclick="langGo('kr')">KR</button> <button class="lang-btn" onclick="langGo('pt')">PT</button> <button class="lang-btn" onclick="langGo('es')">ES</button> <button class="lang-btn" onclick="langGo('en')">EN</button></div>
 </nav>
 
 <div class="wrap">
