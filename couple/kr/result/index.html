@@ -78,6 +78,22 @@
     .share-card p{font-size:13px;color:var(--silver);margin-bottom:24px;line-height:1.6;}
     .share-btns{display:flex;flex-direction:column;gap:10px;}
 .btn-insta{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);color:white;border:none;border-radius:14px;padding:14px;font-size:14px;font-weight:800;font-family:inherit;cursor:pointer;}
+    /* 결과카드 */
+    .result-card-wrap{padding:0 20px;margin-bottom:24px;}
+    .result-card{background:#0D0F1C;border:1.5px solid rgba(201,168,76,0.4);border-radius:20px;overflow:hidden;position:relative;}
+    .rc-top{padding:18px 20px 14px;text-align:center;border-bottom:1px solid rgba(201,168,76,0.15);}
+    .rc-brand{font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;opacity:0.7;}
+    .rc-combo-name{font-size:19px;font-weight:900;color:var(--white);line-height:1.3;margin-bottom:4px;}
+    .rc-subtitle{font-size:11px;color:var(--silver);letter-spacing:0.5px;}
+    .rc-img-wrap{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,#0A0A18,#0F1525);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+    .rc-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+    .rc-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--silver);font-size:12px;opacity:0.5;}
+    .rc-img-placeholder .ph-icon{font-size:40px;opacity:0.3;}
+    .rc-bottom{padding:14px 20px 16px;text-align:center;background:rgba(0,0,0,0.3);}
+    .rc-hook{font-size:13px;color:var(--white);line-height:1.6;margin-bottom:8px;font-style:italic;}
+    .rc-url{font-size:9px;letter-spacing:2px;color:var(--gold);opacity:0.6;}
+    .rc-drama{font-size:10px;color:var(--silver);margin-bottom:4px;}
+    .rc-save-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,#C9A84C,#E8D090);color:#0A0A14;border:none;border-radius:0 0 18px 18px;padding:14px;font-size:14px;font-weight:900;font-family:inherit;cursor:pointer;}
     /* 리포트 CTA */
     .report-cta{margin:0 20px 24px;background:linear-gradient(135deg,#1E1030,#102030);border:1.5px solid var(--gold);border-radius:20px;padding:24px 20px;text-align:center;position:relative;overflow:hidden;}
     .report-cta::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,var(--gold-glow) 0%,transparent 60%);pointer-events:none;}
@@ -277,6 +293,30 @@
       <div class="weather-bar-wrap"><div class="weather-bar-bg"><div class="weather-bar-fill" id="w4" style="background:linear-gradient(90deg,#40C870,#20A050)"></div></div></div>
     </div>
   </section>
+
+  <!-- 결과카드 (바이럴 이미지로 저장) -->
+  <div class="result-card-wrap fade-in" style="animation-delay:1.6s;" id="result-card-outer">
+    <div class="result-card" id="result-card">
+      <div class="rc-top">
+        <div class="rc-brand">SHADOWGRAM · COUPLE</div>
+        <div class="rc-combo-name" id="rc-combo-name">—</div>
+        <div class="rc-subtitle" id="rc-subtitle">—</div>
+      </div>
+      <div class="rc-img-wrap">
+        <img id="rc-img" src="" alt="" style="display:none;" crossorigin="anonymous">
+        <div class="rc-img-placeholder" id="rc-img-placeholder">
+          <div class="ph-icon">🖼️</div>
+          <div>이미지 준비 중</div>
+        </div>
+      </div>
+      <div class="rc-bottom">
+        <div class="rc-drama" id="rc-drama">—</div>
+        <div class="rc-hook" id="rc-hook">—</div>
+        <div class="rc-url">couple.shadowgram.org/kr</div>
+      </div>
+      <button class="rc-save-btn" id="rc-save-btn" onclick="saveCard()">📸 결과카드 저장하기 →</button>
+    </div>
+  </div>
 
   <!-- 공유 / 수신자 CTA (JS로 전환) -->
   <!-- 내가 보낸 경우: 공유 버튼 -->
@@ -525,6 +565,95 @@ function renderPage(){
 
 renderPage();
 
+// ── 결과카드 렌더링 (combo.json 데이터 사용)
+(function(){
+  const params=new URLSearchParams(window.location.search);
+  const a=params.get('a')||'SPARK';
+  const b=params.get('b')||'VISION';
+  const key=`${a}_${b}`;
+
+  fetch('/couple/data/combo.json')
+    .then(r=>r.json())
+    .then(data=>{
+      const d=data[key];
+      if(!d) return;
+      const ko=d.ko;
+      document.getElementById('rc-combo-name').textContent=ko.combination_name||key;
+      document.getElementById('rc-subtitle').textContent=ko.subtitle||'';
+      // 훅 — 따옴표 제거하고 깔끔하게
+      const hookClean=(ko.hook||'').replace(/^"|"$/g,'').replace(/"/g,'');
+      document.getElementById('rc-hook').textContent=hookClean;
+      document.getElementById('rc-drama').textContent=ko.drama?`✦ ${ko.drama}`:'';
+
+      // 이미지 로드 시도
+      const imgEl=document.getElementById('rc-img');
+      const placeholder=document.getElementById('rc-img-placeholder');
+      const imgPath=`/couple/images/${d.image_file}`;
+      imgEl.onload=()=>{
+        imgEl.style.display='block';
+        placeholder.style.display='none';
+      };
+      imgEl.onerror=()=>{
+        imgEl.style.display='none';
+        placeholder.style.display='flex';
+      };
+      imgEl.src=imgPath;
+    })
+    .catch(()=>{/* combo.json 없으면 카드 숨김 */
+      const outer=document.getElementById('result-card-outer');
+      if(outer) outer.style.display='none';
+    });
+})();
+
+// ── 결과카드 저장 (html2canvas)
+function saveCard(){
+  const card=document.getElementById('result-card');
+  const btn=document.getElementById('rc-save-btn');
+  btn.textContent='⏳ 저장 중...';
+  btn.disabled=true;
+
+  // html2canvas 동적 로드
+  function doCapture(){
+    html2canvas(card,{
+      backgroundColor:'#0D0F1C',
+      scale:2,
+      useCORS:true,
+      allowTaint:false,
+      logging:false,
+      width:card.offsetWidth,
+      height:card.offsetHeight
+    }).then(canvas=>{
+      const params=new URLSearchParams(window.location.search);
+      const a=params.get('a')||'SPARK', b=params.get('b')||'VISION';
+      const link=document.createElement('a');
+      link.download=`shadowgram_couple_${a}_${b}.png`;
+      link.href=canvas.toDataURL('image/png');
+      link.click();
+      btn.textContent='✅ 저장됐어요! 인스타에 올려봐요 🔥';
+      btn.disabled=false;
+      setTimeout(()=>{btn.textContent='📸 결과카드 저장하기 →';},3000);
+    }).catch(()=>{
+      btn.textContent='📸 결과카드 저장하기 →';
+      btn.disabled=false;
+      showToast('저장에 실패했어요. 스크린샷을 이용해 주세요 📱');
+    });
+  }
+
+  if(window.html2canvas){
+    doCapture();
+  } else {
+    const s=document.createElement('script');
+    s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload=doCapture;
+    s.onerror=()=>{
+      btn.textContent='📸 결과카드 저장하기 →';
+      btn.disabled=false;
+      showToast('저장 기능을 불러올 수 없어요. 스크린샷을 이용해 주세요 📱');
+    };
+    document.head.appendChild(s);
+  }
+}
+
 // ── 공유 / 수신자 분기
 // ref=share 있으면 → 공유받은 사람 → 결과 보여주고 "테스트하기" 버튼
 // ref=share 없으면 → 내 결과 → "공유하기" 버튼
@@ -537,14 +666,21 @@ renderPage();
     const el=document.getElementById('received-sender');
     if(el) el.textContent = names ? `✦ ${names}의 커플 유형 결과예요` : '✦ 커플 유형 결과예요';
     document.getElementById('section-received').style.display='block';
-    // 리포트 CTA + footer 숨기기
+    // 리포트 CTA + footer + 스티키 바 숨기기
     const reportCta=document.querySelector('.report-cta');
     if(reportCta) reportCta.style.display='none';
     const footer=document.querySelector('.footer');
     if(footer) footer.style.display='none';
-    // 스티키 하단 바도 숨기기
     const stickyBar=document.querySelector('.sticky-bottom');
     if(stickyBar) stickyBar.style.display='none';
+    // 결과카드 저장 버튼 → 테스트하기 버튼으로 교체
+    const saveBtn=document.getElementById('rc-save-btn');
+    if(saveBtn){
+      saveBtn.onclick=null;
+      saveBtn.style.background='linear-gradient(135deg,#B8860B,#D4A017)';
+      saveBtn.innerHTML='✏️ 나도 테스트하기 →';
+      saveBtn.onclick=()=>{window.location.href='/couple/kr/';};
+    }
   } else {
     document.getElementById('section-share').style.display='block';
   }
