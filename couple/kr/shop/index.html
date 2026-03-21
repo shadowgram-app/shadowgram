@@ -203,13 +203,13 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(
   <div class="price-banner">
     <div class="price-banner-left">
       <div class="price-banner-badge">🎁 베타 테스트 기간</div>
-      <div class="price-banner-title">지금은 무료로 다운로드 가능해요</div>
-      <div class="price-banner-sub">정식 출시 후 얼리버드 50% 할인 적용 예정</div>
+      <div class="price-banner-title">결제 시스템 테스트 중이에요</div>
+      <div class="price-banner-sub">정식 오픈 시 얼리버드 50% 할인 적용 예정</div>
     </div>
     <div class="price-banner-right">
       <div class="price-orig">정가 19,800원</div>
       <div class="price-sale">9,900원</div>
-      <div class="price-note">베타 기간 무료</div>
+      <div class="price-note">🔧 테스트 중</div>
     </div>
   </div>
 
@@ -259,9 +259,9 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(
         <span class="modal-price-badge">얼리버드 50% OFF</span>
         <span class="modal-price-num">9,900원</span>
       </div>
-      <div class="modal-price-note">🎁 베타 기간 지금은 무료</div>
+      <div class="modal-price-note">🔧 결제 시스템 테스트 중 — 곧 오픈</div>
     </div>
-    <button class="modal-btn-dl" id="m-btn-dl" onclick="downloadFromModal()">📥 무료로 리포트 받기</button>
+    <button class="modal-btn-dl" id="m-btn-dl" onclick="downloadFromModal()" style="background:linear-gradient(135deg,#888,#aaa);cursor:not-allowed;">🔧 테스트 중 — 곧 오픈돼요</button>
     <button class="modal-btn-close" onclick="closeModalDirect()">닫기</button>
   </div>
 </div>
@@ -381,7 +381,7 @@ function buildCatalog(filterType){
       const card = document.createElement('div');
       card.className = 'report-card';
       card.innerHTML = `
-        <span class="card-free">무료</span>
+        <span class="card-free" style="background:#FFD580;color:#5A3A00;">🔧 준비중</span>
         <div class="card-combo">${TYPES_INFO[typeA].icon} <span>${typeA}</span> × ${TYPES_INFO[typeB].icon} <span>${typeB}</span></div>
         <div class="card-title">${data.title}</div>
         <div class="card-hook">${data.hook}</div>
@@ -412,15 +412,7 @@ function openModal(a, b){
 }
 
 function downloadFromModal(){
-  if(!currentModal) return;
-  const {a, b} = currentModal;
-  const url = `/couple/kr/reports/combo/${a}_${b}_KR.pdf`;
-  const filename = `Shadowgram_Couple_${a}_${b}_KR.pdf`;
-  showToast(`📥 ${a} × ${b} 리포트 다운로드!`);
-  setTimeout(()=>{
-    const l = document.createElement('a');
-    l.href = url; l.download = filename; l.click();
-  }, 400);
+  showToast('🔧 현재 테스트 중입니다 — 결제 오픈 시 알려드릴게요!');
 }
 
 function closeModal(e){
