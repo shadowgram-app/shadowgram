@@ -423,13 +423,13 @@ function renderPage(){
   const offset=circumference-(circumference*chemPct/100);
   const fillEl=document.getElementById('chem-fill-circle');
   setTimeout(()=>{fillEl.style.strokeDashoffset=offset;},300);
-  // 카운터
+  // 카운터 (0.8초에 완료)
   let cur=0;
   const timer=setInterval(()=>{
-    cur=Math.min(cur+chemPct/60,chemPct);
+    cur=Math.min(cur+chemPct/40,chemPct);
     document.getElementById('pct-num').textContent=Math.round(cur)+'%';
     if(cur>=chemPct)clearInterval(timer);
-  },1800/60);
+  },800/40);
 
   // 텍스트
   document.getElementById('combo-title').textContent=d.title;
