@@ -526,17 +526,16 @@ function renderPage(){
 renderPage();
 
 // ── 공유 / 수신자 분기
+// ref=share 있으면 → 공유받은 사람 → 결과 보여주고 "테스트하기" 버튼
+// ref=share 없으면 → 내 결과 → "공유하기" 버튼
 (function(){
   const params=new URLSearchParams(window.location.search);
-  const na=params.get('na')||'';
-  const nb=params.get('nb')||'';
-  // na 또는 nb가 있으면 → 누군가 이름 넣고 공유한 링크 = 받은 사람
-  const isReceived = !!(na||nb);
+  const isReceived = params.get('ref')==='share';
   if(isReceived){
-    // 보낸 사람 이름 표시
-    const senderName = [na,nb].filter(Boolean).join(' · ');
+    const na=params.get('na')||'', nb=params.get('nb')||'';
+    const names=[na,nb].filter(Boolean).join(' · ');
     const el=document.getElementById('received-sender');
-    if(el) el.textContent = senderName ? `✦ ${senderName}의 커플 유형 결과예요` : '✦ 커플 유형 결과예요';
+    if(el) el.textContent = names ? `✦ ${names}의 커플 유형 결과예요` : '✦ 커플 유형 결과예요';
     document.getElementById('section-received').style.display='block';
   } else {
     document.getElementById('section-share').style.display='block';
@@ -562,31 +561,42 @@ function fallbackCopy(text,msg){
   document.body.removeChild(ta);
 }
 function getShareUrl(){
+  // ref=share 포함 → 받는 사람이 결과 보고 테스트 버튼 보게 됨
   const params=new URLSearchParams(window.location.search);
-  const a=params.get('a')||'SPARK',b=params.get('b')||'VISION';
-  if(window.location.protocol==='file:')return `https://shadowgram.org/couple/kr/result?a=${a}&b=${b}`;
-  return window.location.href;
+  const a=params.get('a')||'SPARK', b=params.get('b')||'VISION';
+  const na=params.get('na')||'', nb=params.get('nb')||'';
+  const sp=new URLSearchParams({a,b,ref:'share'});
+  if(na) sp.set('na',na);
+  if(nb) sp.set('nb',nb);
+  return 'https://shadowgram.org/couple/kr/result/?'+sp.toString();
 }
 function shareKakao(){
-  const testUrl='https://shadowgram.org/couple/kr/';
+  const url=getShareUrl();
+  const params=new URLSearchParams(window.location.search);
+  const na=params.get('na')||'', nb=params.get('nb')||'';
+  const names=[na,nb].filter(Boolean).join(' · ');
+  const title=names?`${names}의 커플 유형이 나왔어요 💫`:'우리 커플 완전 신박해 💫';
   if(window.Kakao&&window.Kakao.isInitialized()){
     Kakao.Share.sendDefault({objectType:'feed',content:{
-      title:'우리 커플 완전 신박해 💫 당신들도 체크해봐요',
-      description:'연인과 함께 24문항 — 64가지 조합 중 당신만의 커플 유형이 나와요',
+      title,
+      description:'당신들도 체크해봐요 — 64가지 조합 중 우리만의 커플 유형이 나와요',
       imageUrl:'https://shadowgram.org/og-couple.png',
-      link:{mobileWebUrl:testUrl,webUrl:testUrl}
-    },buttons:[{title:'지금 체크해보기 →',link:{mobileWebUrl:testUrl,webUrl:testUrl}}]});
+      link:{mobileWebUrl:url,webUrl:url}
+    },buttons:[{title:'결과 보러 가기 →',link:{mobileWebUrl:url,webUrl:url}}]});
   }else{
-    copyToClipboard('우리 커플 완전 신박해 🔥 당신들도 체크해봐요 → '+testUrl,'🔗 링크가 복사됐어요! 카톡 열어서 붙여넣기 해보세요 💛');
+    copyToClipboard(title+'\n당신들도 체크해봐요 👉 '+url,'🔗 링크가 복사됐어요! 카톡에 붙여넣기 해보세요 💛');
     if(/Android|iPhone|iPad/i.test(navigator.userAgent))setTimeout(()=>{window.location.href='kakaolink://';},800);
   }
 }
 function shareInsta(){
-  const testUrl='https://shadowgram.org/couple/kr/';
-  const fullMsg='우리 커플 완전 신박해 🔥 당신들도 체크해봐요\n👉 '+testUrl;
+  const url=getShareUrl();
+  const params=new URLSearchParams(window.location.search);
+  const na=params.get('na')||'', nb=params.get('nb')||'';
+  const names=[na,nb].filter(Boolean).join(' · ');
+  const msg=(names?`${names}의 커플 유형이 나왔어요 💫\n`:'우리 커플 완전 신박해 🔥\n')+'당신들도 체크해봐요 👉 '+url;
   if(navigator.share){
-    navigator.share({text:fullMsg}).catch(()=>{copyToClipboard(fullMsg,'📸 링크가 복사됐어요! 붙여넣기 해보세요');});
-  }else{copyToClipboard(fullMsg,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}
+    navigator.share({text:msg}).catch(()=>{copyToClipboard(msg,'📸 링크 복사됐어요! 붙여넣기 해보세요');});
+  }else{copyToClipboard(msg,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}
 }
 function copyLink(){copyToClipboard(getShareUrl(),'✅ 링크가 복사됐어요!');}
 function getReport(){
