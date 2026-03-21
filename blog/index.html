@@ -16,21 +16,7 @@
     :root { --bg: #0F121E; --text: #E8E4DC; --dark: var(--bg); --dark2: #1A1F2E; --card: #161B28; --gold: #C5A572; --goldL: #E8D4A8; --white: #FFFFFF; --silver: #9BAAB8; --border: rgba(197,165,114,0.18); }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15,18,30,0.96); backdrop-filter: blur(10px); z-index: 100; }
-    .nav-logo { text-decoration: none; font-size: 13px; letter-spacing: 3px; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
     .nav-logo img { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; }
-    .nav-logo-text { display: flex; align-items: center; gap: 0; }
-    .nav-logo-wrap { display: none; }
-    .nav-logo .s1 { color: #A0A8B8; font-weight: 300; }
-    .nav-logo .s2 { color: #C9A84C; font-weight: 800; }
-    .nav-logo .s-dot { color: rgba(184,134,11,0.5); font-weight: 300; font-size: 13px; }
-    .nav-logo .s3 { color: #8899AA; font-weight: 400; font-size: 10px; letter-spacing: 2px; }
-    .nav-sub { display: none; }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-link { color: var(--silver); font-size: 12px; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-    .nav-link:hover, .nav-link.active { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 10px 20px; border-radius: 30px; text-decoration: none; text-transform: uppercase; }
-    .nav-cta:hover { background: var(--goldL); }
     .blog-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 80px; }
     .blog-header { text-align: center; padding: 64px 24px 52px; border-bottom: 1px solid var(--border); margin-bottom: 56px; }
     .blog-header .tag { font-size: 11px; font-weight: 800; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 18px; }
@@ -69,7 +55,7 @@
     .cta-meta { font-size: 12px; color: var(--silver); margin-top: 14px; }
     footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 12px; color: var(--silver); line-height: 1.8; }
     footer a { color: var(--gold); text-decoration: none; }
-    @media (max-width: 768px) { .featured-card { grid-template-columns: 1fr; } .featured-img { min-height: 140px; } .articles-grid { grid-template-columns: 1fr; } .types-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
+    @media (max-width: 768px) { .featured-card { grid-template-columns: 1fr; } .featured-img { min-height: 140px; } .articles-grid { grid-template-columns: 1fr; } .types-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 769px) and (max-width: 1024px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
   
   /* ── HAMBURGER & DRAWER ── */

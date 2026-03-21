@@ -41,21 +41,7 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    /* ── NAV ── */
-    nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(15,18,30,0.96);
-    }
-    .nav-logo { text-decoration: none; font-size: 13px; letter-spacing: 3px; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
-    .nav-logo img { width: 30px; height: 30px; border-radius: 50%; }
-    .nav-logo-wrap { display: none; }
-    .nav-logo .s1 { color: #A0A8B8; font-weight: 300; }
-    .nav-logo .s2 { color: #C9A84C; font-weight: 800; }
-    .nav-logo .s-dot { color: rgba(184,134,11,0.5); font-weight: 300; font-size: 13px; }
-    .nav-logo .s3 { color: #8899AA; font-weight: 400; font-size: 10px; letter-spacing: 2px; }
-    .nav-sub { display: none; }
+    /* ── NAV (sg-nav로 통일) ── */
     .nav-back {
       font-size: 13px; color: var(--silver);
       text-decoration: none; transition: color .2s;
@@ -491,8 +477,7 @@
 
     /* ── 태블릿/데스크탑 ── */
     @media (min-width: 600px) {
-      nav { padding: 20px 40px; }
-      .nav-logo { font-size: 13px; }
+      .sg-nav { padding: 0 40px; }
       .cred-inner { flex-direction: row; gap: 28px; }
       .hero { padding: 64px 24px 48px; }
       .result-card-body, .result-shadow-body, .pain-card-body { font-size: 19px; }
