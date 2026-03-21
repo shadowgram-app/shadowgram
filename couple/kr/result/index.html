@@ -500,20 +500,16 @@ function getReport(){
   const params=new URLSearchParams(window.location.search);
   const a=(params.get('a')||'SPARK').toUpperCase();
   const b=(params.get('b')||'VISION').toUpperCase();
-  const base='/couple/kr/reports/';
-  showToast(`📥 두 분의 리포트를 다운로드합니다!`);
+  const combo=`${a}_${b}`;
+  const url=`/couple/kr/reports/combo/${combo}_KR.pdf`;
+  const filename=`Shadowgram_Couple_${combo}_KR.pdf`;
+  showToast(`📥 ${a} × ${b} 커플 리포트를 다운로드합니다!`);
   setTimeout(()=>{
-    const la=document.createElement('a');
-    la.href=`${base}${a}_KR_Paid.pdf`;
-    la.download=`Shadowgram_${a}_리포트.pdf`;
-    la.click();
-  },300);
-  setTimeout(()=>{
-    const lb=document.createElement('a');
-    lb.href=`${base}${b}_KR_Paid.pdf`;
-    lb.download=`Shadowgram_${b}_리포트.pdf`;
-    lb.click();
-  },900);
+    const l=document.createElement('a');
+    l.href=url;
+    l.download=filename;
+    l.click();
+  },400);
 }
 </script>
 </body>
