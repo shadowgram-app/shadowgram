@@ -39,6 +39,45 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(
 }
 .footer{text-align:center;font-size:11px;color:var(--silver);padding:32px 0 24px;opacity:.6;line-height:1.8;}
 .footer a{color:var(--silver);text-decoration:underline;}
+
+  /* ── Hamburger Drawer ───────────────────────────────────── */
+  .hw-btn{position:fixed;top:14px;left:16px;z-index:10001;
+    background:rgba(15,18,30,0.85);border:1px solid rgba(184,134,11,.3);
+    border-radius:10px;width:40px;height:40px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:5px;cursor:pointer;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+  .hw-btn span{display:block;width:18px;height:2px;background:#C9A84C;border-radius:2px;transition:all .25s;}
+  .hw-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hw-btn.open span:nth-child(2){opacity:0;}
+  .hw-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .hw-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0);
+    pointer-events:none;transition:background .3s;}
+  .hw-overlay.open{background:rgba(0,0,0,.5);pointer-events:all;}
+  .hw-drawer{position:fixed;top:0;left:-280px;bottom:0;z-index:10000;
+    width:260px;background:#0F121E;border-right:1px solid rgba(184,134,11,.15);
+    padding:0;display:flex;flex-direction:column;transition:left .3s cubic-bezier(.4,0,.2,1);
+    overflow-y:auto;}
+  .hw-drawer.open{left:0;}
+  .hw-drawer-head{padding:52px 24px 20px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .hw-drawer-logo{font-size:14px;font-weight:900;letter-spacing:.1em;
+    background:linear-gradient(135deg,#E8D090,#C9A84C);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .hw-drawer-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.06em;}
+  .hw-section{padding:16px 20px 8px;}
+  .hw-section-label{font-size:9px;font-weight:800;letter-spacing:.14em;
+    color:rgba(255,255,255,.25);margin-bottom:10px;text-transform:uppercase;}
+  .hw-item{display:flex;align-items:center;gap:12px;padding:11px 14px;
+    border-radius:10px;text-decoration:none;margin-bottom:4px;
+    transition:background .15s;cursor:pointer;}
+  .hw-item:hover{background:rgba(255,255,255,.06);}
+  .hw-item-icon{font-size:17px;width:22px;text-align:center;flex-shrink:0;}
+  .hw-item-body{flex:1;}
+  .hw-item-name{font-size:13px;font-weight:700;color:#fff;}
+  .hw-item-lang{font-size:10px;color:rgba(255,255,255,.35);margin-top:1px;}
+  .hw-item-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:8px;
+    background:rgba(184,134,11,.15);color:#C9A84C;border:1px solid rgba(184,134,11,.3);flex-shrink:0;}
+  .hw-divider{height:1px;background:rgba(255,255,255,.06);margin:8px 20px;}
+
 </style>
 </head>
 <body>
@@ -73,5 +112,22 @@ body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(
     개인정보 문의 · <a href="mailto:joculsion@gmail.com">joculsion@gmail.com</a>
   </div>
 </div>
+
+<script>
+function hwToggle(){
+  const btn=document.getElementById('hw-btn');
+  const drawer=document.getElementById('hw-drawer');
+  const overlay=document.getElementById('hw-overlay');
+  const open=drawer.classList.toggle('open');
+  btn.classList.toggle('open',open);
+  overlay.classList.toggle('open',open);
+}
+function hwClose(){
+  document.getElementById('hw-btn').classList.remove('open');
+  document.getElementById('hw-drawer').classList.remove('open');
+  document.getElementById('hw-overlay').classList.remove('open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')hwClose();});
+</script>
 </body>
 </html>
