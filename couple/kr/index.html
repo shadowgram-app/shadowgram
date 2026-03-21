@@ -1991,6 +1991,7 @@ function showResultDirect(typeA, typeB) {
 }
 </script>
 
+<script>
 function hwToggle(){
   const btn=document.getElementById('hw-btn');
   const drawer=document.getElementById('hw-drawer');
@@ -2005,9 +2006,7 @@ function hwClose(){
   document.getElementById('hw-overlay').classList.remove('open');
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hwClose();});
-
-
-
+</script>
 
 <div class="hw-overlay" id="hw-overlay" onclick="hwClose()"></div>
 <div class="hw-drawer" id="hw-drawer">
@@ -2041,21 +2040,5 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')hwClose();});
     <a class="hw-item hw-disabled" href="#"><span class="hw-item-icon">&#x1F319;</span> leftnoon Community <span class="hw-badge soon">Soon</span></a>
   </div>
 </div>
-<script>
-function hwToggle(){
-  var btn=document.getElementById('hw-btn');
-  var drawer=document.getElementById('hw-drawer');
-  var overlay=document.getElementById('hw-overlay');
-  var open=drawer.classList.toggle('open');
-  btn.classList.toggle('open',open);
-  overlay.classList.toggle('open',open);
-}
-function hwClose(){
-  document.getElementById('hw-btn').classList.remove('open');
-  document.getElementById('hw-drawer').classList.remove('open');
-  document.getElementById('hw-overlay').classList.remove('open');
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')hwClose();});
-</script>
 </body>
 </html>

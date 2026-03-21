@@ -278,13 +278,25 @@
     </div>
   </section>
 
-  <!-- 공유 -->
-  <div class="share-section fade-in" style="animation-delay:1.7s">
+  <!-- 공유 / 수신자 CTA (JS로 전환) -->
+  <!-- 내가 보낸 경우: 공유 버튼 -->
+  <div id="section-share" class="share-section fade-in" style="animation-delay:1.7s;display:none;">
     <div class="share-card">
       <h3>우리 커플 완전 신박해 💫</h3>
       <p>당신들도 체크해봐요 — 64가지 조합 중 당신만의 커플 유형이 나와요 🙈</p>
       <div class="share-btns">
         <button class="btn-insta" onclick="shareInsta()">📸 공유하기 (인스타·문자·더보기)</button>
+      </div>
+    </div>
+  </div>
+  <!-- 받은 사람인 경우: 나도 테스트하기 -->
+  <div id="section-received" class="share-section fade-in" style="animation-delay:1.7s;display:none;">
+    <div class="share-card" style="background:linear-gradient(135deg,#0A2A1A,#0A1830);border-color:#2A5040;">
+      <div id="received-sender" style="font-size:12px;letter-spacing:1px;color:var(--gold);margin-bottom:10px;"></div>
+      <h3 style="font-size:18px;margin-bottom:8px;">나는 어떤 유형일까? 🤔</h3>
+      <p>우리 커플 유형은 뭔지 — 직접 체크해봐요<br>연인과 함께 24문항, 5분이면 돼요</p>
+      <div class="share-btns" style="margin-top:20px;">
+        <a href="/couple/kr/" class="btn-insta" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#B8860B,#D4A017);color:#0A0A14;border-radius:14px;padding:14px;font-size:15px;font-weight:900;">✏️ 지금 테스트하기 →</a>
       </div>
     </div>
   </div>
@@ -513,6 +525,24 @@ function renderPage(){
 
 renderPage();
 
+// ── 공유 / 수신자 분기
+(function(){
+  const params=new URLSearchParams(window.location.search);
+  const na=params.get('na')||'';
+  const nb=params.get('nb')||'';
+  // na 또는 nb가 있으면 → 누군가 이름 넣고 공유한 링크 = 받은 사람
+  const isReceived = !!(na||nb);
+  if(isReceived){
+    // 보낸 사람 이름 표시
+    const senderName = [na,nb].filter(Boolean).join(' · ');
+    const el=document.getElementById('received-sender');
+    if(el) el.textContent = senderName ? `✦ ${senderName}의 커플 유형 결과예요` : '✦ 커플 유형 결과예요';
+    document.getElementById('section-received').style.display='block';
+  } else {
+    document.getElementById('section-share').style.display='block';
+  }
+})();
+
 // ── 토스트
 function showToast(msg){
   const t=document.getElementById('toast');
@@ -553,10 +583,10 @@ function shareKakao(){
 }
 function shareInsta(){
   const testUrl='https://shadowgram.org/couple/kr/';
-  const shareText='우리 커플 완전 신박해 🔥 당신들도 체크해봐요 → ';
+  const fullMsg='우리 커플 완전 신박해 🔥 당신들도 체크해봐요\n👉 '+testUrl;
   if(navigator.share){
-    navigator.share({title:'우리 커플 완전 신박해 💫',text:shareText,url:testUrl}).catch(()=>{});
-  }else{copyToClipboard(shareText+testUrl,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}
+    navigator.share({text:fullMsg}).catch(()=>{copyToClipboard(fullMsg,'📸 링크가 복사됐어요! 붙여넣기 해보세요');});
+  }else{copyToClipboard(fullMsg,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}
 }
 function copyLink(){copyToClipboard(getShareUrl(),'✅ 링크가 복사됐어요!');}
 function getReport(){
