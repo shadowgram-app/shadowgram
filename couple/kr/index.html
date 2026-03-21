@@ -760,54 +760,40 @@
     .split-opt { font-size: 13px; padding: 9px 10px; }
   }
 
-  /* ── Hamburger Drawer ───────────────────────────────────── */
-  .hw-btn{position:relative;top:auto;left:auto;z-index:10001;margin-right:4px;
-    background:rgba(15,18,30,0.85);border:1px solid rgba(184,134,11,.3);
-    border-radius:10px;width:40px;height:40px;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:5px;cursor:pointer;
-    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
-  
-  .hw-drawer-close{position:absolute;top:16px;right:16px;background:none;border:none;color:#C9A84C;font-size:18px;cursor:pointer;padding:4px 8px;}
-  .hw-section{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-  .hw-section-label{font-size:10px;letter-spacing:1.5px;color:#667;padding:10px 24px 4px;text-transform:uppercase;}
-  .hw-item{display:flex;align-items:center;gap:12px;padding:12px 24px;color:#C9C9C9;text-decoration:none;font-size:14px;transition:background .2s;}
-  .hw-item:hover{background:rgba(255,255,255,.05);color:#C9A84C;}
-  .hw-item-icon{font-size:16px;}
-  .hw-item-name{flex:1;}
 
-  .hw-btn span{display:block;width:18px;height:2px;background:#C9A84C;border-radius:2px;transition:all .25s;}
-  .hw-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .hw-btn.open span:nth-child(2){opacity:0;}
-  .hw-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .hw-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0);
-    pointer-events:none;transition:background .3s;}
-  .hw-overlay.open{background:rgba(0,0,0,.5);pointer-events:all;}
-  .hw-drawer{position:fixed;top:0;left:-280px;bottom:0;z-index:10000;
-    width:260px;background:#0F121E;border-right:1px solid rgba(184,134,11,.15);
-    padding:0;display:flex;flex-direction:column;transition:left .3s cubic-bezier(.4,0,.2,1);
-    overflow-y:auto;}
-  .hw-drawer.open{left:0;}
-  .hw-drawer-head{padding:52px 24px 20px;border-bottom:1px solid rgba(255,255,255,.06);}
-  .hw-drawer-logo{font-size:14px;font-weight:900;letter-spacing:.1em;
-    background:linear-gradient(135deg,#E8D090,#C9A84C);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .hw-drawer-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.06em;}
-  .hw-section{padding:16px 20px 8px;}
-  .hw-section-label{font-size:9px;font-weight:800;letter-spacing:.14em;
-    color:rgba(255,255,255,.25);margin-bottom:10px;text-transform:uppercase;}
-  .hw-item{display:flex;align-items:center;gap:12px;padding:11px 14px;
-    border-radius:10px;text-decoration:none;margin-bottom:4px;
-    transition:background .15s;cursor:pointer;}
-  .hw-item:hover{background:rgba(255,255,255,.06);}
-  .hw-item-icon{font-size:17px;width:22px;text-align:center;flex-shrink:0;}
-  .hw-item-body{flex:1;}
-  .hw-item-name{font-size:13px;font-weight:700;color:#fff;}
-  .hw-item-lang{font-size:10px;color:rgba(255,255,255,.35);margin-top:1px;}
-  .hw-item-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:8px;
-    background:rgba(184,134,11,.15);color:#C9A84C;border:1px solid rgba(184,134,11,.3);flex-shrink:0;}
-  .hw-divider{height:1px;background:rgba(255,255,255,.06);margin:8px 20px;}
-
-</style>
+  /* ── HAMBURGER & DRAWER (공통) ───────────── */
+  .hw-btn {
+    position: relative;
+    background: rgba(184,134,11,0.12);
+    border: 1px solid rgba(184,134,11,0.3);
+    border-radius: 8px;
+    width: 38px; height: 38px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 5px; cursor: pointer; flex-shrink: 0;
+    transition: background .2s;
+  }
+  .hw-btn:hover { background: rgba(184,134,11,0.22); }
+  .hw-btn span { display: block; width: 18px; height: 2px; background: #C9A84C; border-radius: 2px; transition: all .25s; }
+  .hw-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hw-btn.open span:nth-child(2) { opacity: 0; }
+  .hw-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hw-overlay { position: fixed; inset: 0; z-index: 9998; background: rgba(0,0,0,0); pointer-events: none; transition: background .3s; }
+  .hw-overlay.open { background: rgba(0,0,0,0.6); pointer-events: all; }
+  .hw-drawer { position: fixed; top: 0; left: -290px; bottom: 0; z-index: 9999; width: 270px; background: #0C0F1A; border-right: 1px solid rgba(184,134,11,0.18); display: flex; flex-direction: column; transition: left .3s cubic-bezier(.4,0,.2,1); overflow-y: auto; }
+  .hw-drawer.open { left: 0; }
+  .hw-drawer-head { padding: 48px 24px 18px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; }
+  .hw-drawer-logo { font-size: 13px; letter-spacing: 3px; font-weight: 700; color: #C9A84C; }
+  .hw-close-btn { background: none; border: none; color: #A0A8B8; font-size: 20px; cursor: pointer; padding: 4px 8px; line-height: 1; transition: color .2s; }
+  .hw-close-btn:hover { color: #C9A84C; }
+  .hw-section { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .hw-section-label { font-size: 10px; letter-spacing: 2px; color: #445; padding: 10px 24px 4px; text-transform: uppercase; }
+  .hw-item { display: flex; align-items: center; gap: 10px; padding: 12px 24px; color: #B0B8C8; text-decoration: none; font-size: 13px; transition: background .2s, color .2s; }
+  .hw-item:hover { background: rgba(184,134,11,0.08); color: #C9A84C; }
+  .hw-item-icon { font-size: 15px; }
+  .hw-badge { font-size: 9px; letter-spacing: 1px; font-weight: 700; background: rgba(184,134,11,0.2); color: #C9A84C; border: 1px solid rgba(184,134,11,0.3); padding: 2px 6px; border-radius: 4px; margin-left: auto; }
+  .hw-badge.soon { background: rgba(80,80,100,0.3); color: #667; border-color: rgba(100,100,120,0.3); }
+  </style>
 </head>
 <body>
 
@@ -2026,19 +2012,41 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')hwClose();});
 <div class="hw-drawer" id="hw-drawer">
   <div class="hw-drawer-head">
     <div class="hw-drawer-logo">SHADOWGRAM</div>
-    <button class="hw-drawer-close" onclick="hwClose()" aria-label="닫기">✕</button>
+    <button class="hw-close-btn" onclick="hwClose()" aria-label="close">&#x2715;</button>
   </div>
   <div class="hw-section">
-    <a class="hw-item" href="/"><span class="hw-item-icon">🏠</span><span class="hw-item-name">Home</span></a>
+    <a class="hw-item" href="/"><span class="hw-item-icon">&#x1F3E0;</span> Home</a>
   </div>
   <div class="hw-section">
-    <div class="hw-section-label">SELF</div>
-    <a class="hw-item" href="/self/pt/"><span class="hw-item-icon">🌟</span><span class="hw-item-name">Shadowgram Self — PT</span></a>
+    <div class="hw-section-label">Self</div>
+    <a class="hw-item" href="/self/pt/"><span class="hw-item-icon">&#x1F31F;</span> Shadowgram Self <span class="hw-badge">PT-BR</span></a>
   </div>
   <div class="hw-section">
-    <div class="hw-section-label">COUPLE</div>
-    <a class="hw-item" href="/couple/kr/"><span class="hw-item-icon">💑</span><span class="hw-item-name">Shadowgram Couple — KR</span></a>
+    <div class="hw-section-label">Couple</div>
+    <a class="hw-item" href="/couple/kr/"><span class="hw-item-icon">&#x1F491;</span> Shadowgram Couple <span class="hw-badge">KR</span></a>
+    <a class="hw-item" href="/couple/kr/shop/"><span class="hw-item-icon">&#x1F6CD;</span> Shop <span class="hw-badge">KR</span></a>
+  </div>
+  <div class="hw-section">
+    <div class="hw-section-label">Coming Soon</div>
+    <a class="hw-item" href="#" style="opacity:.35;pointer-events:none;"><span class="hw-item-icon">&#x1F3E2;</span> Shadowgram Team <span class="hw-badge soon">Soon</span></a>
+    <a class="hw-item" href="#" style="opacity:.35;pointer-events:none;"><span class="hw-item-icon">&#x1F319;</span> leftnoon <span class="hw-badge soon">Soon</span></a>
   </div>
 </div>
+<script>
+function hwToggle(){
+  var btn=document.getElementById('hw-btn');
+  var drawer=document.getElementById('hw-drawer');
+  var overlay=document.getElementById('hw-overlay');
+  var open=drawer.classList.toggle('open');
+  btn.classList.toggle('open',open);
+  overlay.classList.toggle('open',open);
+}
+function hwClose(){
+  document.getElementById('hw-btn').classList.remove('open');
+  document.getElementById('hw-drawer').classList.remove('open');
+  document.getElementById('hw-overlay').classList.remove('open');
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')hwClose();});
+</script>
 </body>
 </html>
