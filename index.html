@@ -50,6 +50,16 @@
       color: var(--goldL); text-decoration: none; flex: 1;
     }
     .gnav-logo span { color: var(--textD); font-weight: 300; }
+    .lang-switcher { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+    .lang-btn {
+      font-size: 10px; letter-spacing: 1px; font-weight: 700;
+      color: var(--textD); background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 5px; padding: 4px 8px; cursor: pointer;
+      transition: all .2s; text-transform: uppercase;
+    }
+    .lang-btn:hover { border-color: rgba(184,134,11,0.5); color: var(--goldL); }
+    .lang-btn.active { border-color: rgba(184,134,11,0.6); color: var(--goldL); background: rgba(184,134,11,0.1); }
 
     /* HAMBURGER BTN */
     .hw-btn {
@@ -104,6 +114,10 @@
     .hw-item-icon { font-size: 15px; }
     .hw-badge { font-size: 9px; letter-spacing: 1px; font-weight: 700; background: rgba(184,134,11,0.2); color: var(--goldL); border: 1px solid rgba(184,134,11,0.3); padding: 2px 6px; border-radius: 4px; margin-left: auto; }
     .hw-badge.soon { background: rgba(80,80,100,0.3); color: #667; border-color: rgba(100,100,120,0.3); }
+    .hw-sub { padding-left: 44px; font-size: 12px; color: #8898A8; }
+    .hw-sub:hover { color: var(--goldL); background: rgba(184,134,11,0.06); }
+    .hw-sub .hw-item-icon { font-size: 13px; }
+    .hw-disabled { opacity: .35; pointer-events: none; }
 
     /* HERO */
     .hero {
@@ -205,6 +219,12 @@
     <span></span><span></span><span></span>
   </button>
   <a class="gnav-logo" href="/"><span>SHADOW</span>GRAM</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="langGo('kr')">KR</button>
+    <button class="lang-btn" onclick="langGo('pt')">PT</button>
+    <button class="lang-btn" onclick="langGo('es')">ES</button>
+    <button class="lang-btn" onclick="langGo('en')">EN</button>
+  </div>
 </nav>
 
 <!-- DRAWER -->
@@ -217,19 +237,25 @@
   <div class="hw-section">
     <a class="hw-item" href="/"><span class="hw-item-icon">🏠</span> Home</a>
   </div>
+
   <div class="hw-section">
     <div class="hw-section-label">Self</div>
     <a class="hw-item" href="/self/pt/"><span class="hw-item-icon">🌟</span> Shadowgram Self <span class="hw-badge">PT-BR</span></a>
+    <a class="hw-item hw-sub" href="/blog/"><span class="hw-item-icon">📝</span> Blog</a>
+    <a class="hw-item hw-sub" href="/blog/faq.html"><span class="hw-item-icon">❓</span> FAQ</a>
   </div>
+
   <div class="hw-section">
     <div class="hw-section-label">Couple</div>
     <a class="hw-item" href="/couple/kr/"><span class="hw-item-icon">💑</span> Shadowgram Couple <span class="hw-badge">KR</span></a>
-    <a class="hw-item" href="/couple/kr/shop/"><span class="hw-item-icon">🛍</span> Shop <span class="hw-badge">KR</span></a>
+    <a class="hw-item hw-sub" href="/couple/kr/shop/"><span class="hw-item-icon">🛍</span> Shop</a>
+    <a class="hw-item hw-sub" href="/couple/kr/blog/"><span class="hw-item-icon">📝</span> Blog</a>
   </div>
+
   <div class="hw-section">
     <div class="hw-section-label">Coming Soon</div>
-    <a class="hw-item" href="#" style="opacity:.35;pointer-events:none;"><span class="hw-item-icon">🏢</span> Shadowgram Team <span class="hw-badge soon">Soon</span></a>
-    <a class="hw-item" href="#" style="opacity:.35;pointer-events:none;"><span class="hw-item-icon">🌙</span> leftnoon <span class="hw-badge soon">Soon</span></a>
+    <a class="hw-item hw-disabled" href="#"><span class="hw-item-icon">🏢</span> Shadowgram Team <span class="hw-badge soon">Soon</span></a>
+    <a class="hw-item hw-disabled" href="#"><span class="hw-item-icon">🌙</span> leftnoon Community <span class="hw-badge soon">Soon</span></a>
   </div>
 </div>
 
@@ -322,10 +348,10 @@
 
 <script>
 function hwToggle(){
-  const btn=document.getElementById('hw-btn');
-  const drawer=document.getElementById('hw-drawer');
-  const overlay=document.getElementById('hw-overlay');
-  const open=drawer.classList.toggle('open');
+  var btn=document.getElementById('hw-btn');
+  var drawer=document.getElementById('hw-drawer');
+  var overlay=document.getElementById('hw-overlay');
+  var open=drawer.classList.toggle('open');
   btn.classList.toggle('open',open);
   overlay.classList.toggle('open',open);
 }
@@ -334,7 +360,22 @@ function hwClose(){
   document.getElementById('hw-drawer').classList.remove('open');
   document.getElementById('hw-overlay').classList.remove('open');
 }
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') hwClose(); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') hwClose(); });
+
+// 언어 전환
+var LANG_URLS = {
+  kr: '/',
+  pt: '/self/pt/',
+  es: '#',  // coming soon
+  en: '#'   // coming soon
+};
+function langGo(lang){
+  if(LANG_URLS[lang] === '#'){
+    alert('준비 중입니다. 곧 오픈 예정이에요!');
+    return;
+  }
+  window.location.href = LANG_URLS[lang];
+}
 </script>
 </body>
 </html>
