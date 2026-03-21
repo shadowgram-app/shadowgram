@@ -281,8 +281,8 @@
   <!-- 공유 -->
   <div class="share-section fade-in" style="animation-delay:1.7s">
     <div class="share-card">
-      <h3>우리 커플 환상의 조합이죠? 💫</h3>
-      <p>친구에게 공유하면 그 친구 조합도 궁금해질 거예요 🙈<br>우리 조합 결과 캡처해서 올려보세요</p>
+      <h3>우리 커플 완전 신박해 💫</h3>
+      <p>당신들도 체크해봐요 — 64가지 조합 중 당신만의 커플 유형이 나와요 🙈</p>
       <div class="share-btns">
         <button class="btn-insta" onclick="shareInsta()">📸 공유하기 (인스타·문자·더보기)</button>
       </div>
@@ -538,26 +538,25 @@ function getShareUrl(){
   return window.location.href;
 }
 function shareKakao(){
-  const url=getShareUrl();
-  const params=new URLSearchParams(window.location.search);
-  const a=params.get('a')||'SPARK',b=params.get('b')||'VISION';
+  const testUrl='https://shadowgram.org/couple/kr/';
   if(window.Kakao&&window.Kakao.isInitialized()){
     Kakao.Share.sendDefault({objectType:'feed',content:{
-      title:`우리 커플 유형 결과가 나왔어요 👀 ${a} × ${b}`,
-      description:'왜 끌렸는지, 왜 싸우는지 — 20페이지 커플 심리 리포트',
+      title:'우리 커플 완전 신박해 💫 당신들도 체크해봐요',
+      description:'연인과 함께 24문항 — 64가지 조합 중 당신만의 커플 유형이 나와요',
       imageUrl:'https://shadowgram.org/og-couple.png',
-      link:{mobileWebUrl:url,webUrl:url}
-    },buttons:[{title:'결과 보러 가기',link:{mobileWebUrl:url,webUrl:url}}]});
+      link:{mobileWebUrl:testUrl,webUrl:testUrl}
+    },buttons:[{title:'지금 체크해보기 →',link:{mobileWebUrl:testUrl,webUrl:testUrl}}]});
   }else{
-    copyToClipboard(url,'🔗 링크가 복사됐어요! 카톡 열어서 붙여넣기 해보세요 💛');
+    copyToClipboard('우리 커플 완전 신박해 🔥 당신들도 체크해봐요 → '+testUrl,'🔗 링크가 복사됐어요! 카톡 열어서 붙여넣기 해보세요 💛');
     if(/Android|iPhone|iPad/i.test(navigator.userAgent))setTimeout(()=>{window.location.href='kakaolink://';},800);
   }
 }
 function shareInsta(){
-  const url=getShareUrl();
+  const testUrl='https://shadowgram.org/couple/kr/';
+  const shareText='우리 커플 완전 신박해 🔥 당신들도 체크해봐요 → ';
   if(navigator.share){
-    navigator.share({title:'우리 커플 유형 결과 👀',text:'Shadowgram 커플 테스트 해봤는데 진짜 신기해요 — 같이 해봐요!',url}).catch(()=>{});
-  }else{copyToClipboard(url,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}
+    navigator.share({title:'우리 커플 완전 신박해 💫',text:shareText,url:testUrl}).catch(()=>{});
+  }else{copyToClipboard(shareText+testUrl,'📸 링크가 복사됐어요! 인스타 스토리에 붙여넣기 해보세요');}
 }
 function copyLink(){copyToClipboard(getShareUrl(),'✅ 링크가 복사됐어요!');}
 function getReport(){
