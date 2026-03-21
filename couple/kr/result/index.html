@@ -389,31 +389,34 @@ function renderPage(){
   const params=new URLSearchParams(window.location.search);
   const a=(params.get('a')||'SPARK').toUpperCase();
   const b=(params.get('b')||'VISION').toUpperCase();
+  const na=params.get('na')||'';
+  const nb=params.get('nb')||'';
   const key=`${a}_${b}`;
   const d=COMBO_DATA[key];
   const tA=TYPE_INFO[a]||TYPE_INFO['SPARK'];
   const tB=TYPE_INFO[b]||TYPE_INFO['VISION'];
 
-  // 유형 배지 스타일
+  // 유형 배지 — 이름 있으면 위에 작게 표시
   const pillA=document.getElementById('pill-a');
   const pillB=document.getElementById('pill-b');
-  pillA.textContent=a;
-  pillA.style.cssText=`background:${tA.pill};color:${tA.pillText};border:1.5px solid ${tA.pillBorder};`;
-  pillB.textContent=b;
-  pillB.style.cssText=`background:${tB.pill};color:${tB.pillText};border:1.5px solid ${tB.pillBorder};`;
+  pillA.innerHTML=na?`<span style="display:block;font-size:9px;opacity:0.8;margin-bottom:2px;">${na}</span>${a}`:a;
+  pillA.style.cssText=`background:${tA.pill};color:${tA.pillText};border:1.5px solid ${tA.pillBorder};line-height:1.2;padding:6px 14px;`;
+  pillB.innerHTML=nb?`<span style="display:block;font-size:9px;opacity:0.8;margin-bottom:2px;">${nb}</span>${b}`:b;
+  pillB.style.cssText=`background:${tB.pill};color:${tB.pillText};border:1.5px solid ${tB.pillBorder};line-height:1.2;padding:6px 14px;`;
 
-  // 레전드
+  // 레전드 — 이름(유형) 형식
   document.getElementById('dot-a').style.background=tA.color;
   document.getElementById('dot-b').style.background=tB.color;
-  document.getElementById('legend-a').textContent=a;
-  document.getElementById('legend-b').textContent=b;
+  document.getElementById('legend-a').textContent=na?`${na}(${a})`:a;
+  document.getElementById('legend-b').textContent=nb?`${nb}(${b})`:b;
 
   // 방사형 차트
   const canvas=document.getElementById('radarChart');
   drawRadar(canvas, tA.radar, tB.radar, tA.color, tB.color);
 
   // 헤드라인
-  document.getElementById('sticky-title').textContent=`${a} × ${b} 리포트`;
+  const titlePair=na&&nb?`${na} × ${nb}`:`${a} × ${b}`;
+  document.getElementById('sticky-title').textContent=`${titlePair} 리포트`;
 
   if(!d){ console.warn('No data for',key); return; }
 
