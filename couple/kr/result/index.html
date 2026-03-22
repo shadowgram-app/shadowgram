@@ -619,7 +619,7 @@ renderPage();
   const nb=params.get('nb')||'';
   const key=`${a}_${b}`;
 
-  fetch('/couple/data/combo.json')
+  fetch('/couple/data/combo.json?v=26acc37')
     .then(r=>r.json())
     .then(data=>{
       const d=data[key];
