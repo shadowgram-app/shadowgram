@@ -31,7 +31,7 @@
       --red:   #E05040;
     }
 
-    /* ── 모바일 우선 베이스 ── */
+    /* ── Mobile first base ── */
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
       background: var(--bg);
@@ -41,14 +41,14 @@
       -webkit-text-size-adjust: 100%;
     }
 
-    /* ── NAV (sg-nav로 통일) ── */
+    /* ── NAV (unified as sg-nav) ── */
     .nav-back {
       font-size: 13px; color: var(--silver);
       text-decoration: none; transition: color .2s;
     }
     .nav-back:active { color: var(--gold); }
 
-    /* ── QUIZ 상단 여백 축소 ── */
+    /* ── Quiz top padding reduced ── */
     #quiz-section {
       max-width: 680px; margin: 0 auto;
       padding: 20px 20px 80px;
@@ -199,7 +199,7 @@
       font-size: 17px; line-height: 1.95; color: var(--silver);
     }
 
-    /* ── POTENTIAL POINT CARD (구 Pain Card → 포텐 프레임으로 전환) ── */
+    /* ── POTENTIAL POINT CARD (formerly Pain Card → transitioned to Potential framework) ── */
     .pain-card {
       background: rgba(184,134,11,0.05);
       border: 1px solid rgba(184,134,11,0.25);
@@ -215,7 +215,7 @@
       font-size: 17px; line-height: 1.95; color: var(--text);
     }
 
-    /* ── Score bars (양방향 중심 기준) ── */
+    /* ── Score bars (bidirectional center-based) ── */
     .score-bars {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 8px; padding: 22px 20px; margin-bottom: 16px;
@@ -475,7 +475,7 @@
       line-height: 2.0;
     }
 
-    /* ── 태블릿/데스크탑 ── */
+    /* ── Tablet / Desktop ── */
     @media (min-width: 600px) {
       .sg-nav { padding: 0 40px; }
       .cred-inner { flex-direction: row; gap: 28px; }
@@ -486,7 +486,7 @@
     }
 
 
-  /* ── HAMBURGER & DRAWER (공통) ───────────── */
+  /* ── HAMBURGER & DRAWER (common) ───────────── */
   .hw-btn {
     position: relative;
     background: rgba(184,134,11,0.12);
@@ -542,7 +542,7 @@
   <a class="sg-logo" href="https://shadowgram.org"><img src="/logo.png" alt="" style="width:26px;height:26px;border-radius:50%;flex-shrink:0;"><span class="sg-s1">SHADOW</span><span class="sg-s2">GRAM</span><span class="sg-dot"> · </span><span class="sg-s3">SELF</span></a>
 </nav>
 
-<!-- MINI HEADER (퀴즈 위 최소 표시) -->
+<!-- MINI HEADER (minimal display above quiz) -->
 <div style="text-align:center; padding: 12px 20px 0; font-size:11px; letter-spacing:2px; color:var(--silver);">
   ⏱ 5–7 MIN &nbsp;·&nbsp; 28 PERGUNTAS &nbsp;·&nbsp; 🔒 SEM CADASTRO
 </div>
@@ -658,7 +658,7 @@
     <a id="res-cta-btn" href="#" target="_blank" class="btn-buy">¡Quiero mi Reporte!</a>
     <p class="guarantee">🔒 Pago seguro vía Hotmart · Acceso inmediato · PDF personalizado por tipo</p>
 
-    <!-- SNS 공유 버튼 -->
+    <!-- SNS share buttons -->
     <div style="margin-top:16px;">
       <p style="font-size:12px;color:var(--silver);text-align:center;margin:0 0 12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;">
         ✦ Compartilhe — seus amigos descobrem o tipo deles
@@ -693,7 +693,7 @@
           padding:12px 8px;border-radius:12px;text-decoration:none;
         ">✕ X</a>
       </div>
-      <!-- 링크 복사 -->
+      <!-- Copy link -->
       <button id="btn-copy-link" onclick="copyQuizLink()" style="
         display:flex;align-items:center;justify-content:center;gap:8px;
         width:100%;margin-top:8px;
@@ -704,7 +704,7 @@
       ">🔗 Copiar enlace del test</button>
     </div>
 
-    <!-- 내 결과 저장 버튼 -->
+    <!-- Save my result button -->
     <button class="btn-save-link" id="btn-save-link" onclick="saveMyLink()" style="
       background: transparent;
       border: 1px solid rgba(197,165,114,0.4);
@@ -752,8 +752,8 @@
 
 <script>
 // ═══════════════════════════════════════════════════════════════
-// HOTMART — 유형별 개별 상품 링크 (Shadowgram Individual Paid)
-// ★ 링크 수령 후 아래 URL만 교체하면 됩니다
+// HOTMART — links by type (Shadowgram Self Paid)
+// ★ After receiving links, just replace the URLs below
 // ═══════════════════════════════════════════════════════════════
 const HOTMART_LINKS = {
   SPARK:   'https://go.hotmart.com/J104717194W',
@@ -766,7 +766,7 @@ const HOTMART_LINKS = {
   LEADER:  'https://go.hotmart.com/U104717647A',
 };
 
-// UTM / afiliado 파라미터 자동 전달
+// UTM / affiliate parameters auto-forward
 function getHotmartLink(tipo) {
   const params = new URLSearchParams(window.location.search);
   const srcCode = params.get('src') || params.get('ref') || params.get('aff') || '';
@@ -775,19 +775,19 @@ function getHotmartLink(tipo) {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// EMAIL CAPTURE — Google Apps Script 경유 → Brevo 자동 발송
-// API 키는 Apps Script 안에만 보관 (프론트엔드 노출 없음)
+// EMAIL CAPTURE — via Google Apps Script → auto-send to Brevo
+// API keys stored only in Apps Script (no frontend exposure)
 // ═══════════════════════════════════════════════════════════════
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbw4gdZ0y8L47fo1p9HGcIb7JTkaDKEN6MQe2b75SIdoXj3zMnZjIR6xnRLBVgatRJ2h1w/exec';
 
-let _currentType = '';  // showResult()에서 세팅됨
+let _currentType = '';  // set in showResult()
 
-// 타임존 → 국가 코드 추정 (브라우저 Intl API 기반)
+// Timezone → country code estimation (browser Intl API based)
 function _guessCountry() {
   try {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
     const lang = (navigator.language || '').toLowerCase();
-    // 타임존 prefix로 대륙/국가 추정
+    // Estimate continent/country by timezone prefix
     if (tz.startsWith('America/Sao_Paulo') || tz.startsWith('America/Fortaleza') ||
         tz.startsWith('America/Manaus') || tz.startsWith('America/Belem') ||
         tz === 'America/Noronha' || lang.includes('pt-br')) return 'BR';
@@ -800,7 +800,7 @@ function _guessCountry() {
     if (tz.startsWith('Europe/')) return 'EU';
     if (tz.startsWith('America/New_York') || tz.startsWith('America/Chicago') ||
         tz.startsWith('America/Denver') || tz.startsWith('America/Los_Angeles')) return 'US';
-    // 언어 fallback
+    // Language fallback
     if (lang.startsWith('pt')) return 'BR';
     if (lang.startsWith('es')) return 'LATAM';
     if (lang.startsWith('en')) return 'EN';
@@ -1046,7 +1046,7 @@ const TYPES = {
 // QUIZ ENGINE
 // ═══════════════════════════════════════════════════════════════
 let dimScores = [0, 0, 0, 0];
-let answers = new Array(QUESTIONS.length).fill(null); // 각 문항 현재 선택값 저장
+let answers = new Array(QUESTIONS.length).fill(null); // save current selection for each question
 let current = 0;
 const totalQ = QUESTIONS.length;
 
@@ -1076,9 +1076,9 @@ function buildQuiz() {
 }
 
 function selectOption(qIdx, choice, btn) {
-  // 첫 번째 답 선택 시 hero + meta + cred 숨기기
+  // hide hero + meta + cred on first answer selection
   if (qIdx === 0 && answers[qIdx] === null) {
-    // 퀴즈 시작 시간 기록
+    // record quiz start time
     if (!window._sgQuizStart) window._sgQuizStart = Date.now();
     const hero = document.querySelector('.hero');
     const meta = document.querySelector('.hero-meta');
@@ -1090,9 +1090,9 @@ function selectOption(qIdx, choice, btn) {
   document.querySelectorAll(`#q-${qIdx} .ab-btn`).forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   const dimIdx = QUESTIONS[qIdx].dim - 1;
-  // 이전 선택이 있으면 먼저 되돌리기 (중복 카운트 방지)
+  // revert previous selection first if exists (prevent duplicate count)
   if (answers[qIdx] === 'a') dimScores[dimIdx]--;
-  // 새 선택 저장
+  // save new selection
   answers[qIdx] = choice;
   if (choice === 'a') dimScores[dimIdx]++;
   setTimeout(() => {
@@ -1106,7 +1106,7 @@ function goToQuestion(idx) {
   document.getElementById('q-' + idx).classList.add('active');
   current = idx;
   updateProgress(idx);
-  // 첫 문항이면 뒤로가기 숨김, 아니면 표시
+  // hide back button if first question, otherwise show
   const prevBtn = document.getElementById('btn-prev');
   if (idx === 0) prevBtn.classList.add('hidden');
   else prevBtn.classList.remove('hidden');
@@ -1129,16 +1129,16 @@ function showResult(savedWinner) {
   let winner, d, data;
 
   if (savedWinner) {
-    // localStorage에서 복원
+    // restore from localStorage
     winner = savedWinner;
     data = TYPES[winner];
-    // 스코어바용 임시 d (저장된 유형 기반으로 추정)
-    d = ['a','a','a','a']; // 바 표시용 기본값
+    // temporary d for score bar (estimated based on saved type)
+    d = ['a','a','a','a']; // default value for bar display
   } else {
     d = dimScores.map(s => s >= 4 ? 'a' : 'b');
     winner = getType(d[0], d[1], d[2], d[3]);
     data = TYPES[winner];
-    // ── localStorage에 결과 저장
+    // ── save result to localStorage
     try {
       localStorage.setItem('sg_type', winner);
       localStorage.setItem('sg_code', d.join(''));
@@ -1146,25 +1146,25 @@ function showResult(savedWinner) {
       localStorage.setItem('sg_scores', JSON.stringify(dimScores));
     } catch(e) {}
 
-    // ── Google Sheets DB 전송
+    // ── send to Google Sheets DB
     try {
       const utmParams = new URLSearchParams(window.location.search);
 
-      // 세션 ID (재방문 추적용)
+      // session ID (for return visit tracking)
       let sessionId = sessionStorage.getItem('sg_session_id');
       if (!sessionId) {
         sessionId = Date.now().toString(36) + Math.random().toString(36).substr(2, 6);
         sessionStorage.setItem('sg_session_id', sessionId);
       }
 
-      // 재방문 여부
+      // return visitor flag
       const visitCount = parseInt(localStorage.getItem('sg_visit_count') || '0') + 1;
       localStorage.setItem('sg_visit_count', visitCount);
 
-      // 소요 시간 (초)
+      // time elapsed (seconds)
       const duration = window._sgQuizStart ? Math.round((Date.now() - window._sgQuizStart) / 1000) : null;
 
-      // 브라우저 파싱
+      // browser parsing
       const ua = navigator.userAgent;
       let browser = 'other';
       if (/Edg\//.test(ua)) browser = 'edge';
@@ -1174,7 +1174,7 @@ function showResult(savedWinner) {
       else if (/Safari\//.test(ua) && !/Chrome/.test(ua)) browser = 'safari';
       else if (/SamsungBrowser/.test(ua)) browser = 'samsung';
 
-      // OS 파싱
+      // OS parsing
       let os = 'other';
       if (/Windows/.test(ua)) os = 'windows';
       else if (/Mac OS X/.test(ua) && !/iPhone|iPad/.test(ua)) os = 'macos';
@@ -1235,16 +1235,16 @@ function showResult(savedWinner) {
   document.getElementById('res-cta-title').textContent = data.ctaTitle;
   document.getElementById('res-cta-sub').textContent = data.ctaSub;
 
-  // 이메일 캡처 — 유형별 타이틀 업데이트 & 상태 리셋
+  // email capture — update title by type & reset state
   _currentType = winner;
 
-  // CTA 버튼 — 유형별 Hotmart URL 연결
+  // CTA button — connect type-specific Hotmart URL
   const _ctaBtn = document.getElementById('res-cta-btn');
   if (_ctaBtn && HOTMART_LINKS[winner]) {
     _ctaBtn.href = HOTMART_LINKS[winner];
   }
 
-  // SNS 공유 버튼 — share.html?type=유형 (바이럴 전용 페이지)
+  // SNS share button — share.html?type=TYPE (viral-only page)
   const SHARE_URL = `https://shadowgram.org/self/es/?type=${winner}&fresh=0`;
   const QUIZ_URL  = 'https://shadowgram.org/self/es/';
   const shareMsg  = `Fiz o Shadowgram e sou tipo ${winner}! 🔥\nE você, qual é o seu?\n👇\n${SHARE_URL}`;
@@ -1254,7 +1254,7 @@ function showResult(savedWinner) {
   document.getElementById('btn-whatsapp-share').href =
     'https://wa.me/?text=' + encodeURIComponent(shareMsg);
 
-  // Instagram — share 링크 복사
+  // Instagram — copy share link
   document.getElementById('btn-instagram-share').href = '#';
   document.getElementById('btn-instagram-share').onclick = function(e) {
     e.preventDefault();
@@ -1272,7 +1272,7 @@ function showResult(savedWinner) {
   document.getElementById('btn-twitter-share').href =
     'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareMsgShort);
 
-  // 링크 복사 함수 (전역) — share.html 링크 복사
+  // copy link function (global) — copy share.html link
   window.copyQuizLink = function() {
     navigator.clipboard && navigator.clipboard.writeText(SHARE_URL);
     const btn = document.getElementById('btn-copy-link');
@@ -1280,7 +1280,7 @@ function showResult(savedWinner) {
     setTimeout(() => btn.textContent = '🔗 Copiar enlace del test', 2000);
   };
 
-  // 저장된 결과에서 복원 시 배너 표시
+  // show banner when restoring from saved result
   if (savedWinner) {
     const savedDate = localStorage.getItem('sg_date') || '';
     const banner = document.createElement('div');
@@ -1290,7 +1290,7 @@ function showResult(savedWinner) {
     rs.insertBefore(banner, rs.firstChild);
   }
 
-  // savedWinner일 때 저장된 점수 복원
+  // restore saved scores when savedWinner
   let scoresForBar = dimScores;
   if (savedWinner) {
     try {
@@ -1299,7 +1299,7 @@ function showResult(savedWinner) {
     } catch(e) {}
   }
 
-  // Score bars —양방향 중심 기준 그래프
+  // Score bars — bidirectional center-based graph
   const dimNames = [
     {a:'Introvertido', b:'Extrovertido'},
     {a:'Concreto',     b:'Intuitivo'},
@@ -1309,13 +1309,13 @@ function showResult(savedWinner) {
   const barRows = document.getElementById('score-bar-rows');
   barRows.innerHTML = '';
   scoresForBar.forEach((sc, i) => {
-    // sc: 'a' 선택 횟수 (0~7), 4 이상이면 a 성향
+    // sc: count of 'a' selections (0~7), 4+ means 'a' tendency
     const isA = sc >= 4;
-    // 중심(50%)에서 얼마나 벗어났는지 (0~50%)
+    // deviation from center (50%) (0~50%)
     const strength = isA
       ? Math.round(((sc - 3.5) / 3.5) * 50)   // a: 4→7% ~ 4→50%
       : Math.round(((3.5 - sc) / 3.5) * 50);   // b: 3→7% ~ 0→50%
-    const fillPct = Math.max(7, strength);       // 최소 7% (눈에 보이도록)
+    const fillPct = Math.max(7, strength);       // min 7% (visible)
 
     barRows.innerHTML += `
       <div class="bar-row">
@@ -1347,7 +1347,7 @@ function restartQuiz() {
   document.querySelector('.progress-wrap').style.display = 'block';
   document.querySelector('.back-btn-wrap').style.display = 'block';
   document.getElementById('btn-prev').classList.add('hidden');
-  // 재시작 시 hero + meta + cred 다시 표시
+  // show hero + meta + cred again on restart
   const hero = document.querySelector('.hero');
   const meta = document.querySelector('.hero-meta');
   const cred = document.querySelector('.cred-bar');
@@ -1360,12 +1360,12 @@ function restartQuiz() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// 재방문 처리 — localStorage + URL 파라미터
+// return visit handling — localStorage + URL parameter
 // ═══════════════════════════════════════════════════════════════
 function checkSavedResult() {
   const params = new URLSearchParams(window.location.search);
 
-  // ?fresh=1 이면 localStorage 지우고 첫 화면 시작 (공유 링크 진입 시)
+  // if ?fresh=1 clear localStorage and start first screen (when entering via share link)
   if (params.get('fresh') === '1') {
     try {
       localStorage.removeItem('sg_type');
@@ -1376,13 +1376,13 @@ function checkSavedResult() {
     return;
   }
 
-  // 1순위: URL 파라미터 ?type=SPARK (내 결과 저장 링크)
+  // priority 1: URL parameter ?type=SPARK (saved result link)
   const urlType = params.get('type');
   if (urlType && TYPES[urlType.toUpperCase()]) {
     showResult(urlType.toUpperCase());
     return;
   }
-  // 2순위: localStorage 저장값
+  // priority 2: localStorage saved value
   try {
     const saved = localStorage.getItem('sg_type');
     if (saved && TYPES[saved]) {
@@ -1390,10 +1390,10 @@ function checkSavedResult() {
       return;
     }
   } catch(e) {}
-  // 저장값 없으면 일반 퀴즈 시작
+  // if no saved value, start normal quiz
 }
 
-// 내 결과 링크 저장 버튼
+// save my result link button
 function saveMyLink() {
   try {
     const type = localStorage.getItem('sg_type');
