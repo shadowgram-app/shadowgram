@@ -44,16 +44,7 @@
     padding: 24px 20px 60px;
   }
 
-  /* ── Global Nav ─────────────────────────────────────────── */
-  
-  
-  
-  
-  
-  
-  
-
-  /* ── Header bar ─────────────────────────────────────────── */
+    /* ── Header bar ─────────────────────────────────────────── */
   .topbar {
     text-align: center;
     padding: 20px 0 8px;
@@ -778,15 +769,7 @@
   
 
     /* ── GNAV ── */
-    .gnav{display:flex;align-items:center;gap:0;padding:0 16px;height:52px;position:sticky;top:0;z-index:200;background:rgba(10,12,20,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,134,11,0.18);}
-    .gnav-logo{font-size:13px;letter-spacing:3px;font-weight:700;text-decoration:none;flex:1;white-space:nowrap;display:flex;align-items:center;}
-    .gnav-logo .s1{color:#A0A8B8;font-weight:300;}
-    .gnav-logo .s2{color:#C9A84C;font-weight:800;}
-    .lang-switcher{display:flex;align-items:center;gap:6px;margin-right:12px;}
-    .lang-btn{display:flex;align-items:center;gap:5px;font-size:11px;letter-spacing:0.5px;font-weight:700;color:#7A8899;background:none;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:5px 11px;cursor:pointer;transition:all .2s;white-space:nowrap;}
-    .lang-btn .flag{font-size:13px;}
     .lang-btn:hover{border-color:rgba(184,134,11,0.5);color:#C9A84C;}
-    .lang-btn.active{border-color:rgba(184,134,11,0.55);color:#C9A84C;background:rgba(184,134,11,0.1);}
     .hw-btn{background:rgba(184,134,11,0.1);border:1px solid rgba(184,134,11,0.25);border-radius:8px;width:36px;height:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;flex-shrink:0;transition:background .2s;}
     .hw-btn:hover{background:rgba(184,134,11,0.2);}
     .hw-btn span{display:block;width:16px;height:2px;background:#C9A84C;border-radius:2px;transition:all .25s;}
@@ -805,19 +788,35 @@
     .hw-item:last-child{border-bottom:none;}
     .hw-item:hover,.hw-item.active-page{background:rgba(184,134,11,0.07);color:#C9A84C;}
     .hw-item-icon{font-size:17px;width:22px;text-align:center;flex-shrink:0;}
-  </style>
+  
+  /* ── SG NAV ──────────────────────────────────────────────── */
+  .sg-nav{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:52px;position:sticky;top:0;z-index:999;background:rgba(15,18,30,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,134,11,0.18);}
+  .sg-logo{font-size:13px;letter-spacing:3px;text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+  .sg-s1{color:#A0A8B8;font-weight:300;}
+  .sg-s2{color:#C9A84C;font-weight:800;}
+  .sg-dot{color:rgba(184,134,11,0.45);font-weight:300;font-size:13px;}
+  .sg-s3{color:#8899AA;font-weight:400;font-size:10px;letter-spacing:2px;}
+
+  .hw-item.active-page { color: #C9A84C !important; background: rgba(184,134,11,0.1); }
+
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="gnav">
+
+<!-- ── Global Nav ── -->
+<nav class="sg-nav" id="sg-nav">
   <button class="hw-btn" id="hw-btn" onclick="hwToggle()" aria-label="menu"><span></span><span></span><span></span></button>
-  <a class="gnav-logo" href="/"><span class="s1">SHADOW</span><span class="s2">GRAM</span></a>
-  <div class="lang-switcher">
-    <button class="lang-btn active" id="lb-pt" onclick="switchLang('pt')"><span class="flag">🇧🇷</span> PT</button>
-    <button class="lang-btn" id="lb-es" onclick="switchLang('es')"><span class="flag">🇲🇽</span> ES</button>
+  <a class="sg-logo" href="/couple/pt/">
+    <img src="/logo.png" alt="" style="width:26px;height:26px;border-radius:50%;flex-shrink:0;">
+    <span class="sg-s1">SHADOW</span><span class="sg-s2">GRAM</span><span class="sg-dot"> · </span><span class="sg-s3">COUPLE</span>
+  </a>
+  <div style="display:flex;gap:6px;align-items:center;">
+    <button onclick="switchLang('pt')" style="background:rgba(184,134,11,0.15);border:1px solid rgba(184,134,11,0.35);border-radius:6px;color:#C9A84C;font-size:11px;font-weight:700;padding:5px 9px;cursor:pointer;letter-spacing:.04em;">🇧🇷 PT</button>
+    <button onclick="switchLang('es')" style="background:rgba(80,80,100,0.15);border:1px solid rgba(80,80,100,0.3);border-radius:6px;color:#8899AA;font-size:11px;font-weight:700;padding:5px 9px;cursor:pointer;letter-spacing:.04em;">🇲🇽 ES</button>
   </div>
 </nav>
+
 <!-- OVERLAY -->
 <div class="hw-overlay" id="hw-overlay" onclick="hwClose()"></div>
 <!-- DRAWER -->
@@ -826,14 +825,33 @@
     <div class="hw-drawer-logo"><span style="font-weight:300;color:#A0A8B8;">SHADOW</span>GRAM</div>
     <button class="hw-close-btn" onclick="hwClose()">✕</button>
   </div>
-  <a class="hw-item" href="/"><span class="hw-item-icon">🏠</span>Home</a>
-  <a class="hw-item" href="/self/pt/?fresh=1"><span class="hw-item-icon">🌟</span>Self</a>
-  <a class="hw-item active-page" href="/couple/pt/"><span class="hw-item-icon">💑</span>Couple</a>
+
+  <div class="hw-section">
+    <a class="hw-item" href="/"><span class="hw-item-icon">🏠</span> Home</a>
+  </div>
+
+  <div class="hw-section">
+    <div class="hw-section-label">Self</div>
+    <span class="hw-item hw-parent"><span class="hw-item-icon">🌟</span> Shadowgram Self <span class="hw-badge">PT-BR</span></span>
+    <a class="hw-item hw-sub" href="/self/pt/?fresh=1"><span class="hw-item-icon">✏</span> Teste</a>
+    <a class="hw-item hw-sub" href="/blog/"><span class="hw-item-icon">📝</span> Blog</a>
+    <a class="hw-item hw-sub" href="/blog/faq.html"><span class="hw-item-icon">❓</span> FAQ</a>
+  </div>
+
+  <div class="hw-section">
+    <div class="hw-section-label">Couple</div>
+    <span class="hw-item hw-parent"><span class="hw-item-icon">💑</span> Shadowgram Couple <span class="hw-badge">PT-BR</span></span>
+    <a class="hw-item hw-sub active-page" href="/couple/pt/"><span class="hw-item-icon">✏</span> Teste</a>
+    <a class="hw-item hw-sub" href="/couple/pt/shop/"><span class="hw-item-icon">🛍</span> Shop</a>
+    <a class="hw-item hw-sub" href="/couple/pt/blog/"><span class="hw-item-icon">📝</span> Blog</a>
+  </div>
+
+  <div class="hw-section">
+    <div class="hw-section-label">Coming Soon</div>
+    <span class="hw-item hw-parent hw-disabled"><span class="hw-item-icon">🏢</span> Shadowgram Team <span class="hw-badge soon">Soon</span></span>
+    <span class="hw-item hw-parent hw-disabled"><span class="hw-item-icon">🌙</span> leftnoon Community <span class="hw-badge soon">Soon</span></span>
+  </div>
 </div>
-
-
-<!-- ── Global Nav ── -->
-
 
 <!-- ═══════════════════════════════════════════════════════════
      SCREEN 1: INTRO
@@ -1021,7 +1039,7 @@
 function hwToggle(){var b=document.getElementById('hw-btn'),d=document.getElementById('hw-drawer'),o=document.getElementById('hw-overlay'),op=d.classList.toggle('open');b.classList.toggle('open',op);o.classList.toggle('open',op);}
 function hwClose(){['hw-btn','hw-drawer','hw-overlay'].forEach(function(id){document.getElementById(id).classList.remove('open');});}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')hwClose();});
-function switchLang(l){try{localStorage.setItem('sg_lang',l);}catch(e){}window.location.href=l==='pt'?'/couple/pt/':'/couple/es/';}
+function switchLang(l){try{localStorage.setItem('sg_lang',l);}catch(e){}if(l==='pt')window.location.href='/couple/pt/';else if(l==='es')window.location.href='/couple/es/';else window.location.href='/couple/kr/';}
 
 
 /* ── WhatsApp share ────────────────────────────────────────*/
@@ -1236,7 +1254,7 @@ function showScreen(id) {
 }
 
 function startTest() {
-  window.location.href = '/couple/kr/test/';
+  showScreen('q');
 }
 
 function restart() {
@@ -1503,7 +1521,7 @@ function renderBig5Radar(sA, sB) {
   const b5A = calcBig5(sA);
   const b5B = calcBig5(sB);
 
-  const labels = ['Tipo de Energia', 'Excitement level', 'Empatia', 'Planejamento', 'Estabilidade Emocional'];
+  const labels = ['Tipo de Energia', 'Intensidade', 'Empatia', 'Planejamento', 'Estabilidade Emocional'];
   const engLabels = ['Extraversion', 'Openness', 'Agreeableness', 'Conscientiousness', 'Stability'];
   const keysA = [b5A.extraversion, b5A.openness, b5A.agreeableness, b5A.conscientiousness, b5A.stability];
   const keysB = [b5B.extraversion, b5B.openness, b5B.agreeableness, b5B.conscientiousness, b5B.stability];
@@ -1591,7 +1609,7 @@ function renderBig5Radar(sA, sB) {
   drawDots(keysA, colorA);
 
   // axis labels
-  ctx.font = 'bold 11px "Apple SD Gothic Neo", "Noto Sans KR", sans-serif';
+  ctx.font = 'bold 11px "Montserrat", Arial, sans-serif';
   ctx.fillStyle = '#1A2030';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -1697,15 +1715,15 @@ function fallbackCopy(text) {
 /* ── Save result image ────────────────────────────────────────*/
 function saveResultImage() {
   var btn = document.getElementById('btn-save');
-  btn.textContent = '\u23f3 \uc0dd\uc131 \uc911...';
+  btn.textContent = '⏳ Gerando...';
   btn.disabled = true;
 
   var typeA = getType(state.scoresA);
   var typeB = getType(state.scoresB);
   var key   = typeA + '\u00d7' + typeB;
   var combo = COMBOS[key] || COMBOS[typeB + '\u00d7' + typeA] || {
-    title: typeA + ' \u00d7 ' + typeB + '\ud615',
-    sub: '\uc6b0\ub9ac\ub9cc\uc758 \uc870\ud569',
+    title: typeA + ' × ' + typeB,
+    sub: 'Nossa combinação única',
     hook: '',
     bg: ['#1A2030','#2A3450'],
   };
@@ -1714,7 +1732,7 @@ function saveResultImage() {
   var b5B = calcBig5(state.scoresB);
   var axisValsA = [b5A.extraversion, b5A.openness, b5A.agreeableness, b5A.conscientiousness, b5A.stability];
   var axisValsB = [b5B.extraversion, b5B.openness, b5B.agreeableness, b5B.conscientiousness, b5B.stability];
-  var axisLabels = ['\uc5d0\ub108\uc9c0 \ud0c0\uc785', '\uc124\ub808\uc784 \uac10\ub3c4', '\ubc30\ub824 \uc628\ub3c4', '\uc5f0\uc560 \uacc4\ud68d\ub825', '\ub9c8\uc74c \ub0a0\uc528'];
+  var axisLabels = ['Tipo de Energia', 'Intensidade', 'Empatia', 'Planejamento', 'Estabilidade'];
 
   // Canvas size: 600x900 (9:15 — optimized for mobile share)
   var W = 600, H = 900;
@@ -1790,7 +1808,7 @@ function saveResultImage() {
   c.font = '300 13px Arial, sans-serif';
   c.fillStyle = 'rgba(255,255,255,0.5)';
   c.textAlign = 'left';
-  c.fillText('\uc6b0\ub9ac \ucee4\ud50c\uc758 \ub300\ud654', 32, hookY);
+  c.fillText('💬 Nossa conversa de casal', 32, hookY);
   hookY += 22;
   c.font = 'bold 15px Arial, sans-serif';
   c.fillStyle = 'rgba(255,255,255,0.9)';
@@ -1875,7 +1893,7 @@ function saveResultImage() {
 
   // legend
   var legY = radarCY + maxR + 36;
-  [['\ub098','#42A5F5'],['\ud30c\ud2b8\ub108','#EF5350']].forEach(function(pair, idx) {
+  [['Eu','#42A5F5'],['Parceiro(a)','#EF5350']].forEach(function(pair, idx) {
     var lx = W/2 - 70 + idx*100;
     c.beginPath(); c.arc(lx,legY,6,0,Math.PI*2);
     c.fillStyle=pair[1]; c.fill();
@@ -1888,8 +1906,8 @@ function saveResultImage() {
   // ── tension + magic (2-col boxes)
   var boxY = legY + 30;
   var boxes = [
-    { label:'\u26a1 \uae34\uc7a5 \ud3ec\uc778\ud2b8', val: combo.tension },
-    { label:'\u2728 \uc6b0\ub9ac\uc758 \ub9c8\ubc95',  val: combo.magic  },
+    { label:'⚡ Ponto de Tensão', val: combo.tension },
+    { label:'✨ Nossa Magia',  val: combo.magic  },
   ];
   var bW = (W-80)/2;
   boxes.forEach(function(box, idx) {
@@ -1923,12 +1941,12 @@ function saveResultImage() {
     a.href = dataUrl;
     a.download = 'shadowgram_couple_' + typeA + '_' + typeB + '.png';
     a.click();
-    showToast('\uc774\ubbf8\uc9c0\uac00 \uc800\uc7a5\ub418\uc5c8\uc5b4\uc694! \uc778\uc2a4\ud0c0\uc5d0 \uacf5\uc720\ud574\ubcf4\uc138\uc694 \uad81');
+    showToast('Imagem salva! Compartilhe no Instagram 📸');
   } catch(e) {
-    showToast('\uc800\uc7a5 \uc2e4\ud328 \uc8c4\uc1a1\ud574\uc694. \ub9c1\ud06c\ub97c \ubcf5\uc0ac\ud574 \uacf5\uc720\ud574\ubcf4\uc138\uc694.');
+    showToast('Falha ao salvar. Copie o link e compartilhe.');
   }
 
-  btn.textContent = '\ud558 \uacb0\uacfc \uc774\ubbf8\uc9c0 \uc800\uc7a5';
+  btn.textContent = '📥 Salvar Imagem do Resultado';
   btn.disabled = false;
 }
 
